@@ -1,0 +1,11 @@
+.register-wrapper{
+    min-height: 100vh;
+    background-color: brown;
+    @include flexCenter(row);
+    .register-contaner{
+        width: 80%;
+        min-height: 300px;
+        background-color: green;
+        display: flex;
+    }
+}
