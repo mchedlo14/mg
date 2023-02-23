@@ -1,0 +1,95 @@
+.expert-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #2f2f32;
+    overflow: hidden;
+
+    .expert-text-wrapper{
+        max-width: 1140px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1{
+            text-align: center;
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 0 1px 3px #333333f7;
+        }
+
+        p{
+            text-align: center;
+            color: #fff;
+            font-size: 17px;
+        }
+    }
+
+    .all-service-wrapper{
+        max-width: 1140px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        margin-top: 60px;
+
+
+        .search-wrapper{
+            max-width: 300px;
+            width: 90%;
+
+        }
+
+        .text-wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h2{
+                text-align: center;
+                font-weight: 700;
+                font-size: 32px;
+                color: #fff;
+            }       
+            
+
+            p{
+                text-align: center;
+                font-size: 15px;
+                font-weight: 400;
+                color: #fff;
+            }
+        }
+
+        .services-list-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+
+            div{
+                width: 265px;
+                height: 150px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            img{
+                width: 80%;
+                height: 100px;
+                object-fit: cover;
+                &:hover{
+                    transform: scale(1.1);
+                    transition: all 0.3s;
+                }
+            }
+            h3{
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import logo from '../../assets/images/logomg.png'
 import lightIcon from '../../assets/svgs/brightness.svg'
 import searchIcon from '../../assets/svgs/search.svg'
+import Homenav from '../../components/homepagenav/Homenav';
 import Weather from '../../components/weather/Weather';
 function HomePage() {
     return ( 
@@ -22,6 +23,7 @@ function HomePage() {
                 <img src={searchIcon} alt='search icon' />
             </div>
             <Weather />
+            <Homenav />
         </div>
      );
 }

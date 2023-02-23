@@ -25,9 +25,7 @@ const Weather = () => {
             `https://nbg.gov.ge/gw/api/ct/monetarypolicy/currencies/ka/json`
         );
         const data = await res.json();
-        console.log(data[0].currencies);
         setCurrencyData(data[0].currencies);
-        console.log(data[0].currencies);
     };
 
     useEffect(() => {
