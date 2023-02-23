@@ -1,0 +1,30 @@
+.company-info-cover {
+    height: 345px;
+    background-color: green;
+    .company-basic-information {
+        width: 80%;
+        min-width: 876px;
+        height: 175px;
+        padding: 30px 160px 30px 140px;
+        .image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid #fffdfd;
+            position: relative;
+            img {
+                @include imageStyle(contain);
+                border-radius: 50%;
+            }
+            .checked {
+                width: 36px;
+                height: 36px;
+                background-color: red;
+                border-radius: 50%;
+                position: absolute;
+                left: calc(50% - 18px);
+                bottom: -18px;
+            }
+        }
+    }
+}
