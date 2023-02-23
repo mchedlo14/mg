@@ -1,11 +1,217 @@
-.register-wrapper{
+.register-wrapper {
     min-height: 100vh;
-    background-color: brown;
-    @include flexCenter(row);
-    .register-contaner{
+    background-color: $background_black;
+    // @include flexCenter(row);
+    .registration-navigation {
+        // background-color: red;
+        padding: 20px 15px;
+        display: flex;
+        justify-content: end;
+        p {
+            margin-right: 0.5em;
+        }
+        a {
+        }
+    }
+
+    .register-contaner {
         width: 80%;
         min-height: 300px;
-        background-color: green;
+        // background-color: green;
         display: flex;
+        margin: 0 auto;
+        margin-top: 100px;
+        gap: 2em;
+        @media (max-width: 1050px) {
+            flex-direction: column;
+        }
+
+        .registration-information {
+            width: 50%;
+            // background-color: gold;
+            @include flexCenter(column);
+            justify-content: start;
+            @media (max-width: 1050px) {
+                width: 100%;
+            }
+            .image-box {
+                width: 64px;
+                height: 64px;
+                img {
+                    @include imageStyle(contain);
+                }
+            }
+            .registration-title {
+                h2 {
+                    margin-top: 20px;
+                    // color: $registration_title;
+                    color: white;
+                    font-size: 24px;
+                    text-align: center;
+                }
+            }
+            .registration-icons {
+                width: 100%;
+                display: flex;
+                margin: 40px 0;
+                gap: 3em;
+                justify-content: center;
+                @media (max-width: 1050px) {
+                    display: none;
+                }
+                div {
+                    width: 50px;
+                    height: 35px;
+                    // background-color: burlywood;
+                    img {
+                        @include imageStyle(contain);
+                    }
+                }
+            }
+            .registration-information {
+                width: 80%;
+                text-align: center;
+                @media (max-width: 1050px) {
+                    display: none;
+                }
+                p {
+                    font-size: 15px;
+                    color: $registration_text;
+                }
+            }
+        }
+        .registration-form {
+            width: 50%;
+            @media (max-width: 1050px) {
+                width: 100%;
+            }
+            h1 {
+                width: fit-content;
+                margin: 20px auto;
+                color: white;
+            }
+            .user-choose-container {
+                width: 100%;
+                min-height: 2rem;
+                margin: 20px 0;
+                display: flex;
+                justify-content: space-evenly;
+                @media (max-width: 570px) {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1em;
+                }
+
+                .choose {
+                    width: 150px;
+                    height: 50px;
+                    @include flexCenter(row);
+                    position: relative;
+                    border-radius: 15px;
+                    border: 1px solid red;
+                    color: white;
+
+                    input {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        opacity: 0;
+                    }
+                }
+                .active {
+                    border: 2px solid green;
+                }
+            }
+            form {
+                width: 80%;
+                min-height: 200px;
+                margin: 20px auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                padding-bottom: 2rem;
+
+                div {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3em;
+
+                    @media (max-width: 550px) {
+                        gap: 1em;
+                    }
+                    span{
+                        color: red;
+                        margin: 0 auto;
+                        transform:  translateY(-30px);
+                    }
+                    .telephone{
+                        flex-direction: row;
+                    }
+                    label {
+                        width: 170px;
+                        min-width: 170px;
+                        height: 50px;
+                        // background-color: green;
+                        @include flexCenter(row);
+                        position: relative;
+                        border-radius: 15px;
+                        border: 1px solid red;
+                        text-align: center;
+                    }
+                    #dial_code {
+                        width: 30%;
+                        padding: 0.5em;
+                        min-width: 75px;
+                    }
+                    input::-webkit-outer-spin-button,
+                    input::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    input[type="number"] {
+                        -moz-appearance: textfield; /* Firefox */
+                    }
+                    input,
+                    select {
+                        text-align: center;
+                        width: 100%;
+                        height: 55px;
+                        min-height: 55px;
+                        // background-color: green;
+                        outline: none;
+                        @include flexCenter(row);
+                        position: relative;
+                        border-radius: 15px;
+                        // border: 1px solid red;
+                        border: none;
+                        padding: 1em;
+                        font-size: 1rem;
+                    }
+                }
+                button {
+                    width: 150px;
+                    height: 50px;
+                    margin: 0 auto;
+                    outline: none;
+                    @include flexCenter(row);
+                    position: relative;
+                    border-radius: 15px;
+                    // border: 1px solid red;
+                    border: none;
+                    padding: 1em;
+                    cursor: pointer;
+                    transition: 700ms;
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+
+                        transition: 700ms;
+                    }
+                }
+            }
+        }
     }
 }

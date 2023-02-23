@@ -6,10 +6,21 @@
 //colors
 $home_page_bg_dark:rgb(22,22,23);
 
-//functions
+// colors
+$registration_title:#333;
+$registration_text: #757575;
+$background_black:#161617;
+
 @mixin flexCenter($direction){
     display: flex;
     flex-direction: $direction;
     align-items: center;
     justify-content: center;
+}
+
+@mixin imageStyle($fit){
+    width: 100%;
+    height: 100%;
+    object-fit: $fit;
+    object-position: center;
 }
