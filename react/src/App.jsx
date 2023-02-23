@@ -6,8 +6,7 @@ import HomePage from "./pages/home"
 import RegisterPage from "./pages/register"
 
 // Style
-import './styles/main.scss'
-
+import "./styles/main.scss";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,10 +21,7 @@ const router = createBrowserRouter(
 )
 
 function App() {
-
-  return (
-    <RouterProvider router={router} />
-  )
+    return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
