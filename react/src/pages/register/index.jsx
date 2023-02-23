@@ -1,11 +1,16 @@
 import logo from "../../assets/images/logomg.png";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
+import { useEffect, useState } from "react";
 import PersonRegistration from "../../components/register/Person";
 import CompanyRegister from "../../components/register/Company";
+import telCodes from "../../Json/country_code.json";
 
 function RegisterPage() {
     const [registerIsActive, setRegisterIsActive] = useState("person");
+    const countryData = useLoaderData();
+    // useEffect(() => {
+    //     console.log(countryData);
+    // }, []);
     return (
         <section className="register-wrapper">
             <header className="registration-navigation">
@@ -99,8 +104,18 @@ function RegisterPage() {
                         </div>
                     </div>
                     {/* Person Form */}
-                    {registerIsActive === "person" && <PersonRegistration />}
-                    {registerIsActive === "company" && <CompanyRegister />}
+                    {registerIsActive === "person" && (
+                        <PersonRegistration
+                            countryData={countryData}
+                            telCodes={telCodes}
+                        />
+                    )}
+                    {registerIsActive === "company" && (
+                        <CompanyRegister
+                            countryData={countryData}
+                            telCodes={telCodes}
+                        />
+                    )}
                 </div>
             </div>
         </section>
@@ -108,3 +123,13 @@ function RegisterPage() {
 }
 
 export default RegisterPage;
+
+export const countryApi = async () => {
+    const res = await fetch("https://restcountries.com/v3.1/all");
+
+    if (!res.ok) {
+        throw Error("Could not fetch the list of Country");
+    }
+
+    return res.json();
+};

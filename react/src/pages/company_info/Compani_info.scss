@@ -1,17 +1,38 @@
 .company-info-cover {
     height: 345px;
     background-color: green;
-    .company-basic-information {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .container {
+        display: flex;
         width: 80%;
-        min-width: 876px;
-        height: 175px;
-        padding: 30px 160px 30px 140px;
+        max-width: 876px;
+        height: 10rem;
+        position: absolute;
+        bottom: -5rem;
+        @include flexCenter(row);
+        @media (max-width: 1100px) {
+            bottom: -14rem;
+            flex-direction: column;
+            height: fit-content;
+        }
+        @media (max-width: 600px) {
+            width: 90%;
+        }
         .image {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             border: 8px solid #fffdfd;
-            position: relative;
+            position: absolute;
+            left: -90px;
+            top: 0px;
+            @media (max-width: 1100px) {
+                position: relative;
+                left: 0;
+            }
+
             img {
                 @include imageStyle(contain);
                 border-radius: 50%;
@@ -19,11 +40,108 @@
             .checked {
                 width: 36px;
                 height: 36px;
-                background-color: red;
+                background: $verify_bg;
                 border-radius: 50%;
                 position: absolute;
                 left: calc(50% - 18px);
                 bottom: -18px;
+                @include flexCenter(row);
+            }
+        }
+        .company-basic-information {
+            width: 100%;
+            max-width: 876px;
+            // height: 175px;
+            padding: 30px 160px 30px 140px;
+            background-color: $registration_text;
+            border-radius: 10px;
+            @media (max-width: 1100px) {
+                padding: 1em;
+            }
+
+            .company-information {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                position: relative;
+                @media (max-width: 860px) {
+                    text-align: center;
+                }
+                h1 {
+                    font-weight: 700;
+                    font-size: 30px;
+                    line-height: 1.2;
+                }
+                p {
+                    font-size: 15px;
+                    font-weight: 600;
+                    width: 100%;
+                    margin-top: 15px;
+                    span {
+                        font-size: 1.1rem;
+                        margin-right: 1em;
+                    }
+                }
+                .address-information {
+                    display: flex;
+                    gap: 1em;
+                    margin-top: 1em;
+                    flex-wrap: wrap;
+                    div {
+                        display: flex;
+                        align-items: center;
+                        img {
+                            width: 27px;
+                            height: 27px;
+                            margin-right: 1em;
+                        }
+                        a {
+                            color: black;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .company_contact {
+                    width: 100%;
+                    position: absolute;
+                    bottom: -6rem;
+                    left: 0;
+                    display: flex;
+                    gap: 0.5em;
+
+                    @media (max-width: 860px) {
+                        flex-wrap: wrap;
+                        // width: 100%;
+                        bottom: -100%;
+                    }
+                    .box {
+                        width: 125px;
+                        min-width: 125px;
+                        height: 38px;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        border: 1px solid gray;
+                        @include flexCenter(row);
+                        color: black;
+                        &:nth-child(3) {
+                            background-color: #b8f5ba;
+                        }
+                        &:nth-child(4) {
+                            background-color: #7360f2;
+                        }
+                        &:nth-child(5) {
+                            background-color: #40cfff;
+                        }
+
+                        img {
+                            width: 27px;
+                            height: 27px;
+                            margin-right: 1em;
+                        }
+                    }
+                }
             }
         }
     }

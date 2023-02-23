@@ -1,6 +1,8 @@
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
-function PersonRegistration() {
+function PersonRegistration({ countryData, telCodes }) {
+    const [telCodeSort, setTelCodeSort] = useState([]);
     const {
         register,
         handleSubmit,
@@ -9,6 +11,17 @@ function PersonRegistration() {
     } = useForm();
 
     const onSubmit = () => {};
+    // console.log(telCodes);
+    useEffect(() => {
+        setTelCodeSort(
+            telCodes
+                .map((data) => data.dial_code)
+                .sort(function (a, b) {
+                    return a - b;
+                })
+        );
+    }, [telCodes]);
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
@@ -35,7 +48,13 @@ function PersonRegistration() {
             <div>
                 <div className="telephone">
                     <select name="dial_code" id="dial_code">
-                        <option value="+995">Geo</option>
+                        <option value="+995">+995</option>
+                        {telCodeSort &&
+                            telCodeSort.map((data, i) => (
+                                <option key={i} value={data}>
+                                    {data}
+                                </option>
+                            ))}
                     </select>
 
                     <input
