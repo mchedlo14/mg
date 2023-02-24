@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import CompanyInfoLeftSide from "../../components/company_info/leftSide";
+import CompanyInfoRightSide from "../../components/company_info/rightSide";
 
 function CompanyInfo() {
     return (
@@ -93,6 +95,20 @@ function CompanyInfo() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+            {/* White Space */}
+            <div className="white-pace"></div>
+            {/* Company About */}
+            <section className="company-info-about">
+                {/* Left Side */}
+                <div className="left-side">
+                    <CompanyInfoLeftSide />
+                </div>
+
+                {/* Right Side */}
+                <div className="right-side">
+                    <CompanyInfoRightSide />
                 </div>
             </section>
         </>

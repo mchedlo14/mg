@@ -6,6 +6,8 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import RootLayout from "./components/layout/Rootlayout";
+import AllCategoryPage from "./pages/all_category";
+import CategoryServicesPage from "./pages/category_services";
 import CompanyInfo from "./pages/company_info";
 import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
@@ -24,7 +26,13 @@ const router = createBrowserRouter(
                 loader={countryApi}
             />
             <Route path="log_in" element={<LoginPage />} />
+            <Route path="all_category" element={<AllCategoryPage />}></Route>
+            <Route
+                path="all_category/:services"
+                element={<CategoryServicesPage />}
+            ></Route>
             <Route path="company_info/:id" element={<CompanyInfo />} />
+            //ჩასასწორებელია ბოლოს
         </Route>
     )
 );
