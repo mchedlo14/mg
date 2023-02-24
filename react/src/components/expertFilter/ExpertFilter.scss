@@ -1,0 +1,42 @@
+.expert-filter-wrapper{
+    width: 285px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #2f2f32;
+
+    .radio-wrapper{
+        margin: 5px 0px 0px 12px;
+        margin-top: 60px;
+        label{
+            color: #fff;
+            padding-left: 10px;   
+        }
+        div{
+            margin-top: 10px;
+        }
+        h3{
+            padding-left: 0;
+        }
+    }
+
+    div{
+        margin-top: 60px;
+    }
+
+    h3{
+        padding-left: 12px;
+        color: #fff;
+    }
+    select{
+        height: 40px;
+        outline: none;
+        border-radius: 4px;
+        margin: 5px 5px 0px 12px;
+        display: block;
+        margin-right: 26px;
+        font-weight: 500;
+        font-size: 13px;
+
+    }
+}

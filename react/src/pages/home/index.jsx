@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router';
 import logo from '../../assets/images/logomg.png'
 import lightIcon from '../../assets/svgs/brightness.svg'
 import searchIcon from '../../assets/svgs/search.svg'
 import Homenav from '../../components/homepagenav/Homenav';
 import Weather from '../../components/weather/Weather';
 function HomePage() {
+
+    const router = useNavigate()
+
     return ( 
         <div className="home-wrapper">
             <div className="home-page-logo-container">
@@ -12,7 +16,7 @@ function HomePage() {
                 </div>
 
                 <div className='home-button-wrapper'>
-                    <button>შესვლა</button>
+                    <button onClick={() => router('register')}>შესვლა</button>
                     <img src={lightIcon} alt='brightness'/>
                 </div>
             </div>

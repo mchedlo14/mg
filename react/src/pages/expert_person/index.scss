@@ -1,0 +1,87 @@
+.expert-person-wrapper{
+    max-width: 800px;
+    width: 90%;
+    height: 650px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+    .person-image-container{
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: center;
+
+        .expert-detail{
+            width: 100%;
+            height: 300px;
+            margin-top: 40px;
+            border-radius: 6px;
+            background-color: whitesmoke;
+            
+            .details-box{
+                max-width: 670px;
+                height: 248px;
+                margin: 0 auto;
+                margin-top: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                .box{
+                    width: auto;
+                    height: 60px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    justify-content: center;
+                    background-color: #e9fcf4;
+                    p{
+                        padding-right: 60px;
+                        color: black;
+                    }
+                }
+            }
+
+            p{
+                color: black;
+                font-size: 16px;
+                font-weight: 500;
+                padding-left: 60px;
+            }
+        }
+
+        .profile-img-container{
+            max-width: 590px;
+            height: 140px;
+            background-color: transparent;
+            margin: 0 auto;
+            margin-top: 140px;
+            display: flex;
+
+            .image-box{
+                width: 450px;
+                height: 154px;
+                display: flex;
+                gap: 30px;
+
+                img{
+                    width: 155px;
+                    height: 140px;
+                    border-radius: 8px;
+                }
+
+                p{
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                }
+
+
+            }
+        }
+    }
+
+}
