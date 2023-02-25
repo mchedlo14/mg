@@ -10,6 +10,7 @@ import Expert from "./pages/expert/Expert";
 import ExpertDetail from "./pages/expertDetail/ExpertDetail";
 import { ExpertPersonPage } from "./pages/expert_person";
 import HomePage from "./pages/home";
+import Jobs from "./pages/jobs/Jobs";
 import RegisterPage from "./pages/register";
 
 // Style
@@ -25,6 +26,7 @@ const router = createBrowserRouter(
                 <Route path=":path" element={<ExpertDetail />}></Route>
                 <Route path=":path/:id" element={<ExpertPersonPage />}></Route>
             </Route>
+            <Route path="jobs" element={<Jobs />}></Route>
         </Route>
     )
 );
