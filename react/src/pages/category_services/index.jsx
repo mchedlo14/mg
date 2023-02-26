@@ -1,5 +1,6 @@
 import Breadcrumbs from "../../components/breadcrumbs/breadcrumbs";
-import CategoryServicesSidebar from "../../components/category_servces/Sidebar";
+import CategoryServicesSidebar from "../../components/category_services/Sidebar";
+import CategoryServiceMainContent from "../../components/category_services/main_contant";
 
 function CategoryServicesPage() {
     return (
@@ -16,7 +17,9 @@ function CategoryServicesPage() {
                     <div className="category_services_main_content">
                         <CategoryServicesSidebar />
 
-                        <div className="category_services_data"></div>
+                        <div className="category_services_data">
+                            <CategoryServiceMainContent />
+                        </div>
                     </div>
                 </div>
             </section>

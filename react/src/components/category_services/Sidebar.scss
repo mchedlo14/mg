@@ -1,0 +1,220 @@
+.category_services_side_bar_container {
+    width: 25%;
+    min-height: 300px;
+    background-color: cadetblue;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px 0 0 0;
+    @media (max-width: 1000px){
+        display: none;
+    }
+    .provider_title {
+        height: 54px;
+        background-color: $quote_title_bg;
+        padding: 18px;
+        h4 {
+            font-size: 15px;
+            margin: 0px;
+            text-align: left;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 2px;
+        }
+    }
+    .companies_container {
+        min-height: 100px;
+        padding: 10px 17px;
+        overflow: hidden;
+        margin: 10px 0;
+        background-color: hotpink;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        li {
+            background-color: red;
+            border-bottom: 1px solid white;
+            padding-bottom: 17px;
+            height: 60px;
+            .company_box {
+                background-color: blue;
+                height: 100%;
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                .image {
+                    background-color: gold;
+                    overflow: hidden;
+                    @include flexCenter(row);
+                    min-width: 32px;
+                    img {
+                        border-radius: 50%;
+                        width: 90%;
+                        aspect-ratio: 1 / 1;
+                        background-color: chartreuse;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+                .info {
+                    background-color: honeydew;
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 170px;
+                    .up {
+                        height: 50%;
+                        h5 {
+                            color: $list_company_txt;
+                            font-size: 14px;
+                            margin-bottom: 4px;
+                            font-weight: 600;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            max-width: 150px;
+                        }
+                    }
+                    .down {
+                        height: 50%;
+
+                        p {
+                            color: $list_company_city;
+                            font-weight: 600;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 1;
+                            -webkit-box-orient: vertical;
+                            overflow: hidden;
+                            max-width: 150px;
+                            font-size: 12px;
+                            span {
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+                .rating {
+                    background-color: $list_company_green;
+                    @include flexCenter(row);
+                    p {
+                        color: #fff;
+                        font-weight: 700;
+                        font-size: 14px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+    }
+    .category_title {
+        background-color: saddlebrown;
+        width: 100%;
+        height: 3rem;
+        display: flex;
+        padding: 10px 17px;
+        .svg {
+            height: 100%;
+            width: 10%;
+            min-width: 35px;
+            background-color: salmon;
+            display: flex;
+            align-items: center;
+            img {
+                width: 18px;
+                height: 18px;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+        .title {
+            width: 85%;
+            display: flex;
+            align-items: center;
+            h4 {
+                margin-left: 0.5em;
+                color: $list_company_title;
+                font-weight: 600;
+            }
+        }
+    }
+    .category_list {
+        padding: 10px 17px;
+        background-color: red;
+
+        select {
+            height: 50px;
+            width: 100%;
+            background: $list_select_bg;
+            border: none;
+            font-size: 15px;
+            padding: 12px 18px;
+            border-radius: 5px;
+            font-weight: 500;
+            outline: none;
+        }
+    }
+    .category_sub_list {
+        padding: 10px 17px;
+        padding-right: 0px;
+        background-color: red;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        li {
+            background-color: black;
+            display: flex;
+            gap: 0.7em;
+            text-align: center;
+            align-items: center;
+            input {
+                outline: none;
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+                &:checked {
+                    accent-color: #219e3e;
+                    border-color: #219e3e;
+                }
+            }
+            label {
+                cursor: pointer;
+                font-weight: 500;
+                font-size: 13px;
+                text-overflow: ellipsis;
+                white-space: pre;
+                overflow: hidden;
+                line-height: 26px;
+                color: #585e6b;
+                float: left;
+            }
+        }
+    }
+    .category_rating {
+        label {
+            background-color: white;
+            display: flex;
+            gap: 0.5em;
+            div {
+                width: 22px;
+                height: 22px;
+                background-color: lawngreen;
+                img {
+                    @include imageStyle(contain);
+                }
+            }
+        }
+    }
+    .submit {
+        padding: 10px 17px;
+        margin-top: 20px;
+        button {
+            width: 100%;
+            height: 40px;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    }
+}

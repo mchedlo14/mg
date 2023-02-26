@@ -20,6 +20,12 @@ $quota_input_txt: #495057;
 $quota_bg: #f2f4f6;
 $about_text: #56595d;
 
+$list_company_txt: #20344c;
+$list_company_city: #7b868f;
+$list_company_green: #7dc34a;
+$list_company_title: #3c4043;
+$list_select_bg: #e8eaed;
+
 @mixin flexCenter($direction) {
     display: flex;
     flex-direction: $direction;

@@ -9,6 +9,9 @@
         width: 80%;
         display: flex;
         flex-direction: column;
+        @media (max-width: 1000px){
+            width: 90%;
+        }
 
         .section_title {
             margin-top: 50px;
@@ -54,6 +57,11 @@
                 width: 75%;
                 min-height: 300px;
                 background-color: blueviolet;
+                padding: 15px;
+
+                @media (max-width: 1000px){
+                    width: 100%;
+                }
             }
         }
     }

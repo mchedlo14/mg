@@ -4,7 +4,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 function CompanySlider({ data, category }) {
     const settings = {
-        dots: true,
         infinite: true,
         accessibility: true,
         speed: 500,
@@ -42,7 +41,6 @@ function CompanySlider({ data, category }) {
     };
 
     const settingsGallery = {
-        dots: true,
         infinite: true,
         accessibility: true,
         speed: 500,
