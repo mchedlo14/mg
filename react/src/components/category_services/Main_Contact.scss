@@ -1,7 +1,6 @@
 .company_filter_list {
     width: 100%;
     min-height: 3rem;
-    background-color: brown;
     list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -12,6 +11,7 @@
         justify-content: center;
     }
     li {
+        // border-radius: 5px;
         height: fit-content;
         cursor: pointer;
         position: relative;
@@ -51,10 +51,11 @@
 }
 .company_long_container {
     min-height: 300px;
-    background-color: brown;
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    background-color: #f5f5f5;
+    gap: 1.5em;
     @media (max-width: 800px) {
         flex-wrap: wrap;
         flex-direction: row;
@@ -63,14 +64,14 @@
     @media (max-width: 640px) {
         flex-direction: column;
         justify-content: start;
-        gap: 1.5em;
     }
 
     .company_long_box {
         height: 165px;
-        background-color: green;
         padding: 15px 10px 15px 10px;
         display: flex;
+        background-color: white;
+        gap: 0.5em;
         @media (max-width: 800px) {
             height: 500px;
             width: 40%;
@@ -85,7 +86,6 @@
 
         .image {
             width: 25%;
-            background-color: gold;
             @media (max-width: 800px) {
                 width: 100%;
                 height: 33%;
@@ -97,7 +97,6 @@
         }
         .information {
             width: 60%;
-            background-color: blue;
             display: flex;
             flex-direction: column;
             @media (max-width: 800px) {
@@ -108,7 +107,6 @@
 
             .title {
                 height: 25%;
-                background-color: cadetblue;
                 display: flex;
                 align-items: center;
                 a {
@@ -125,7 +123,6 @@
             }
             .address {
                 height: 25%;
-                background-color: darkmagenta;
                 display: flex;
                 gap: 0.5em;
                 align-items: center;
@@ -136,7 +133,6 @@
             }
             .phone {
                 height: 25%;
-                background-color: darkgreen;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -157,7 +153,6 @@
             }
             .social {
                 height: 25%;
-                background-color: dodgerblue;
                 display: flex;
                 align-items: center;
                 @media (max-width: 800px) {
@@ -176,7 +171,6 @@
         }
         .review {
             width: 15%;
-            background-color: burlywood;
             @include flexCenter(row);
             min-width: fit-content;
             @media (max-width: 800px) {
