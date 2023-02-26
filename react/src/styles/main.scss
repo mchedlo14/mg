@@ -8,4 +8,24 @@
 @import "../components/expertFilter/ExpertFilter.scss";
 @import "../pages/expertDetail/ExpertDetail.scss";
 @import "../pages/expert_person/index.scss";
-@import "../pages/jobs/Jobs.scss"
+@import "../pages/jobs/Jobs.scss";
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

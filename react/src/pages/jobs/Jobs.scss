@@ -68,7 +68,7 @@
         }
     }
     .jobs-list-wrapper{
-        max-width: 1400px;
+        max-width: 1300px;
         width: 90%;
         height: 700px;
         margin: 0 auto;
@@ -77,13 +77,44 @@
         justify-content: space-between;
 
         .jobs-filter-wrapper{
-            width: 285px;
-            height: 400px;
-            background-color: yellow;
+            width: 220px;
+            height:auto;
             margin-top: 30px;
             display: flex;
             flex-direction: column;
             gap: 15px;
+            border-right: 1px solid #efefef;
+
+            div{
+                padding: 5px;
+
+                h3{
+                    color: #fff;
+                    padding: 5px;
+                    font-size: 16px;
+                }
+                .price-box{
+                    width: 80%;
+                    height: 30px;
+                    margin-top: 5px;
+                    cursor: pointer;
+                    color: #fff;
+
+                    &:hover{
+                        background-color: #292a2a;
+                        transition: all 0.3s;
+                        border-radius: 2px;
+                    }
+                }
+
+                label{
+                    padding-left: 5px;
+                    color: #fff;
+                }
+                p{
+                    color: #fff;
+                }
+            }
         }
 
         .jobs-list-container{

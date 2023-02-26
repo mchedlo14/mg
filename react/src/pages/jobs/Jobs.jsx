@@ -26,7 +26,54 @@ const Jobs = () => {
 
         <div className='jobs-list-wrapper'>
           <div className='jobs-filter-wrapper'>
+            <div>
+              <p>სულ განცხადება (236)</p>
+            </div>
 
+            <div>
+              <h3>ფასიის შუალედი</h3>
+              <div className='price-box'>250 ₾ - 500 ₾</div>
+              <div className='price-box'>500 ₾ - 1000 ₾</div>
+              <div className='price-box'>1000 ₾ - 1500 ₾</div>
+              <div className='price-box'>1500₾+</div>
+            </div>
+
+            <div>
+              <h3>დასაქმების ტიპი</h3>
+              <div>
+                <input type='checkbox' />
+                <label>სრული განაკვეთი</label>
+              </div>
+              <div>
+                <input type='checkbox' />
+                <label>არასრული განაკვეთი</label>
+              </div>
+            </div>
+
+
+            <div>
+              <h3>გამოცდილება</h3>
+              <div>
+                <input type='checkbox' />
+                <label>გამოცდილების გარეშე</label>
+              </div>
+              <div>
+                <input type='checkbox' />
+                <label>1 წელზე ნაკლები</label>
+              </div>
+              <div>
+                <input type='checkbox' />
+                <label>1-2 წელი</label>
+              </div>
+              <div>
+                <input type='checkbox' />
+                <label>2-3 წელი</label>
+              </div>
+              <div>
+                <input type='checkbox' />
+                <label>5+ წელი</label>
+              </div>
+            </div>
           </div>
 
           <div className='jobs-list-container'>
