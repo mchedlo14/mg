@@ -1,8 +1,8 @@
 .jobs-form-wrapper {
     max-width: 1400px;
-    width: 90%;
-    height: auto;
-    min-height:100px;
+    width: 95%;
+    height: max-content;
+    // min-height:100px;
     background-color: #262727;
     border-radius: 6px;
     margin: 0 auto;
@@ -34,31 +34,39 @@
     .general-wrapper {
         position: relative;
         overflow: hidden;
-        transition: 400ms;
-        
+        @keyframes identifier {
+            99% {
+                position: static;
+            }
+        }
+
         .general-container {
             // padding: 15px;
             height: 700px;
-            // height: max-content;
+            height: max-content;
             width: 944px;
-            transition: 400ms;
-            position: absolute;
-
+            transition: 900ms;
+            // animation: identifier linear 3s forwards;
             display: flex;
             justify-content: space-between;
 
             width: 100%;
             padding: 20px;
+            gap: 1em;
 
+            @media (max-width: 1450px) {
+                flex-wrap: wrap;
+                justify-content: space-around;
+                height: auto;
+            }
 
-            .form-wrapper{
+            .form-wrapper {
                 display: flex;
                 flex-direction: column;
                 gap: 7px;
                 margin-top: 15px;
 
-                
-                select{
+                select {
                     background-color: transparent;
                     color: #fff;
                     width: 400px;
@@ -68,17 +76,39 @@
                     border: 2px solid #303030;
                     padding-left: 5px;
 
+                    @media (max-width: 1450px) {
+                        width: 700px;
+                    }
+
+                    
+                    @media (max-width: 768px) {
+                        width: 568px;
+                    }
+
+                    @media (max-width: 689px) {
+                        width: 500px;
+                    }
+
+                    @media (max-width: 550px) {
+                        width: 450px;
+                    }
+
+                    @media (max-width: 500px) {
+                        width: 400px;
+                    }
+                    @media (max-width: 450px) {
+                        width: 300px;
+                    }
                 }
 
-                option{
+                option {
                     background-color: #262727;
                     height: 10px;
                     font-size: 15px;
-                   
                 }
 
-                textarea{
-                    width: 800px;
+                textarea {
+                    width: 1000px;
                     height: 150px;
                     border: 0;
                     border-radius: 6px;
@@ -89,28 +119,78 @@
                     color: #fff;
                     padding: 15px;
                     font-size: 16px;
-                    &:focus{
+                    &:focus {
                         border: 2px solid #fdc435;
                         transition: all 0.5s;
                     }
+
+                    @media (max-width: 1450px) {
+                        width: 700px;
+                    }
+
+                    
+                    @media (max-width: 768px) {
+                        width: 568px;
+                    }
+
+                    @media (max-width: 689px) {
+                        width: 500px;
+                    }
+
+                    @media (max-width: 550px) {
+                        width: 450px;
+                    }
+
+                    @media (max-width: 500px) {
+                        width: 400px;
+                    }
+                    @media (max-width: 450px) {
+                        width: 300px;
+                    }
                 }
 
-                .range-input{
+                .range-input {
                     width: 200px;
+
+                    
                 }
 
-
-                div{
+                div {
                     display: flex;
                     gap: 5px;
+
+                    
+                    @media (max-width: 1450px) {
+                        width: 700px;
+                    }
+
+                    
+                    @media (max-width: 768px) {
+                        width: 568px;
+                    }
+
+                    @media (max-width: 689px) {
+                        width: 500px;
+                    }
+
+                    @media (max-width: 550px) {
+                        width: 450px;
+                    }
+
+                    @media (max-width: 500px) {
+                        width: 400px;
+                    }
+                    @media (max-width: 450px) {
+                        width: 300px;
+                    }
                 }
-                label{
+                label {
                     color: #fff;
                 }
-                input[type=checkbox]{
+                input[type="checkbox"] {
                     height: 15px;
                 }
-                input{
+                input {
                     width: 400px;
                     height: 35px;
                     border: 0;
@@ -121,13 +201,37 @@
                     border: 2px solid #303030;
                     color: #fff;
 
-                    &:focus{
+                    &:focus {
                         border: 2px solid #fdc435;
                         transition: all 0.5s;
                     }
+
+                    @media (max-width: 1450px) {
+                        width: 700px;
+                    }
+
+                    
+                    @media (max-width: 768px) {
+                        width: 568px;
+                    }
+
+                    @media (max-width: 689px) {
+                        width: 500px;
+                    }
+
+                    @media (max-width: 550px) {
+                        width: 450px;
+                    }
+
+                    @media (max-width: 500px) {
+                        width: 400px;
+                    }
+                    @media (max-width: 450px) {
+                        width: 300px;
+                    }
                 }
 
-                .checkbox-container{
+                .checkbox-container {
                     display: flex;
                     background-color: red;
                     justify-content: start;
