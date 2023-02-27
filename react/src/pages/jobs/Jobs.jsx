@@ -4,11 +4,12 @@ import searchIcon from '../../assets/svgs/search.svg'
 import clockIcon from '../../assets/images/clock.png'
 import pinIcon from '../../assets/images/pin.png'
 import walletIcon from '../../assets/images/wallet.png'
+import JobsForm from '../../components/jobsform/JobsForm'
 const Jobs = () => {
   return (
     <section className='jobs-wrapper'>
         <div className='header-test'>
-
+          <button>ვაკანსიის დამატება</button>
         </div>
 
         <div className='title-wrapper'>
@@ -143,6 +144,8 @@ const Jobs = () => {
           </div>
 
         </div>
+
+        <JobsForm />  
 
     </section>
   )

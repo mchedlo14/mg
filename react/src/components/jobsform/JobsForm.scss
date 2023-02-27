@@ -1,0 +1,138 @@
+.jobs-form-wrapper {
+    max-width: 1400px;
+    width: 90%;
+    height: auto;
+    min-height:100px;
+    background-color: #262727;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+
+    .general-container-parent {
+        width: 100%;
+        height: 50px;
+        // border-bottom: 1px solid #a1a2a2;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+
+        img {
+            padding-left: 10px;
+        }
+
+        h4 {
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+
+    .general-wrapper {
+        position: relative;
+        overflow: hidden;
+        transition: 400ms;
+        
+        .general-container {
+            // padding: 15px;
+            height: 700px;
+            // height: max-content;
+            width: 944px;
+            transition: 400ms;
+            position: absolute;
+
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+            padding: 20px;
+
+
+            .form-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+                margin-top: 15px;
+
+                
+                select{
+                    background-color: transparent;
+                    color: #fff;
+                    width: 400px;
+                    height: 35px;
+                    border: 0;
+                    border-radius: 6px;
+                    border: 2px solid #303030;
+                    padding-left: 5px;
+
+                }
+
+                option{
+                    background-color: #262727;
+                    height: 10px;
+                    font-size: 15px;
+                   
+                }
+
+                textarea{
+                    width: 800px;
+                    height: 150px;
+                    border: 0;
+                    border-radius: 6px;
+                    outline: none;
+                    padding-left: 10px;
+                    background-color: transparent;
+                    border: 2px solid #303030;
+                    color: #fff;
+                    padding: 15px;
+                    font-size: 16px;
+                    &:focus{
+                        border: 2px solid #fdc435;
+                        transition: all 0.5s;
+                    }
+                }
+
+                .range-input{
+                    width: 200px;
+                }
+
+
+                div{
+                    display: flex;
+                    gap: 5px;
+                }
+                label{
+                    color: #fff;
+                }
+                input[type=checkbox]{
+                    height: 15px;
+                }
+                input{
+                    width: 400px;
+                    height: 35px;
+                    border: 0;
+                    border-radius: 6px;
+                    outline: none;
+                    padding-left: 10px;
+                    background-color: transparent;
+                    border: 2px solid #303030;
+                    color: #fff;
+
+                    &:focus{
+                        border: 2px solid #fdc435;
+                        transition: all 0.5s;
+                    }
+                }
+
+                .checkbox-container{
+                    display: flex;
+                    background-color: red;
+                    justify-content: start;
+                }
+            }
+        }
+    }
+}
