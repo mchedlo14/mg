@@ -36,34 +36,66 @@
     }
 
     .jobs-search-wrapper{
-        max-width: 700px;
+        max-width: 1100px;
         width: 90%;
-        height: auto;
+        // height: auto;
         margin: 0 auto;
         margin-top: 10px;
-        position: relative;
+        // position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 50px;
+
+        .jobs-search-container{
+            width: 60px;
+            height: 60px;
+            background-color: #d13253;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &:hover{
+                background-color: #961831;
+                transition: all 0.5s;
+            }
+        }
+
 
         input{
             padding-left: 20px;
-            width: 100%;
-            height: 50px;
+            width: 250px;
+            height: 68px;
             margin-left: 50%;
-            margin-top: 20px;
             transform: translateX(-50%);
             outline: none;
             border: 0;
-            border-radius: 6px;
             background-color: rgb(47,47,50);
             color: #fff;
             font-size: 16px;
+            border-radius: 5px;
+
+        }
+
+        select{
+            width: 250px;
+            height: 68px;
+            outline: none;
+            border: 0;
+            padding: 15px;
+            font-size: 16px;
+            background-color: rgb(47,47,50);
+            color: #fff;
+            border-radius: 5px;
+
+            option{
+                font-size: 18px;
+            }
         }
 
         img{
-            position: absolute;
-            top: 20px;
-            bottom: 0;
-            margin: auto 0;
-            right: 20px;
             cursor: pointer;
         }
     }
@@ -118,27 +150,45 @@
         }
 
         .jobs-list-container{
-            width: 1050px;
-            height: 400px;
+            width: 1500px;
+            background-color: red;
+            height: auto;
+            margin: auto;
+            display: flex;
+            gap:40px;
+
+            @media(max-width:1180px){
+                flex-wrap: wrap;
+                justify-content: center;
+            }
 
 
             .job-card{
-                max-width: 900px;
-                height: 120px;
+                width: 350px;
+                height: 300px;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
                 background-color: #292a2a  ;
                 border-radius: 8px;
                 margin-top: 30px;
 
+                h6{
+                    padding: 15px;
+                    color: #fff;
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+
                 .card-title{
                     display: flex;
-                    gap: 10px;
+                    gap: 35px;
                     padding:15px;
+                    align-items: center;
 
                     div{
                         display: flex;
                         flex-direction: column;
+                        gap: 5px;
 
                         h3{
                             color: #fff;
@@ -184,6 +234,32 @@
 
                 .date-wrapper{
                     padding:15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    button{
+                        padding: 4px 5px 6px;
+                        border: 0;
+                        background-color: #d13253;
+                        border: 1px solid #d13253;
+                        border-radius: 5px;
+                        color: #fff;
+                        display: inline-block;
+                        font-size: 15px;
+                        padding: 8px 35px 8px;
+                        cursor: pointer;
+                        text-align: center;
+
+                        &:hover{
+                            background-color: #fff;
+                            border: 1px solid #d13253;
+                            color: #d13253;
+                            transition: all 0.5s;
+                        }
+
+                    }
+
                     p{
                         color: #fff;
                         font-size: 14px;

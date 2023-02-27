@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
+    "bpg-classic-medium": "^1.0.0",
+    "bpg-nino-elite": "^1.0.0",
+    "bpg-nino-mtavruli": "^1.0.0",
     "react": "^18.2.0",
     "react-calendar": "^4.0.0",
     "react-dom": "^18.2.0",
