@@ -1,9 +1,14 @@
 .company-info-cover {
     height: 345px;
-    background-color: green;
     position: relative;
     display: flex;
     justify-content: center;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-attachment: fixed;
+    background-position-y: top;
     .container {
         display: flex;
         width: 80%;
@@ -78,6 +83,7 @@
                     font-weight: 600;
                     width: 100%;
                     margin-top: 15px;
+
                     span {
                         font-size: 1.1rem;
                         margin-right: 1em;
@@ -113,26 +119,49 @@
 
                     @media (max-width: 860px) {
                         flex-wrap: wrap;
-                        // width: 100%;
-                        bottom: -100%;
+                        bottom: -7rem;
+                    }
+                    @media (max-width: 810px) {
+                        flex-wrap: wrap;
+                        bottom: -11rem;
+                    }
+                    @media (max-width: 487px) {
+                        flex-wrap: wrap;
+                        bottom: -16rem;
+                        justify-content: center;
                     }
                     .box {
-                        width: 125px;
-                        min-width: 125px;
+                        width: 200px;
+                        min-width: 200px;
                         height: 38px;
                         text-decoration: none;
                         border-radius: 5px;
                         border: 1px solid gray;
                         @include flexCenter(row);
-                        color: black;
+                        color: white;
                         &:nth-child(3) {
                             background-color: #b8f5ba;
+                            padding: 1em;
+                            min-width: fit-content;
+                            img {
+                                margin-right: 0em;
+                            }
                         }
                         &:nth-child(4) {
                             background-color: #7360f2;
+                            padding: 1em;
+                            min-width: fit-content;
+                            img {
+                                margin-right: 0em;
+                            }
                         }
                         &:nth-child(5) {
                             background-color: #40cfff;
+                            padding: 1em;
+                            min-width: fit-content;
+                            img {
+                                margin-right: 0em;
+                            }
                         }
 
                         img {
@@ -148,10 +177,13 @@
 }
 .white-pace {
     height: 200px;
-    @media (max-width: 1250px){
+    @media (max-width: 1250px) {
         height: 400px;
     }
-    @media (max-width: 400px){
+    // @media (max-width: 400px) {
+    //     height: 500px;
+    // }
+    @media (max-width: 487px) {
         height: 500px;
     }
 }
@@ -163,15 +195,15 @@
     display: flex;
     gap: 3em;
     padding-bottom: 3em;
-    @media (max-width: 1250px){
+    @media (max-width: 1250px) {
         flex-direction: column;
         min-width: 0px;
         width: 90%;
     }
     .left-side {
         width: 70%;
-        @media (max-width: 1250px){
-        width: 100%;
+        @media (max-width: 1250px) {
+            width: 100%;
         }
 
         .padding {
@@ -180,8 +212,8 @@
     }
     .right-side {
         width: 30%;
-        @media (max-width: 1250px){
-        width: 100%;
+        @media (max-width: 1250px) {
+            width: 100%;
         }
     }
 }

@@ -5,7 +5,12 @@ import CompanyInfoRightSide from "../../components/company_info/rightSide";
 function CompanyInfo() {
     return (
         <>
-            <section className="company-info-cover">
+            <section
+                className="company-info-cover"
+                // style={{
+                //     background: `url(${"https://upload.wikimedia.org/wikipedia/commons/c/ce/Coca-Cola_logo.svg"})`,
+                // }}
+            >
                 {/* Company Basic Information */}
                 <div className="container">
                     <div className="image">
@@ -62,7 +67,7 @@ function CompanyInfo() {
                                         src="https://www.freeiconspng.com/uploads/phone-png-3.png"
                                         alt=""
                                     />
-                                    call Now
+                                    დაგვიკავშირდით
                                 </Link>
                                 <Link className="box" to={""}>
                                     <img
@@ -76,21 +81,18 @@ function CompanyInfo() {
                                         src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-whatsapp-mobile-software-icon-png-image_6315991.png"
                                         alt=""
                                     />
-                                    WhatsApp
                                 </Link>
                                 <Link className="box" to={""}>
                                     <img
                                         src="https://cdn-icons-png.flaticon.com/512/2111/2111705.png"
                                         alt=""
                                     />
-                                    Viber
                                 </Link>
                                 <Link className="box" to={""}>
                                     <img
                                         src="https://i.pinimg.com/originals/42/77/b8/4277b847781e0336453066dc81266235.png"
                                         alt=""
                                     />
-                                    Telegram
                                 </Link>
                             </div>
                         </div>
