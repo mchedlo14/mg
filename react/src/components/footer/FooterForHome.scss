@@ -1,0 +1,40 @@
+.footer_home {
+    min-height: 5rem;
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    gap: 0.8em;
+    @media (max-width: 650px) {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .box {
+        @include flexCenter(column);
+        p,
+        a {
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 400;
+            color: $footer_white_txt;
+            text-decoration: none;
+        }
+    }
+    .social {
+        display: flex;
+        margin-top: 20px;
+        gap: 1em;
+        a {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            @include flexCenter(column);
+
+            img {
+                @include imageStyle(contain);
+            }
+        }
+    }
+}

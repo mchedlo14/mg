@@ -9,23 +9,26 @@
 @import "../pages/expertDetail/ExpertDetail.scss";
 @import "../pages/expert_person/index.scss";
 @import "../pages/jobs/Jobs.scss";
-
+@import "../components/layout//RootLayout.scss";
+@import "../components/footer/FooterForHome.scss";
+@import "../pages/terms_conditions/TermsAndConditions.scss";
+@import "../pages/contact/Contact.scss";
 
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+    background: #f1f1f1;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+    background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+    background: #555;
 }

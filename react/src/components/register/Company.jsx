@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 function CompanyRegister() {
     const {
@@ -135,6 +136,37 @@ function CompanyRegister() {
                     style={{ border: errors.re_password && "2px solid red" }}
                 />
             </div>
+            <aside>
+                <input
+                    type="checkbox"
+                    id="terms_check"
+                    {...register("terms_checked", { required: true })}
+                />
+                <label htmlFor="terms_check">
+                    ვეთანხმები{" "}
+                    <Link to={"/terms_and_conditions"}>
+                        წესებსა და პირობებს
+                    </Link>
+                </label>
+            </aside>
+            {errors.politic_checked && (
+                <span style={{ color: "red" }}>სავალდებულო ველი</span>
+            )}
+
+            <aside>
+                <input
+                    type="checkbox"
+                    id="politic_check"
+                    {...register("politic_checked", { required: true })}
+                />
+                <label htmlFor="politic_check">
+                    ვეთანხმები <Link to={""}>კონფიდენციალობის პოლიტიკას</Link>
+                </label>
+            </aside>
+            {errors.politic_checked && (
+                <span style={{ color: "red" }}>სავალდებულო ველი</span>
+            )}
+
             <button type="submit">რეგისტრაცია</button>
         </form>
     );

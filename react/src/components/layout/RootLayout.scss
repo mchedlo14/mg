@@ -1,0 +1,53 @@
+.root-layout-header {
+    background-color: $home_page_bg_dark;
+    display: flex;
+    flex-direction: column;
+}
+.root-layout-nav {
+    height: 3rem;
+    margin: 2rem 2rem 0 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 60px;
+        height: 47px;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.15);
+            transition: all 0.3s;
+        }
+    }
+
+    button {
+        display: block;
+        height: 2.7rem;
+        line-height: 2rem;
+        border-radius: 0.6rem;
+        padding: 0 1.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s;
+        border: 0;
+        color: rgb(250, 250, 250);
+        letter-spacing: 1px;
+        background: rgb(36, 36, 37);
+
+        &:hover {
+            background-color: rgb(255, 255, 255, 0.12);
+        }
+    }
+
+    .home-button-wrapper {
+        width: 150px;
+        height: auto;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
