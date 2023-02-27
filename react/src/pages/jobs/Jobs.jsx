@@ -120,6 +120,10 @@ const Jobs = () => {
                         </div>
                     </div>
 
+
+                    
+                    
+
                     <div className="job-card">
                         <div className="card-title">
                             <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />

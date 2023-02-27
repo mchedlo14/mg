@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import downArrow from "../../assets/svgs/arrow-down.svg";
 import rightArrow from "../../assets/svgs/right-arrow.svg";
 import mark from "../../assets/svgs/danger.svg";
-import Calendar from "react-calendar";
+
 const JobsForm = () => {
     const [screenWidth, setScreenWidth] = useState(null);
     const [showInfo, setShowInfo] = useState({
