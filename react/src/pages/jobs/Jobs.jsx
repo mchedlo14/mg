@@ -1,9 +1,10 @@
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import searchIcon from '../../assets/svgs/search.svg'
-import clockIcon from '../../assets/images/clock.png'
-import pinIcon from '../../assets/images/pin.png'
-import walletIcon from '../../assets/images/wallet.png'
+import clockIcon from '../../assets/svgs/clock.svg'
+import pinIcon from '../../assets/svgs/pin.svg'
+import walletIcon from '../../assets/svgs/wallet.svg'
+
 import JobsForm from '../../components/jobsform/JobsForm'
 const Jobs = () => {
   return (

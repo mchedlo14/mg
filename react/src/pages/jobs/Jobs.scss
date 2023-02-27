@@ -161,13 +161,14 @@
                 .card-detail{
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 15px;
                     padding: 15px;
+                    user-select: none;
 
                     div{
                         display: flex;
                         align-items: center;
-                        gap: 7px;
+                        gap: 10px;
                     
 
                         img{
@@ -184,7 +185,7 @@
                 .date-wrapper{
                     padding:15px;
                     p{
-                        color: #a1a2a2;
+                        color: #fff;
                         font-size: 14px;
                         
                     }
