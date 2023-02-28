@@ -11,3 +11,41 @@
 @import "../pages/category_services/Category_services.scss";
 @import "../components/category_services/Sidebar.scss";
 @import "../components/category_services/Main_Contact.scss";
+@import "../components/homepagenav/Homenav.scss";
+@import "../pages/expert/Expert.scss";
+@import "../components/expertFilter/ExpertFilter.scss";
+@import "../pages/expertDetail/ExpertDetail.scss";
+@import "../pages/expert_person/index.scss";
+@import "../pages/jobs/Jobs.scss";
+@import "../components/layout//RootLayout.scss";
+@import "../components/footer/FooterForHome.scss";
+@import "../pages/terms_conditions/TermsAndConditions.scss";
+@import "../pages/contact/Contact.scss";@import "../components/jobsform/JobsForm.scss";
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #161617;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #d13253;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #d13253;
+}
+
+*{
+  font-family: "BPG Classic Medium", sans-serif;
+}

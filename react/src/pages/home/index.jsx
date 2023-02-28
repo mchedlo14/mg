@@ -28,9 +28,9 @@ function HomePage() {
                 <input placeholder="მოიძებნება ყველაფერი" />
                 <img src={searchIcon} alt="search icon" />
             </div>
-            <Weather />
         </div>
     );
 }
 
 export default HomePage;
+

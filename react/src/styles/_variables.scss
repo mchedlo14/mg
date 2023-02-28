@@ -1,5 +1,6 @@
 *,
-body {
+
+body  {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,7 +13,7 @@ body {
 }
 
 // colors
-$registration_title: #333;
+$registration_title:  #333;
 $registration_text: #757575;
 $lightgray_text: #8a8d92;
 $login_button: #fc0;
@@ -32,16 +33,21 @@ $list_select_bg: #e8eaed;
 
 $list_company_sidebar_bg: rgba(39, 39, 41, 0.253);
 
-@mixin flexCenter($direction) {
+$background_black: #161617;
+$footer_white_txt: #efedfb;
+$yellow_color: yellow;
+
+@mixin flexCenter($direction)  {
     display: flex;
     flex-direction: $direction;
     align-items: center;
     justify-content: center;
 }
 
-@mixin imageStyle($fit) {
+@mixin imageStyle($fit)  {
     width: 100%;
     height: 100%;
     object-fit: $fit;
     object-position: center;
 }
+

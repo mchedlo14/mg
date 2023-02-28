@@ -140,19 +140,18 @@
                     @media (max-width: 550px) {
                         gap: 1em;
                     }
-                    span{
+                    span {
                         color: red;
                         margin: 0 auto;
-                        transform:  translateY(-30px);
+                        transform: translateY(-30px);
                     }
-                    .telephone{
+                    .telephone {
                         flex-direction: row;
                     }
                     label {
                         width: 170px;
                         min-width: 170px;
                         height: 50px;
-                        // background-color: green;
                         @include flexCenter(row);
                         position: relative;
                         border-radius: 15px;
@@ -179,14 +178,40 @@
                         width: 100%;
                         height: 55px;
                         min-height: 55px;
-                        // background-color: green;
                         outline: none;
                         @include flexCenter(row);
                         position: relative;
                         border-radius: 15px;
-                        // border: 1px solid red;
                         border: none;
                         padding: 1em;
+                        font-size: 1rem;
+                    }
+                }
+                aside {
+                    width: 100%;
+                    display: flex;
+                    gap: 3em;
+                    input {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        min-width: 1.5rem;
+                        min-height: 1.5rem;
+                        border-radius: 50%;
+                        background-color: white;
+                        border-radius: 50%;
+                        vertical-align: middle;
+                        border: 1px solid #ddd;
+                        appearance: none;
+                        -webkit-appearance: none;
+                        outline: none;
+                        cursor: pointer;
+                        &:checked {
+                            background-color: green;
+                        }
+                    }
+                    label,
+                    a {
+                        color: white;
                         font-size: 1rem;
                     }
                 }

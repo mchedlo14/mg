@@ -11,9 +11,11 @@ const Weather = () => {
     //geoapi custom hook
     const { lat, long } = useGeoApi();
 
+    // console.log(lat, long);
+
     const getWeatherData = async () => {
         const res = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${long}&lon=${lat}&appid=06c87d7f534e51b60301ffa18249f1d7`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=06c87d7f534e51b60301ffa18249f1d7`
         );
         const data = await res.json();
         setCurrentLocation(data.name);
@@ -93,7 +95,11 @@ const Weather = () => {
                 </div>
             </div>
             <div className="right-container">
-                <p>{currentLocation}</p>
+                <p>
+                    {currentLocation && currentLocation === "K'alak'i T'bilisi"
+                        ? currentLocation.split(" ")[1]
+                        : currentLocation}
+                </p>
             </div>
         </section>
     );
