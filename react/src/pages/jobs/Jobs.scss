@@ -20,9 +20,16 @@
             color: #fff;
             font-size: 40px;
             padding-left: 5px;
-            height: 40px;
+            height: 50px;
             text-align: center;
             letter-spacing: 1px;
+
+            @media(max-width:510px){
+                font-size: 30px;
+            }
+            @media(max-width:370px){
+                font-size: 25px;
+            }
         }
 
         p{
@@ -31,21 +38,56 @@
             padding-left: 15px;
             font-size: 17px;
             text-align: center;
+
+            
+            @media(max-width:510px){
+                font-size: 15;
+            }
+            @media(max-width:370px){
+                font-size: 14;
+            }
             
         }
     }
 
     .jobs-search-wrapper{
         max-width: 1100px;
-        width: 90%;
-        // height: auto;
+        width: 98%;
         margin: 0 auto;
         margin-top: 10px;
-        // position: relative;
         display: flex;
         align-items: center;
         gap: 10px;
         margin-top: 50px;
+
+        .jobs-search-first-box{
+            display: flex;
+            gap: 10px;
+
+            @media(max-width:910px){
+                flex-direction: column;
+            }
+        }
+
+        .jobs-search-second-box{
+            display: flex;
+            gap: 10px;
+            
+            @media(max-width:910px){
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width:1060px){
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media(max-width:815px){
+        }
+        
+
+        
 
         .jobs-search-container{
             width: 60px;
@@ -57,6 +99,11 @@
             justify-content: center;
             cursor: pointer;
 
+            @media(max-width:1100px){
+                width: 60px;
+                height: 55px;
+            }
+
             &:hover{
                 background-color: #961831;
                 transition: all 0.5s;
@@ -66,7 +113,7 @@
 
         input{
             padding-left: 20px;
-            width: 250px;
+            max-width: 250px;
             height: 68px;
             margin-left: 50%;
             transform: translateX(-50%);
@@ -76,6 +123,20 @@
             color: #fff;
             font-size: 16px;
             border-radius: 5px;
+
+            @media(max-width:910px){
+                flex-direction: column;
+            }
+
+            @media(max-width:1100px){
+                width: 230px;
+                height: 55px;
+            }
+
+            @media(max-width:1060px){
+                width: 150px;
+                height: 55px;
+            }
 
         }
 
@@ -90,6 +151,16 @@
             color: #fff;
             border-radius: 5px;
             cursor: pointer;
+
+            @media(max-width:1100px){
+                width: 230px;
+                height: 55px;
+            }
+
+            @media(max-width:1060px){
+                width: 150px;
+                height: 55px;
+            }
 
             &:hover{
                 background-color: #d13253;
@@ -178,6 +249,10 @@
                 background-color: #292a2a  ;
                 border-radius: 8px;
                 margin-top: 30px;
+
+                &:hover{
+                    box-shadow: 0px 10px 10px 0px rgb(209 50 83 / 10%);
+                }
 
                 h6{
                     padding: 15px;
@@ -276,4 +351,8 @@
             }
         }
     }
+}
+
+::placeholder{
+    font-size: 15px;
 }
