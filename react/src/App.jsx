@@ -12,6 +12,7 @@ import CompanyInfo from "./pages/company_info";
 import HomePage from "./pages/home";
 import LoginPage from "./pages/login";
 import RegisterPage, { countryApi } from "./pages/register";
+import UserPage from "./pages/user";
 
 // Style
 import "./styles/main.scss";
@@ -31,6 +32,7 @@ const router = createBrowserRouter(
                 path="all_category/:services"
                 element={<CategoryServicesPage />}
             ></Route>
+            <Route path="user/:id" element={<UserPage />} />
             <Route path="company_info/:id" element={<CompanyInfo />} />
             //ჩასასწორებელია ბოლოს
         </Route>
