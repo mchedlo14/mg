@@ -4,9 +4,11 @@ import searchIcon from "../../assets/svgs/search.svg";
 import clockIcon from "../../assets/svgs/clock.svg";
 import pinIcon from "../../assets/svgs/pin.svg";
 import walletIcon from "../../assets/svgs/wallet.svg";
+import { useNavigate } from "react-router";
 
 const Jobs = () => {
 
+    const router = useNavigate()
     
     return (
         <section className="jobs-wrapper">
@@ -118,7 +120,7 @@ const Jobs = () => {
 
                         <div className="date-wrapper">
                             <p>24 თებ-26 მარ</p>
-                            <button>სრულად</button>
+                            <button onClick={() => router('jobdetail')}>სრულად</button>
                         </div>
                     </div>
 

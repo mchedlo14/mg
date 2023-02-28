@@ -26,6 +26,7 @@ import TermsAndConditionsPage from "./pages/terms_conditions";
 // Style
 import "./styles/main.scss";
 import UserLayout from "./components/layout/UserLayout";
+import JobDetail from "./pages/job_detail/JobDetail";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -54,7 +55,10 @@ const router = createBrowserRouter(
                 <Route path=":path/:id" element={<ExpertPersonPage />} />
             </Route>
             {/* Jobs */}
-            <Route path="jobs" element={<Jobs />} />
+            {/* <Route path="jobs" element={<Jobs />} />
+            <Route path="jobdetail" element={<JobDetail />}/> */}
+            <Route path="jobs" element={<Jobs />}></Route>
+            <Route path="jobs/:id" element={<JobDetail />} />
 
             {/* Footer */}
             <Route
