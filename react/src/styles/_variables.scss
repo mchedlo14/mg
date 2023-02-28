@@ -1,6 +1,5 @@
 *,
-
-body  {
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,7 +12,7 @@ body {
 }
 
 // colors
-$registration_title:  #333;
+$registration_title: #333;
 $registration_text: #757575;
 $lightgray_text: #8a8d92;
 $login_button: #fc0;
@@ -37,17 +36,25 @@ $background_black: #161617;
 $footer_white_txt: #efedfb;
 $yellow_color: yellow;
 
-@mixin flexCenter($direction)  {
+$mg_red: rgb(234 49 83);
+
+@mixin flexCenter($direction) {
     display: flex;
     flex-direction: $direction;
     align-items: center;
     justify-content: center;
 }
 
-@mixin imageStyle($fit)  {
+@mixin imageStyle($fit) {
     width: 100%;
     height: 100%;
     object-fit: $fit;
     object-position: center;
 }
 
+@mixin HideTextWithDots {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
