@@ -5,7 +5,6 @@ import clockIcon from "../../assets/svgs/clock.svg";
 import pinIcon from "../../assets/svgs/pin.svg";
 import walletIcon from "../../assets/svgs/wallet.svg";
 
-import JobsForm from "../../components/jobsform/JobsForm";
 const Jobs = () => {
     return (
         <section className="jobs-wrapper">
