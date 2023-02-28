@@ -17,7 +17,6 @@ function HomePage() {
                 <Weather />
                 <Homenav />
             </div>
-            <FooterForHome />
         </div>
     );
 }

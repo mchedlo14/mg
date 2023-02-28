@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PersonRegistration from "../../components/register/Person";
 import CompanyRegister from "../../components/register/Company";
+import experts from "../../assets/images/expert.png";
+import info from "../../assets/images/fire.png";
+import jobs from "../../assets/images/employee.png";
 
 function RegisterPage() {
     const [registerIsActive, setRegisterIsActive] = useState("person");
@@ -26,38 +29,24 @@ function RegisterPage() {
                     {/* Icons */}
                     <div className="registration-icons">
                         <div>
-                            <img
-                                src="https://yastatic.net/s3/passport-static/core/v1.79.2/i/services_icons/mail.svg"
-                                alt=""
-                            />
+                            <img src={experts} alt="experts" />
+                        </div>
+
+                        <div>
+                            <img src={info} alt="info" />
                         </div>
                         <div>
-                            <img
-                                src="https://yastatic.net/s3/passport-static/core/v1.79.2/i/services_icons/disk.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div>
-                            <img
-                                src="https://yastatic.net/s3/passport-static/core/v1.79.2/i/services_icons/market.svg"
-                                alt=""
-                            />
-                        </div>
-                        <div>
-                            <img
-                                src="https://yastatic.net/s3/passport-static/core/v1.79.2/i/services_icons/music.svg"
-                                alt=""
-                            />
+                            <img src={jobs} alt="jobs" />
                         </div>
                     </div>
                     {/* Information */}
                     <div className="registration-information">
-                        <p>
+                        {/* <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Quibusdam sunt magnam ducimus laborum
                             similique voluptate nostrum id, ipsam minus,
                             expedita, rerum modi eaque soluta saepe.
-                        </p>
+                        </p> */}
                     </div>
                 </div>
 
