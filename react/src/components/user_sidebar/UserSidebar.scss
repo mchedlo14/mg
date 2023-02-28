@@ -1,0 +1,21 @@
+.user_sidebar_container {
+    width: 250px;
+    min-width: 250px;
+    min-height: 500px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px 30px 0px;
+
+    .user_info {
+        display: flex;
+
+        img {
+            width: 50%;
+            height: 50%;
+        }
+        h3{
+            
+        }
+    }
+}

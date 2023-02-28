@@ -16,9 +16,9 @@ const Homenav = () => {
 
   return (
     <section className='home-nav-wrapper'>
-        <div className='home-card'>
+        <div className='home-card' onClick={() => router('info')}>
             <img src={serviceImg} alt='show image'/>
-            <p>ყველა სერვისი</p>
+            <p>ინფო</p>
         </div>
 
         <div className='home-card' onClick={() => router('/experts')}>

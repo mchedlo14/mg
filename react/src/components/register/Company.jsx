@@ -1,7 +1,9 @@
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-function CompanyRegister() {
+function CompanyRegister({ countryData }) {
+    const [countrySort, setCountrySort] = useState([]);
     const {
         register,
         handleSubmit,
@@ -10,6 +12,22 @@ function CompanyRegister() {
     } = useForm();
 
     const onSubmit = () => {};
+    useEffect(() => {
+        setCountrySort(
+            countryData
+                .map((data) => data.name.common)
+                .sort(function (a, b) {
+                    if (a > b) {
+                        return 1;
+                    }
+                    if (b > a) {
+                        return -1;
+                    }
+                    return 0;
+                })
+        );
+    }, [countryData]);
+
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
@@ -80,15 +98,15 @@ function CompanyRegister() {
                 />
             </div>
             <div>
-                {/* <label htmlFor="country">ქვეყანა</label> */}
-                <input
-                    type="text"
-                    name="person_registration"
-                    id="country"
-                    placeholder="ქვეყანა"
-                    {...register("country", { required: true })}
-                    style={{ border: errors.country && "2px solid red" }}
-                />
+                <select name="" id="">
+                    <option value="Georgia">Georgia</option>
+                    {countrySort &&
+                        countrySort.map((data, i) => (
+                            <option key={i} value={data}>
+                                {data}
+                            </option>
+                        ))}
+                </select>
             </div>
             <div>
                 {/* <label htmlFor="city">ქალაქი</label> */}

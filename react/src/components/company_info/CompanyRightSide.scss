@@ -1,0 +1,73 @@
+.company_get_quote {
+    min-width: 322px;
+    min-height: 418px;
+    display: flex;
+    flex-direction: column;
+    // background: $quota_bg;
+    border-radius: 10px;
+    overflow: hidden;
+    .quote_title {
+        // background: $quote_title_bg;
+        padding: 20px 30px;
+        text-align: center;
+        // border-radius: 10px 10px 0 0;
+        h3 {
+            font-weight: 600;
+            font-size: 15px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+    }
+    form {
+     
+        display: flex;
+        flex-direction: column;
+        padding: 20px 30px;
+        gap: 1em;
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid #e1e4e6;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            padding-left: 40px;
+            outline: none;
+            // color: $quota_input_txt;
+            min-height: calc(1.5em + 0.75rem + 9px);
+            resize: none;
+            background-color: transparent;
+            color: white;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            cursor: pointer;
+            height: 50px;
+            width: 150px;
+            align-self: center;
+            border-radius: 20px;
+            border: none;
+            // background-color: $lightgray_text;
+            border: 1px solid #e1e4e6;
+            background-color: transparent;
+            color: white;
+        }
+    }
+}
+
+.company_main_information{
+margin-top: 3em;
+.information_container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    gap: 1em;
+    p{
+        display: flex;
+        justify-content: space-between;
+        color: white;
+    }
+}
+}

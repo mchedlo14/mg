@@ -1,0 +1,116 @@
+.login-wrapper {
+    min-height: 100vh;
+    background-image: url("https://free4kwallpapers.com/uploads/originals/2021/04/06/tbilisi-georgia-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include flexCenter(column);
+
+    .login-container {
+        width: 360px;
+        min-height: 600px;
+        background-color: $home_page_bg_dark;
+        padding: 32px;
+        border-radius: 16px;
+        position: relative;
+        .back-button {
+            width: 36px;
+            height: 36px;
+            position: absolute;
+            background-color: $home_page_bg_dark;
+            left: -18px;
+            border-radius: 50%;
+            cursor: pointer;
+            @include flexCenter(row);
+            div {
+                border: 1px solid white;
+                width: 10px;
+                height: 10px;
+                border-top: transparent;
+                border-right: transparent;
+                transform: rotate(45deg);
+            }
+        }
+        .logn-image-box {
+            height: 64px;
+            width: 64px;
+            margin: 0 auto;
+            img {
+                @include imageStyle(contain);
+                cursor: pointer;
+            }
+        }
+        .login-title {
+            margin-top: 20px;
+            p {
+                color: white;
+                text-align: center;
+                font-size: 1.2rem;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 40px 0;
+            gap: 1em;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+            input {
+                height: 54px;
+                min-height: 54px;
+                outline: none;
+                padding: 1em;
+                font-size: 1.1rem;
+                text-align: center;
+                border-radius: 8px;
+                border: 1px solid gray;
+                background: transparent;
+                color: white;
+            }
+            button {
+                height: 44px;
+                min-height: 44px;
+                background-color: $login_button;
+                border: none;
+                color: $registration_title;
+                font-size: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+            }
+        }
+        button {
+            height: 44px;
+            min-height: 44px;
+            background-color: transparent;
+            border: 1px solid gray;
+            color: white;
+            font-size: 1rem;
+            width: 100%;
+            touch-action: manipulation;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: -10px;
+        }
+        .signin-socials {
+            min-height: 50px;
+            margin-top: 40px;
+            color: white;
+            .social_container {
+                display: flex;
+                justify-content: center;
+                gap: 1em;
+                margin-top: 1em;
+                div {
+                    width: 44px;
+                    height: 44px;
+                    min-width: 44px;
+                    border-radius: 50px;
+                    background-color: red;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ function RootLayout() {
                     </div>
 
                     <div className="home-button-wrapper">
-                        <button onClick={() => router("register")}>
+                        <button onClick={() => navigate("/log_in")}>
                             შესვლა
                         </button>
                         <img src={lightIcon} alt="brightness" />

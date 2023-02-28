@@ -3,6 +3,14 @@
 @import "../pages/register/register.scss";
 @import "../pages/home/Home.scss";
 @import "../components/weather/Weather.scss";
+@import "../pages/login/Login.scss";
+@import "../pages/company_info/Compani_info.scss";
+@import "../components/company_info/CompanyLeftSide.scss";
+@import "../components/company_info/CompanyRightSide.scss";
+@import "../pages/all_category/AllCategory.scss";
+@import "../pages/category_services/Category_services.scss";
+@import "../components/category_services/Sidebar.scss";
+@import "../components/category_services/Main_Contact.scss";
 @import "../components/homepagenav/Homenav.scss";
 @import "../pages/expert/Expert.scss";
 @import "../components/expertFilter/ExpertFilter.scss";
@@ -12,8 +20,10 @@
 @import "../components/layout//RootLayout.scss";
 @import "../components/footer/FooterForHome.scss";
 @import "../pages/terms_conditions/TermsAndConditions.scss";
-@import "../pages/contact/Contact.scss";@import "../components/jobsform/JobsForm.scss";
-
+@import "../pages/contact/Contact.scss";
+@import "../components/jobsform/JobsForm.scss";
+@import "../components/layout/userLayout.scss";
+@import "../components/user_sidebar/UserSidebar.scss";
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -27,10 +37,10 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #d13253;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 /* Handle on hover */
@@ -38,6 +48,6 @@
     background: #d13253;
 }
 
-*{
-  font-family: "BPG Classic Medium", sans-serif;
+* {
+    font-family: "BPG Classic Medium", sans-serif;
 }
