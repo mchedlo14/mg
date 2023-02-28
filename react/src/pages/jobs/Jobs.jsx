@@ -50,9 +50,9 @@ const Jobs = () => {
                 <div>
                     <select>
                         <option disabled>ანაზღაურება</option>
-                        <option>0-1000</option>
-                        <option>1001-2000</option>
-                        <option>2001+</option>
+                        <option>0-1000₾</option>
+                        <option>1001-2000₾</option>
+                        <option>2001₾+</option>
                     </select>
                 </div>
                 <div className="jobs-search-container">
@@ -153,16 +153,423 @@ const Jobs = () => {
                         </div>
                     </div>
 
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
 
                     
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
 
                     
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
 
                     
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+
+
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+                    <div className="job-card">
+                        <div className="card-title">
+                            <img src="https://www.epam.com/etc/designs/epam-core/images/common/logo.png" />
+                            <div>
+                                <h3>კოკა-კოლა</h3>
+                                <p>თბილისი</p>
+                            </div>
+                        </div>
+
+                        <h6>გაყიდვების მენეჯერი</h6>
+
+                        <div className="card-detail">
+                            <div>
+                                <img src={clockIcon} alt="clock icon" />
+                                <h5>სრული განაკვეთი</h5>
+                            </div>
+
+                            <div>
+                                <img src={walletIcon} alt="clock icon" />
+                                <h5>900-1100₾</h5>
+                            </div>
+                        </div>
+
+                        <div className="date-wrapper">
+                            <p>24 თებ-26 მარ</p>
+                            <button>სრულად</button>
+                        </div>
+                    </div>
+                    
+
                 </div>
             </div>
 
-            <JobsForm />
+             
         </section>
     );
 };

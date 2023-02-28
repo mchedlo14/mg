@@ -54,10 +54,6 @@ const Homenav = () => {
             <img src={eventImg} alt='event image'/>
             <p>ივენთები</p>
         </div>
-        <div className='home-card'>
-            <img src={newsImg} alt='newws image'/>
-            <p>ახალი ამბები</p>
-        </div>
     </section>
   )
 }
