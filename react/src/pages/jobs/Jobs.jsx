@@ -9,9 +9,6 @@ import JobsForm from "../../components/jobsform/JobsForm";
 const Jobs = () => {
     return (
         <section className="jobs-wrapper">
-            <div className="header-test">
-                <button>ვაკანსიის დამატება</button>
-            </div>
 
             <div className="title-wrapper">
                 <h3>
