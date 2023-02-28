@@ -20,8 +20,10 @@
 @import "../components/layout//RootLayout.scss";
 @import "../components/footer/FooterForHome.scss";
 @import "../pages/terms_conditions/TermsAndConditions.scss";
-@import "../pages/contact/Contact.scss";@import "../components/jobsform/JobsForm.scss";
-
+@import "../pages/contact/Contact.scss";
+@import "../components/jobsform/JobsForm.scss";
+@import "../components/layout/userLayout.scss";
+@import "../components/user_sidebar/UserSidebar.scss";
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -35,10 +37,10 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #d13253;
-  border-top-right-radius: 2px;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
 }
 
 /* Handle on hover */
@@ -46,6 +48,6 @@
     background: #d13253;
 }
 
-*{
-  font-family: "BPG Classic Medium", sans-serif;
+* {
+    font-family: "BPG Classic Medium", sans-serif;
 }

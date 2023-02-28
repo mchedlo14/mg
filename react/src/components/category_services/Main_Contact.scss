@@ -74,6 +74,7 @@
         display: flex;
         // background-color: white;
         gap: 0.5em;
+        cursor: pointer;
         @media (max-width: 800px) {
             height: 500px;
             width: 40%;
@@ -112,7 +113,7 @@
                 height: 25%;
                 display: flex;
                 align-items: center;
-                a {
+                h3 {
                     // color: #212529;
                     font-size: 16px;
                     font-weight: 600;

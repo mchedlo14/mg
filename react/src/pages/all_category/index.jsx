@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router";
 import bgImage from "../../assets/images/bgIcons.png";
 
 function AllCategoryPage() {
+    const navigate = useNavigate();
     return (
         <>
             <section className="all_category_header">
@@ -22,8 +24,12 @@ function AllCategoryPage() {
 
             {/* Category Container */}
             <section className="all_category_contaner">
-                <div className="box">
-                    {" "}
+                <div
+                    className="box"
+                    onClick={() => {
+                        navigate("rr");
+                    }}
+                >
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"
@@ -35,7 +41,6 @@ function AllCategoryPage() {
                     </div>
                 </div>
                 <div className="box">
-                    {" "}
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"
@@ -47,7 +52,6 @@ function AllCategoryPage() {
                     </div>
                 </div>
                 <div className="box">
-                    {" "}
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"
@@ -59,7 +63,6 @@ function AllCategoryPage() {
                     </div>
                 </div>
                 <div className="box">
-                    {" "}
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"
@@ -71,7 +74,6 @@ function AllCategoryPage() {
                     </div>
                 </div>
                 <div className="box">
-                    {" "}
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"
@@ -83,7 +85,6 @@ function AllCategoryPage() {
                     </div>
                 </div>
                 <div className="box">
-                    {" "}
                     <div className="image">
                         <img
                             src="https://mg.ge/images/services/48466ser4.jpg"

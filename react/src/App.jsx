@@ -25,31 +25,38 @@ import TermsAndConditionsPage from "./pages/terms_conditions";
 
 // Style
 import "./styles/main.scss";
+import UserLayout from "./components/layout/UserLayout";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<RootLayout />}>
             <Route index element={<HomePage />}></Route>
+            {/* Auth / Registration */}
+            <Route path="log_in" element={<LoginPage />} />
             <Route
                 path="register"
                 element={<RegisterPage />}
                 loader={countryApi}
             />
-            <Route path="log_in" element={<LoginPage />} />
-            <Route path="all_category" element={<AllCategoryPage />}></Route>
-            <Route
-                path="all_category/:services"
-                element={<CategoryServicesPage />}
-            ></Route>
-            <Route path="user/:id" element={<UserPage />} />
-            <Route path="company_info/:id" element={<CompanyInfo />} />
-            //ჩასასწორებელია ბოლოს
+            {/* All Info */}
+            <Route path="info" element={<AllCategoryPage />} />
+            <Route path="info/:services" element={<CategoryServicesPage />} />
+            <Route path="info/:services/:id" element={<CompanyInfo />} />
+            {/* User */}
+            <Route path="user/:id" element={<UserLayout />}>
+                <Route index element={<UserPage />} />
+            </Route>
+
+            {/* Experets */}
             <Route path="experts" element={<ExpertLayout />}>
                 <Route index element={<Expert />}></Route>
-                <Route path=":path" element={<ExpertDetail />}></Route>
-                <Route path=":path/:id" element={<ExpertPersonPage />}></Route>
+                <Route path=":path" element={<ExpertDetail />} />
+                <Route path=":path/:id" element={<ExpertPersonPage />} />
             </Route>
-            <Route path="jobs" element={<Jobs />}></Route>
+            {/* Jobs */}
+            <Route path="jobs" element={<Jobs />} />
+
+            {/* Footer */}
             <Route
                 path="terms_and_conditions"
                 element={<TermsAndConditionsPage />}
@@ -60,6 +67,7 @@ const router = createBrowserRouter(
                 element={<ConfidentialPoliticsPage />}
             />
             <Route path="contact" element={<ContactPage />} />
+            {/*  */}
         </Route>
     )
 );

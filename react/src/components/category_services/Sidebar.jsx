@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router";
 import block from "../../assets/svgs/grid.svg";
 import star_filled from "../../assets/svgs/star.svg";
 import star_not_filled from "../../assets/svgs/star_not.svg";
 
 function CategoryServicesSidebar() {
+    const navigate = useNavigate();
     return (
         <>
             <div className="category_services_side_bar_container">
@@ -12,7 +14,12 @@ function CategoryServicesSidebar() {
                 {/* Top Companies */}
                 <ul className="companies_container">
                     <li>
-                        <div className="company_box">
+                        <div
+                            className="company_box"
+                            onClick={() => {
+                                navigate("2");
+                            }}
+                        >
                             <div className="image">
                                 <img
                                     src="https://mg.ge/images/listings/69656woman-girl-beauty-mask.jpg"

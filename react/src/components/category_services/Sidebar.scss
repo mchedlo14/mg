@@ -38,6 +38,8 @@
                 height: 100%;
                 display: grid;
                 grid-template-columns: 1fr 3fr 1fr;
+                cursor: pointer;
+
                 .image {
                     overflow: hidden;
                     @include flexCenter(row);
@@ -133,7 +135,6 @@
     }
     .category_list {
         padding: 10px 17px;
-      
 
         select {
             height: 50px;
@@ -148,7 +149,7 @@
             background-color: transparent;
             color: white;
             border: 1px solid white;
-            option{
+            option {
                 // color: black;
                 background-color: $home_page_bg_dark;
             }
