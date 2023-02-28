@@ -6,6 +6,8 @@ import pinIcon from "../../assets/svgs/pin.svg";
 import walletIcon from "../../assets/svgs/wallet.svg";
 
 const Jobs = () => {
+
+    
     return (
         <section className="jobs-wrapper">
 
