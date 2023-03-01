@@ -1,5 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { authLogin, loadUser, checkAuth, logout, loadAllUser } from "./actions";
+import {
+    authLogin,
+    loadUser,
+    checkAuth,
+    logout,
+    loadAllUser,
+    signUp,
+} from "./actions";
 
 const userToken = localStorage.getItem("userToken")
     ? localStorage.getItem("userToken")
@@ -23,6 +30,19 @@ const authSlice = createSlice({
             state.userToken = action.payload;
         });
         builder.addCase(authLogin.rejected, (state, action) => {
+            state.isAuthenticated = false;
+            state.userToken = null;
+        });
+
+        builder.addCase(signUp.pending, (state, action) => {
+            state.isAuthenticated = false;
+            state.userToken = null;
+        });
+        builder.addCase(signUp.fulfilled, (state, action) => {
+            state.isAuthenticated = true;
+            state.userToken = action.payload;
+        });
+        builder.addCase(signUp.rejected, (state, action) => {
             state.isAuthenticated = false;
             state.userToken = null;
         });

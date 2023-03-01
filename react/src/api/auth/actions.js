@@ -6,9 +6,10 @@ export const signUp = createAsyncThunk(
     async (payload, { rejectWithValue }) => {
         try {
             const { data } = await axiosUnAuthorized.post(
-                "auth/users/",
+                "registration",
                 payload
             );
+            localStorage.setItem("authTokens", JSON.stringify(data));
             return data;
         } catch (err) {
             throw rejectWithValue(err.response.data);
