@@ -48,12 +48,13 @@
     }
 
     .home-button-wrapper {
-        width: 150px;
+        min-width: 150px;
         height: auto;
 
         display: flex;
         justify-content: space-around;
         align-items: center;
+        gap: 10px;
     }
 }
 

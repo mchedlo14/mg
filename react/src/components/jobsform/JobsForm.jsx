@@ -21,6 +21,8 @@ const JobsForm = () => {
         }
     }, []);
     return (
+        <section>
+
         <div className="jobs-form-wrapper">
             <div>
                 <div
@@ -30,24 +32,24 @@ const JobsForm = () => {
                             general: !showInfo.general,
                         })
                     }
-                >
+                    >
                     {!showInfo.general ? (
                         <img src={rightArrow} />
-                    ) : (
-                        <img src={downArrow} />
-                    )}
+                        ) : (
+                            <img src={downArrow} />
+                            )}
 
                     <h4>ზოგადი ინფორმაცია</h4>
                 </div>
                 <div className="general-wrapper">
                     {screenWidth != null && (
                         <div
-                            className="general-container"
-                            style={{
-                                marginTop: showInfo.general
-                                    ? "0px"
-                                    : screenWidth,
-                            }}
+                        className="general-container"
+                        style={{
+                            marginTop: showInfo.general
+                            ? "0px"
+                            : screenWidth,
+                        }}
                         >
                             <div>
                                 <div className="form-wrapper">
@@ -125,11 +127,12 @@ const JobsForm = () => {
                             about: !showInfo.about,
                         })
                     }
-                >
+                    >
                     {!showInfo.about ? (
                         <img src={rightArrow} />
-                    ) : (
-                        <img src={downArrow} />
+                        ) : (
+                            <img src={downArrow} />
+                            
                     )}
 
                     <h4>ვაკანსიის დეტალური ინფორმაცია</h4>
@@ -289,7 +292,7 @@ const JobsForm = () => {
                 >
                     <div
                         className="general-container"
-                        style={{ marginTop: showInfo.contact ? "0" : "-619px" }}
+                        style={{ marginTop: showInfo.contact ? "0" : "-719px" }}
                     >
                         <div>
                             <div className="form-wrapper">
@@ -317,11 +320,15 @@ const JobsForm = () => {
                                 </div>
                                 <textarea />
                             </div>
+                            
+                            <button>ვაკანსიის დამატება</button>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </section>
     );
 };
 

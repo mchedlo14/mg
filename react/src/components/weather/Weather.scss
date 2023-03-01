@@ -1,4 +1,4 @@
-.weather-wrapper{
+.weather-wrapper {
     max-width: 1052px;
     width: 90%;
     height: 40px;
@@ -7,62 +7,62 @@
     justify-content: space-between;
     padding: 0px 14px 0px 0px;
 
-    a{
+    a {
         text-decoration: none;
     }
 
-    .left-container{
+    .left-container {
         width: 230px;
         height: 40px;
         display: flex;
         align-items: center;
         justify-content: start;
 
-        .celsius{
+        .celsius {
             color: #999;
             font-size: 1rem;
             font-weight: 500;
             cursor: context-menu;
 
-            &:hover{
+            &:hover {
                 color: #fff;
             }
 
-            @media(max-width:640px){
+            @media (max-width: 640px) {
                 padding-top: 6px;
             }
         }
 
-        p{
+        p {
             color: #999;
             cursor: context-menu;
             font-size: 1rem;
             cursor: pointer;
             user-select: none;
-            &:hover{
+            &:hover {
                 color: #fff;
                 transition: all 0.4s;
             }
 
-            @media(max-width:640px){
+            @media (max-width: 640px) {
                 padding-top: 6px;
             }
         }
-        div{
+        div {
             display: flex;
             gap: 15px;
             margin-left: 20px;
         }
     }
 
-    .right-container{
+    .right-container {
         width: 120px;
         height: 40px;
         display: flex;
         justify-content: center;
         align-items: center;
 
-        p{
+        p {
             font-size: 1rem;
             overflow: hidden;
             white-space: nowrap;
@@ -71,13 +71,13 @@
             color: #999;
             letter-spacing: 0.5px;
 
-            @media(max-width:640px){
+            @media (max-width: 640px) {
                 padding-top: 6px;
             }
         }
     }
 }
 
-span{
+span {
     margin-left: 10px;
 }
