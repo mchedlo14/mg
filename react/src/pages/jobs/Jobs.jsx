@@ -61,7 +61,7 @@ const Jobs = () => {
                 </div>
                 <div className="jobs-search-container">
                     <img src={searchIcon} alt="search" />
-                </div>
+                </div> 
             </div>
 
             <div className="jobs-list-wrapper">
