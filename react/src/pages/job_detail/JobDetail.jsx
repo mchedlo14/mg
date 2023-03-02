@@ -43,40 +43,69 @@ const JobDetail = () => {
             </div>
 
             <div className="job-description-container">
-              <div>
-              <div className="description">
-                    <h4>აღწერა</h4>
-                    <p>
-                        It is a long established fact that a reader will be
-                        distracted the readable content of page when looking
-                        atits layout. The point of using is that has
-                        more-or-less normal a distribution of letters, as
-                        opposed to usin content publishing packages web page
-                        editors. It is a long established fact that a reader
-                        will be distracts by the readable content of a page when
-                        looking at its layout. The point of using Lorem Ipsum is
-                        that has look like readable publishing packages and web
-                        page editors. It is a long established fact that a
-                        reader will be distracted the readable content of a page
-                        when looking atits layout. The point of using is that
-                        has more-or-less normal a distribution of letters, as
-                        opposed to usin content publishing packages web page
-                        editors.
-                    </p>
-                </div>
+                <div>
+                    <div className="description">
+                        <h4>აღწერა</h4>
+                        <p>
+                            It is a long established fact that a reader will be
+                            distracted the readable content of page when looking
+                            atits layout. The point of using is that has
+                            more-or-less normal a distribution of letters, as
+                            opposed to usin content publishing packages web page
+                            editors. It is a long established fact that a reader
+                            will be distracts by the readable content of a page
+                            when looking at its layout. The point of using Lorem
+                            Ipsum is that has look like readable publishing
+                            packages and web page editors. It is a long
+                            established fact that a reader will be distracted
+                            the readable content of a page when looking atits
+                            layout. The point of using is that has more-or-less
+                            normal a distribution of letters, as opposed to usin
+                            content publishing packages web page editors.
+                        </p>
+                    </div>
+                    <div className="description-wrapper">
 
-                <div className="description">
-                    <h4>მოთხოვნები</h4>
-                    <li>HTML/CSS</li>
-                    <li>React</li>
-                    <li>Redux</li>
-                    <li>Django</li>
-                </div>
-              </div>
+                        <div className="description-requirments">
+                            <div>
+                            <h4>მოთხოვნები</h4>
+                            <li>HTML/CSS</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Django</li>
+                            </div>
 
+                            <div>
+                            <h4>მოთხოვნები</h4>
+                            <li>HTML/CSS</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Django</li>
+                            </div>
+
+                            <div>
+                            <h4>მოთხოვნები</h4>
+                            <li>HTML/CSS</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Django</li>
+                            </div>
+
+                            <div>
+                            <h4>მოთხოვნები</h4>
+                            <li>HTML/CSS</li>
+                            <li>React</li>
+                            <li>Redux</li>
+                            <li>Django</li>
+                            </div>
+                            
+
+
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
-
-
         </section>
     );
 };

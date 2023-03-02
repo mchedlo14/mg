@@ -6,6 +6,7 @@ section{
         height: max-content;
         // min-height:100px;
         background-color: #262727;
+        box-shadow: 2px 2px 5px 4px rgba(41,42,42,0.38);
         border-radius: 6px;
         margin: 0 auto;
         margin-top: 200px;
@@ -96,6 +97,11 @@ section{
                         border-radius: 6px;
                         border: 2px solid #303030;
                         padding-left: 5px;
+
+                        &:focus {
+                            border: 1px solid #ee3255;
+                            transition: all 0.5s;
+                        }
     
                         @media (max-width: 1450px) {
                             width: 700px;
@@ -264,3 +270,9 @@ section{
     
 
 }
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    padding-right: 10px;
+}
+
