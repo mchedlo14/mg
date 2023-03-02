@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import downArrow from "../../assets/svgs/arrow-down.svg";
 import rightArrow from "../../assets/svgs/right-arrow.svg";
 import mark from "../../assets/svgs/danger.svg";
-
+import { useForm } from "react-hook-form";
+import axios from "axios";
 const JobsForm = () => {
     const [screenWidth, setScreenWidth] = useState(null);
     const [showInfo, setShowInfo] = useState({
@@ -20,9 +21,63 @@ const JobsForm = () => {
             setScreenWidth("-274px");
         }
     }, []);
+
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
+    const onSubmit = (data) => {
+        const formData = new FormData();
+        formData.append("age_max", data.age_max);
+        formData.append("age_min", data.age_min);
+        formData.append("desciption_en", data.desciption_en);
+
+        formData.append("desciption_geo", data.desciption_geo);
+        formData.append("email", data.email);
+
+        formData.append("desciption_ru", data.desciption_ru);
+        formData.append("desciption_en", data.desciption_en);
+
+        formData.append("driving_license", data.driving_license);
+        formData.append("experience", data.experience);
+
+        formData.append("gender", data.gender);
+        formData.append("last_date", data.last_date);
+
+        formData.append("name_en", data.name_en);
+        formData.append("name_geo", data.name_geo);
+        formData.append("name_ru", data.name_ru);
+
+        formData.append("phone", data.phone);
+        formData.append("position_en", data.position_en);
+        formData.append("position_geo", data.position_geo);
+        formData.append("position_ru", data.position_ru);
+
+        formData.append("salary_min", data.salary_min);
+        formData.append("salary_max", data.salary_max);
+
+        formData.append("working_hours", data.working_hours);
+        formData.append("en", "en");
+        formData.append("id", "5");
+
+        // axios.post("http://127.0.0.1:8000/app/jobs", formData, {
+        //     headers: {
+        //         Accept: "application/json",
+        //         "Content-Type": "application/json",
+                
+        //     },
+        // });
+
+    };
+
     return (
         <section>
-            <div className="jobs-form-wrapper">
+            <form
+                className="jobs-form-wrapper"
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 <div>
                     <div
                         className="general-container-parent"
@@ -56,21 +111,36 @@ const JobsForm = () => {
                                             <label>კომპანიის დასახელება</label>
                                             <img src={mark} />
                                         </div>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("name_geo", {
+                                                required: true,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
                                         <label>
                                             კომპანიის დასახელება(ინგლისურად)
                                         </label>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("name_en", {
+                                                required: false,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
                                         <label>
                                             კომპანიის დასახელება(რუსულად)
                                         </label>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("name_ru", {
+                                                required: false,
+                                            })}
+                                        />
                                     </div>
                                 </div>
 
@@ -80,27 +150,41 @@ const JobsForm = () => {
                                             <label>ვაკანსიის დასახელება</label>
                                             <img src={mark} />
                                         </div>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("position_geo", {
+                                                required: true,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
                                         <label>
                                             ვაკანსიის დასახელება(ინგლისურად)
                                         </label>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("position_en", {
+                                                required: false,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
                                         <label>
                                             ვაკანსიის დასახელება(რუსულად)
                                         </label>
-                                        <input type="text" />
+                                        <input
+                                            type="text"
+                                            {...register("position_ru", {
+                                                required: false,
+                                            })}
+                                        />
                                     </div>
                                 </div>
 
                                 <div>
                                     <div className="form-wrapper">
-
                                         <div>
                                             <label>სახელფასო ზღვარი</label>
                                             <img src={mark} />
@@ -110,19 +194,30 @@ const JobsForm = () => {
                                                 type="text"
                                                 className="range-input"
                                                 placeholder="დან"
+                                                {...register("salary_max", {
+                                                    required: true,
+                                                })}
                                             />
                                             <input
                                                 type="text"
                                                 className="range-input"
                                                 placeholder="მდე"
+                                                {...register("salary_min", {
+                                                    required: true,
+                                                })}
                                             />
                                         </div>
                                     </div>
 
                                     <div className="form-wrapper">
-
                                         <label>ვაკანსიის ადგილმდებარეობა</label>
-                                        <select name="cars" id="cars">
+                                        <select
+                                            name="cars"
+                                            id="cars"
+                                            {...register("place", {
+                                                required: true,
+                                            })}
+                                        >
                                             <option value="tbilisi">
                                                 თბილისი
                                             </option>
@@ -137,9 +232,9 @@ const JobsForm = () => {
                                     </div>
 
                                     <div className="form-wrapper">
-                                    <label>სამუშაო განაკვეთი</label>
-                                        <select name="cars" id="cars">
-                                            <option value="en">სრული</option>
+                                        <label>სამუშაო განაკვეთი</label>
+                                        <select name="working hours">
+                                            <option value="fukk">სრული</option>
                                             <option value="ge">არასრული</option>
                                             <option value="en">
                                                 დროებითი სამუშაო
@@ -188,7 +283,12 @@ const JobsForm = () => {
                                             <label>ელ - ფოსტა</label>
                                             <img src={mark} />
                                         </div>
-                                        <input type="email" />
+                                        <input
+                                            type="email"
+                                            {...register("email", {
+                                                required: true,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
@@ -198,11 +298,17 @@ const JobsForm = () => {
                                                 type="text"
                                                 className="range-input"
                                                 placeholder="დან"
+                                                {...register("age_min", {
+                                                    required: true,
+                                                })}
                                             />
                                             <input
                                                 type="text"
                                                 className="range-input"
                                                 placeholder="მდე"
+                                                {...register("age_max", {
+                                                    required: true,
+                                                })}
                                             />
                                         </div>
                                     </div>
@@ -214,14 +320,24 @@ const JobsForm = () => {
                                             </label>
                                             <img src={mark} />
                                         </div>
-                                        <input type="date" />
+                                        <input
+                                            type="date"
+                                            {...register("last_date", {
+                                                required: true,
+                                            })}
+                                        />
                                     </div>
                                 </div>
 
                                 <div>
                                     <div className="form-wrapper">
-                                    <label>საკონტაქტო ტელეფონი</label>
-                                        <input type="text" />
+                                        <label>საკონტაქტო ტელეფონი</label>
+                                        <input
+                                            type="text"
+                                            {...register("phone", {
+                                                required: false,
+                                            })}
+                                        />
                                     </div>
 
                                     <div className="form-wrapper">
@@ -238,9 +354,17 @@ const JobsForm = () => {
 
                                     <div className="form-wrapper">
                                         <label>სქესი</label>
-                                        <select name="cars" id="cars">
-                                            <option value="en">ქაცი</option>
-                                            <option value="ge">ქალი</option>
+                                        <select
+                                            {...register("gender", {
+                                                required: false,
+                                            })}
+                                        >
+                                            <option value="man">
+                                                მამრობითი
+                                            </option>
+                                            <option value="women">
+                                                მდედრობითი
+                                            </option>
                                         </select>
                                     </div>
                                 </div>
@@ -248,15 +372,21 @@ const JobsForm = () => {
                                 <div>
                                     <div className="form-wrapper">
                                         <label>სამუშაო გრაფიკი</label>
-                                        <select name="cars" id="cars">
-                                            <option value="en">
+                                        <select
+                                            {...register("working_hours", {
+                                                required: true,
+                                            })}
+                                        >
+                                            <option value="full">
                                                 სრული დღე
                                             </option>
-                                            <option value="ge">ცვლები</option>
-                                            <option value="en">
+                                            <option value="shifts">
+                                                ცვლები
+                                            </option>
+                                            <option value="Free schedule">
                                                 თავისუფალი გრაფიკი
                                             </option>
-                                            <option value="ge">
+                                            <option value="remote">
                                                 სამუშაო სახლში
                                             </option>
                                         </select>
@@ -264,14 +394,37 @@ const JobsForm = () => {
 
                                     <div className="form-wrapper">
                                         <label>სამუშაო გამოცდილება</label>
-                                        <select name="cars" id="cars">
+                                        <select
+                                            name="cars"
+                                            {...register("experience", {
+                                                required: true,
+                                            })}
+                                        >
+                                            <option defaultValue>
+                                                არ მოითხოვება
+                                            </option>
+                                            <option value="1">1 წელი</option>
+                                            <option value="2">2 წელი </option>
+                                            <option value="3">3 წელი</option>
+                                            <option value="3+">3+</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-wrapper">
+                                        <label>მართვის მოწმობა</label>
+                                        <select
+                                            name="cars"
+                                            {...register("driving_license", {
+                                                required: false,
+                                            })}
+                                        >
                                             <option value="en">
                                                 არ მოითხოვება
                                             </option>
-                                            <option value="ge">1 წელი</option>
-                                            <option value="en">2 წელი </option>
-                                            <option value="ge">3 წელი</option>
-                                            <option value="ge">3+</option>
+                                            <option value="A">A</option>
+                                            <option value="B">B</option>
+                                            <option value="C">C</option>
+                                            <option value="D">D</option>
                                         </select>
                                     </div>
                                 </div>
@@ -315,7 +468,11 @@ const JobsForm = () => {
                                         <label>თანამდებობის აღწერა</label>
                                         <img src={mark} />
                                     </div>
-                                    <textarea />
+                                    <textarea
+                                        {...register("desciption_geo", {
+                                            required: true,
+                                        })}
+                                    />
                                 </div>
 
                                 <div className="form-wrapper">
@@ -325,7 +482,11 @@ const JobsForm = () => {
                                         </label>
                                         <img src={mark} />
                                     </div>
-                                    <textarea />
+                                    <textarea
+                                        {...register("desciption_en", {
+                                            required: false,
+                                        })}
+                                    />
                                 </div>
 
                                 <div className="form-wrapper">
@@ -335,15 +496,21 @@ const JobsForm = () => {
                                         </label>
                                         <img src={mark} />
                                     </div>
-                                    <textarea />
+                                    <textarea
+                                        {...register("desciption_ru", {
+                                            required: false,
+                                        })}
+                                    />
                                 </div>
 
-                                <button>ვაკანსიის დამატება</button>
+                                <button type="submit">
+                                    ვაკანსიის დამატება
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </section>
     );
 };
