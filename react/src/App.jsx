@@ -26,6 +26,9 @@ import TermsAndConditionsPage from "./pages/terms_conditions";
 // Style
 import "./styles/main.scss";
 import UserLayout from "./components/layout/UserLayout";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { loadUser } from "./api/auth/actions";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -73,6 +76,13 @@ const router = createBrowserRouter(
 );
 
 function App() {
+    // const dispatch = useDispatch();
+    // const token = localStorage.getItem("authTokens")
+    //     ? JSON.parse(localStorage.getItem("authTokens"))
+    //     : null;
+    // useEffect(() => {
+    //     token && dispatch(loadUser());
+    // }, []);
     return <RouterProvider router={router} />;
 }
 

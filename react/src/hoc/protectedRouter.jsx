@@ -5,13 +5,19 @@ import jwt_decode from "jwt-decode";
 import dayjs from "dayjs";
 
 export default function PrivateRoute({ children }) {
-  const token = localStorage.getItem("authTokens")
-    ? JSON.parse(localStorage.getItem("authTokens"))
-    : null;
-  const user = jwt_decode(token?.access);
-  const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
+    // const token = localStorage.getItem("authTokens")
+    //   ? JSON.parse(localStorage.getItem("authTokens"))
+    //   : null;
+    // const user = jwt_decode(token?.access);
+    // const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
+    const { isAuthenticated } = useSelector((state) => state.auth);
 
-  return !isExpired ? children : <Navigate to={"/log_in"} replace={true} />;
+    // return !isExpired ? children : <Navigate to={"/log_in"} replace={true} />;
+    return isAuthenticated ? (
+        children
+    ) : (
+        <Navigate to={"/log_in"} replace={true} />
+    );
 }
 
 // export function PrivateRouteForAdmin({ children }) {

@@ -37,6 +37,7 @@ $footer_white_txt: #efedfb;
 $yellow_color: yellow;
 
 $mg_red: rgb(234 49 83);
+$mg_red_hover: rgba(234, 49, 83, 0.555);
 
 @mixin flexCenter($direction) {
     display: flex;

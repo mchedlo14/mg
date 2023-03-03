@@ -10,6 +10,7 @@ import jobs from "../../assets/images/employee.png";
 import PopupMiddle from "../../components/popup/middle";
 import { useDispatch, useSelector } from "react-redux";
 import { setRegisterSuccess } from "../../redux/client/auth/slice";
+import { loadUser } from "../../api/auth/actions";
 
 function RegisterPage() {
     const [registerIsActive, setRegisterIsActive] = useState("person");

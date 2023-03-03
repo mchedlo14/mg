@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../api/auth/actions";
+import { loadUser, signUp } from "../../api/auth/actions";
 import { setRegisterSuccess } from "../../redux/client/auth/slice";
+import axios from "axios";
 
 function CompanyRegister({ countryData }) {
     // States
     const [countrySort, setCountrySort] = useState([]);
     //  Modules
     const dispatch = useDispatch();
+    // UseForm
     const {
         register,
         handleSubmit,
@@ -32,6 +34,14 @@ function CompanyRegister({ countryData }) {
         dispatch(signUp(formData))
             .unwrap()
             .then((originalPromiseResult) => {
+                // axios.get(`${import.meta.env.VITE_BASE_URL}/user`, {
+                //     headers: {
+                //         Authorization: `Bearer ${originalPromiseResult.access_token}`,
+                //         "Content-type": "multipart/form-data",
+                //         "X-requested-With": "XMLHttpRequest",
+                //     },
+                // });
+                dispatch(loadUser());
                 dispatch(setRegisterSuccess(true));
             })
             .catch((rejectedValue) => {});
