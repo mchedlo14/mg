@@ -22,12 +22,7 @@ const JobsForm = () => {
         }
     }, []);
 
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-    } = useForm();
+    const {register, handleSubmit, watch,formState: { errors },} = useForm();
     const onSubmit = (data) => {
         const formData = new FormData();
         formData.append("age_max", data.age_max);
@@ -62,15 +57,17 @@ const JobsForm = () => {
         formData.append("en", "en");
         formData.append("id", "5");
 
-        // axios.post("http://127.0.0.1:8000/app/jobs", formData, {
+        // axios.post("http://127.0.0.1:8000/apps/jobs", formData, {
         //     headers: {
-        //         Accept: "application/json",
-        //         "Content-Type": "application/json",
-                
+        //         Authorization: "Bearer 73|rXyvc09i5XHDHPDdKs5NUG77ZvFBClqQe3WHueB3",
+        //         "Content-type": "multipart/form-data",
+        //         "X-requested-With": "XMLHttpRequest",
         //     },
         // });
 
     };
+
+   
 
     return (
         <section>
@@ -108,8 +105,8 @@ const JobsForm = () => {
                                 <div>
                                     <div className="form-wrapper">
                                         <div>
-                                            <label>კომპანიის დასახელება</label>
-                                            <img src={mark} />
+                                            <label>კომპანიის დასახელება <img src={mark} /></label>
+                                            
                                         </div>
                                         <input
                                             type="text"
@@ -117,6 +114,7 @@ const JobsForm = () => {
                                                 required: true,
                                             })}
                                         />
+                                        {errors.name_geo && <span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
@@ -147,8 +145,8 @@ const JobsForm = () => {
                                 <div>
                                     <div className="form-wrapper">
                                         <div>
-                                            <label>ვაკანსიის დასახელება</label>
-                                            <img src={mark} />
+                                            <label>ვაკანსიის დასახელება <img src={mark} /></label>
+                                            
                                         </div>
                                         <input
                                             type="text"
@@ -156,6 +154,7 @@ const JobsForm = () => {
                                                 required: true,
                                             })}
                                         />
+                                        {errors.position_geo && <span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
@@ -186,8 +185,8 @@ const JobsForm = () => {
                                 <div>
                                     <div className="form-wrapper">
                                         <div>
-                                            <label>სახელფასო ზღვარი</label>
-                                            <img src={mark} />
+                                            <label>სახელფასო ზღვარი <img src={mark} /></label>
+                                            
                                         </div>
                                         <div className="s">
                                             <input
@@ -207,10 +206,11 @@ const JobsForm = () => {
                                                 })}
                                             />
                                         </div>
+                                        {errors.salary_min && errors.salary_max && <span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
-                                        <label>ვაკანსიის ადგილმდებარეობა</label>
+                                        <label>ვაკანსიის ადგილმდებარეობა <img src={mark} /></label>
                                         <select
                                             name="cars"
                                             id="cars"
@@ -229,6 +229,7 @@ const JobsForm = () => {
                                                 ქუთაისი
                                             </option>
                                         </select>
+                                        {errors.position_geo && <span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
@@ -280,8 +281,8 @@ const JobsForm = () => {
                                 <div>
                                     <div className="form-wrapper">
                                         <div>
-                                            <label>ელ - ფოსტა</label>
-                                            <img src={mark} />
+                                            <label>ელ - ფოსტა <img src={mark} /></label>
+                                            
                                         </div>
                                         <input
                                             type="email"
@@ -289,10 +290,12 @@ const JobsForm = () => {
                                                 required: true,
                                             })}
                                         />
+                                        {errors.email && <span className="error-sapn">სავალდებულო ველი</span>}
+                                        
                                     </div>
 
                                     <div className="form-wrapper">
-                                        <label>მაძიებლის ასაკი</label>
+                                        <label>მაძიებლის ასაკი <img src={mark} /></label>
                                         <div>
                                             <input
                                                 type="text"
@@ -311,14 +314,17 @@ const JobsForm = () => {
                                                 })}
                                             />
                                         </div>
+
+                                        {errors.age_min && errors.age_max &&<span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
                                         <div>
                                             <label>
                                                 ვაკანსიის მოქმედების ვადა
+                                                <img src={mark} />
                                             </label>
-                                            <img src={mark} />
+                                            
                                         </div>
                                         <input
                                             type="date"
@@ -326,6 +332,7 @@ const JobsForm = () => {
                                                 required: true,
                                             })}
                                         />
+                                        {errors.last_date &&<span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
                                 </div>
 
@@ -390,6 +397,8 @@ const JobsForm = () => {
                                                 სამუშაო სახლში
                                             </option>
                                         </select>
+
+                                        {errors.working_hours &&<span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
@@ -408,6 +417,7 @@ const JobsForm = () => {
                                             <option value="3">3 წელი</option>
                                             <option value="3+">3+</option>
                                         </select>
+                                        {errors.experience &&<span className="error-sapn">სავალდებულო ველი</span>}
                                     </div>
 
                                     <div className="form-wrapper">
@@ -462,17 +472,20 @@ const JobsForm = () => {
                                 marginTop: showInfo.contact ? "0" : "-719px",
                             }}
                         >
-                            <div>
+                             
                                 <div className="form-wrapper">
                                     <div>
-                                        <label>თანამდებობის აღწერა</label>
-                                        <img src={mark} />
+                                        <label>თანამდებობის აღწერა <img src={mark} /></label>
                                     </div>
-                                    <textarea
-                                        {...register("desciption_geo", {
-                                            required: true,
-                                        })}
-                                    />
+                                    <div className="text-area-container">
+                                        <textarea
+                                            {...register("desciption_geo", {
+                                                required: true,
+                                            })}
+                                        />
+
+                                    </div>
+                                    {errors.desciption_geo &&<span className="error-sapn">სავალდებულო ველი</span>}
                                 </div>
 
                                 <div className="form-wrapper">
@@ -480,7 +493,7 @@ const JobsForm = () => {
                                         <label>
                                             თანამდებობის აღწერა(ინგლისურად)
                                         </label>
-                                        <img src={mark} />
+                                        
                                     </div>
                                     <textarea
                                         {...register("desciption_en", {
@@ -494,7 +507,7 @@ const JobsForm = () => {
                                         <label>
                                             თანამდებობის აღწერა(რუსულად)
                                         </label>
-                                        <img src={mark} />
+                                        
                                     </div>
                                     <textarea
                                         {...register("desciption_ru", {
@@ -507,7 +520,7 @@ const JobsForm = () => {
                                     ვაკანსიის დამატება
                                 </button>
                             </div>
-                        </div>
+                       
                     </div>
                 </div>
             </form>

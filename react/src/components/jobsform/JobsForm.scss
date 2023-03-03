@@ -13,6 +13,10 @@ section{
         margin-bottom: 100px;
         display: flex;
         flex-direction: column;
+        .text-area-container{
+            display: flex;
+            flex-direction: column;
+        }
     
         .general-container-parent {
             width: 100%;
@@ -46,18 +50,21 @@ section{
     
             .general-container {
                 // padding: 15px;
+                
                 height: 700px;
                 height: max-content;
                 width: 944px;
                 transition: 900ms;
                 // animation: identifier linear 3s forwards;
-                display: flex;
-                justify-content: space-between;
     
                 width: 100%;
                 padding: 20px;
                 gap: 1em;
 
+                div{
+                    display: flex;
+                    justify-content: space-between;
+                }
 
     
                 @media (max-width: 1450px) {
@@ -85,8 +92,14 @@ section{
                 .form-wrapper {
                     display: flex;
                     flex-direction: column;
-                    gap: 7px;
                     margin-top: 15px;
+
+                    .error-sapn{
+                        color: #ee3255;
+                        font-size: 12px;
+                        padding-top: 5px;
+                        margin: 0;
+                    }
     
                     select {
                         background-color: transparent;
@@ -97,6 +110,7 @@ section{
                         border-radius: 6px;
                         border: 2px solid #303030;
                         padding-left: 5px;
+                        margin-top: 7px;
 
                         &:focus {
                             border: 1px solid #ee3255;
@@ -146,6 +160,7 @@ section{
                         color: #fff;
                         padding: 15px;
                         font-size: 16px;
+                        margin-top: 5px;
                         &:focus {
                             border: 1px solid #ee3255;
                             transition: all 0.5s;
@@ -213,6 +228,9 @@ section{
                     }
                     label {
                         color: #fff;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
                     }
                     input[type="checkbox"] {
                         height: 15px;
@@ -227,6 +245,7 @@ section{
                         background-color: transparent;
                         border: 2px solid #303030;
                         color: #fff;
+                        margin-top: 7px;
     
                         &:focus {
                             border: 1px solid #ee3255;
