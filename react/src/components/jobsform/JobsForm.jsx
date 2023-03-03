@@ -57,13 +57,12 @@ const JobsForm = () => {
         formData.append("en", "en");
         formData.append("id", "5");
 
-        // axios.post("http://127.0.0.1:8000/apps/jobs", formData, {
-        //     headers: {
-        //         Authorization: "Bearer 73|rXyvc09i5XHDHPDdKs5NUG77ZvFBClqQe3WHueB3",
-        //         "Content-type": "multipart/form-data",
-        //         "X-requested-With": "XMLHttpRequest",
-        //     },
-        // });
+        axios.post("http://127.0.0.1:8000/apps/jobs", formData, {
+            headers: {
+                method: 'HEAD',
+                mode: 'no-cors',
+            },
+        });
 
     };
 
