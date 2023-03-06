@@ -1,12 +1,14 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+const baseURL = `${import.meta.env.VITE_BASE_URL}/api/`;
+
+const authTokens = Cookies.get("authTokens") ? Cookies.get("authTokens") : null;
 
 const axiosInstance = axios.create({
     baseURL,
     headers: {
-        Authorization: `Bearer ${Cookies.get("authTokens")}`,
+        Authorization: `Bearer ${authTokens}`,
         "Content-type": "multipart/form-data",
         "X-requested-With": "XMLHttpRequest",
     },
@@ -30,8 +32,11 @@ export const axiosUnAuthorized = axios.create({
 });
 
 axiosInstance.interceptors.request.use(async (req) => {
-    if (Cookies.get("authTokens")) {
-        req.headers.Authorization = `Bearer ${Cookies.get("authTokens")}`;
+    if (!authTokens) {
+        const authTokens = Cookies.get("authTokens")
+            ? Cookies.get("authTokens")
+            : null;
+        req.headers.Authorization = `Bearer ${authTokens}`;
     }
     return req;
 });

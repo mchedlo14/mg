@@ -1,0 +1,12 @@
+.dahsboard_contant {
+    min-height: 100vh;
+    display: flex;
+    // .dashboard_header {
+    //     grid-area: header;
+    //     background-color: green;
+    //     height: 60px;
+    // }
+    .dashboard_main_content {
+        width: calc(100% - 260px);
+    }
+}
