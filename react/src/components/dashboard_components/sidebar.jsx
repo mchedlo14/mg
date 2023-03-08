@@ -150,7 +150,9 @@ function DashboardSideBar() {
                                                                     }}
                                                                 >
                                                                     <NavLink
-                                                                        to={""}
+                                                                        to={
+                                                                            subCat.link
+                                                                        }
                                                                     >
                                                                         {
                                                                             subCat.name

@@ -65,33 +65,33 @@ export const dashboardCategoryApp = [
             },
             {
                 id: 2,
-                name: "კატეგორიები",
+                name: "ინფო",
                 subCategory: [
                     {
                         id: 1,
-                        name: "ყველა კატეგორია",
+                        name: "ყველა ინფო",
+                        link: "all_infos",
                     },
                     {
-                        id: 2,
-                        name: "ახალი კატეგორიის შექმნა",
+                        id: 2, //შექმნილია
+                        name: "ახალი ინფოს შექმნა",
+                        link: "create_info",
                     },
                     {
                         id: 3,
-                        name: "ყველა ქვე. კატეგორია",
+                        name: "ყველა ქვე. ინფო",
+                        link: "all_sub_infos",
                     },
                     {
                         id: 4,
-                        name: "ქვე. კატეგორიის დამატება",
-                    },
-                    {
-                        id: 5,
-                        name: "კატეგორიის პოზციის ცვლილება",
+                        name: "ქვე. ინფოს დამატება",
+                        link: "create_sub_info",
                     },
                 ],
             },
             {
                 id: 3,
-                name: "კატეგორიები",
+                name: "სამსახურები",
                 subCategory: [
                     {
                         id: 1,

@@ -31,6 +31,8 @@ import { useEffect } from "react";
 import { loadUser } from "./api/auth/actions";
 import DashboardLayout from "./components/layout/dashboard/dashboardLayout";
 import DashboardPage from "./pages/dashboard";
+import DashboardCreateInfo from "./pages/dashboard/info/create_info";
+import DashboardCreateSubInfo from "./pages/dashboard/info/create_sub_info";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -81,7 +83,11 @@ const router = createBrowserRouter(
 
             {/* Dashboard */}
             <Route path="dashboard" element={<DashboardLayout />}>
-                <Route index element={<DashboardPage />}></Route>
+                <Route index element={<DashboardPage />} />
+                {/* Info */}
+                <Route path="create_info" element={<DashboardCreateInfo />} />
+
+                <Route path="create_sub_info" element={<DashboardCreateSubInfo />} />
             </Route>
         </>
     )
