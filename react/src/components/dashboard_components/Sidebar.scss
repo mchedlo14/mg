@@ -22,6 +22,7 @@
     color: $mg_red;
     font-weight: 700;
     //  gap: 1em;
+    overflow: hidden;
     .upper {
         display: flex;
         align-items: center;
@@ -37,6 +38,7 @@
         border-top: 2px solid transparent;
         border-left: 2px solid transparent;
         transition: 500ms;
+        margin-right: 5px;
     }
     aside {
         display: flex;
@@ -46,6 +48,7 @@
         font-weight: 500;
         transition: 500ms;
         overflow: hidden;
+        z-index: 1;
         main {
             display: flex;
             flex-direction: column;
@@ -57,26 +60,27 @@
                 align-items: center;
                 justify-content: space-between;
                 min-height: 40px;
+                cursor: pointer;
                 div {
                     width: 10px;
                     height: 10px;
                     border: 2px solid white;
+                    transform: rotate(-45deg);
                     border-top: 2px solid transparent;
                     border-left: 2px solid transparent;
                 }
             }
             .sub_cat {
-                padding-left: 40px;
+                padding-left: 15px;
                 display: flex;
                 flex-direction: column;
                 gap: 1em;
-                background-color: red;
                 transition: 500ms;
                 overflow: hidden;
                 height: max-content;
+                cursor: pointer;
                 .sub_sub_category {
                     min-height: 40px;
-                    background-color: aqua;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;

@@ -2,12 +2,13 @@ import { NavLink } from "react-router-dom";
 // import DashboaradSidebarCat from "./categories";
 // import DashboardSidebarSubCat from "./subCategories";
 import { dashboardCategoryApp } from "../localjson/dashboardCategory";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 function DashboardSideBar() {
     const [categoryIsOpen, setCategoryIsOpen] = useState({
         isOpen: false,
         id: null,
+        height: `-100%`,
     });
     const [subCategoryIsOpen, setSubCategoryIsOpen] = useState({
         isOpen: false,
@@ -27,12 +28,15 @@ function DashboardSideBar() {
                             >
                                 <div
                                     className="upper"
-                                    onClick={() =>
+                                    onClick={() => {
                                         setCategoryIsOpen({
                                             id: data.id,
                                             isOpen: !categoryIsOpen.isOpen,
-                                        })
-                                    }
+                                            height: `-${
+                                                data.category.length * 40
+                                            }px`,
+                                        });
+                                    }}
                                 >
                                     {data.title}
                                     <div
@@ -46,6 +50,7 @@ function DashboardSideBar() {
                                         }}
                                     />
                                 </div>
+                                {/*  */}
 
                                 {data &&
                                     data.category &&
@@ -71,18 +76,15 @@ function DashboardSideBar() {
                                                         data.id
                                                         ? "10px"
                                                         : "0",
+                                                marginTop:
+                                                    categoryIsOpen.isOpen &&
+                                                    categoryIsOpen.id ===
+                                                        data.id
+                                                        ? "0"
+                                                        : categoryIsOpen.height,
                                             }}
                                         >
-                                            <main
-                                                style={{
-                                                    marginTop:
-                                                        categoryIsOpen.isOpen &&
-                                                        categoryIsOpen.id ===
-                                                            data.id
-                                                            ? "0"
-                                                            : "-150%",
-                                                }}
-                                            >
+                                            <main>
                                                 <div
                                                     className="category"
                                                     onClick={() =>
@@ -109,12 +111,12 @@ function DashboardSideBar() {
                                                 <div
                                                     className="sub_cat"
                                                     style={{
-                                                        // opacity:
-                                                        //     subCategoryIsOpen.isOpen &&
-                                                        //     subCategoryIsOpen.id ===
-                                                        //         info.id
-                                                        //         ? "1"
-                                                        //         : "0",
+                                                        opacity:
+                                                            subCategoryIsOpen.isOpen &&
+                                                            subCategoryIsOpen.id ===
+                                                                info.id
+                                                                ? "1"
+                                                                : "0",
                                                         paddingBottom:
                                                             subCategoryIsOpen.isOpen &&
                                                             subCategoryIsOpen.id ===
