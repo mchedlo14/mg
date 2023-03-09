@@ -35,6 +35,7 @@ import DashboardCreateInfo from "./pages/dashboard/info/create_info";
 import DashboardCreateSubInfo from "./pages/dashboard/info/create_sub_info";
 import JobDetail from "./pages/job_detail/JobDetail";
 import "./index.css";
+import ExpertsCount from "./pages/countdown/ExpertsCount";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -62,10 +63,12 @@ const router = createBrowserRouter(
 
                 {/* Experets */}
                 <Route path="experts" element={<ExpertLayout />}>
-                    <Route index element={<Expert />}></Route>
+                    {/* <Route index element={<Expert />}></Route> */}
+                    {/* <Route index element={<ExpertCountDown />}></Route> */}
                     <Route path=":path" element={<ExpertDetail />} />
                     <Route path=":path/:id" element={<ExpertPersonPage />} />
                 </Route>
+                    <Route path="expertsCount" element={<ExpertsCount />}/>
                 {/* Jobs */}
                 {/* <Route path="jobs" element={<Jobs />} />
             <Route path="jobdetail" element={<JobDetail />}/> */}

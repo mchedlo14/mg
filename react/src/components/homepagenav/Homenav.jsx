@@ -21,7 +21,7 @@ const Homenav = () => {
             <p>ინფო</p>
         </div>
 
-        <div className='cards' onClick={() => router('/experts')}>
+        <div className='cards' onClick={() => router('/expertsCount')}>
             <img src={expertsImg} alt='expert image'/>
             <p>ექსპერტები</p>
         </div>
