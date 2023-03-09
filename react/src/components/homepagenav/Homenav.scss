@@ -1,54 +1,98 @@
-.home-nav-wrapper {
-    max-width: 1052px;
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 40px;
+// .home-nav-wrapper {
+//     max-width: 1052px;
+//     width: 90%;
+//     height: auto;
+//     margin: 0 auto;
+//     margin-top: 40px;
+//     display: flex;
+//     align-items: center;
+//     gap: 15px;
+
+//     @media (max-width: 1145px) {
+//         flex-wrap: wrap;
+//         justify-content: center;
+//     }
+
+//     .home-card {
+//         width: 120px;
+//         height: 90px;
+//         background-color: #2f2f32;
+//         border-radius: 8px;
+//         cursor: pointer;
+//         box-shadow: 2px 2px 3px 3px rgba(41, 42, 42, 0.38);
+
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         gap: 10px;
+
+//         @media (max-width: 1145px) {
+//             width: 103px;
+//         }
+
+//         &:hover {
+//             background-color: #ee3255;
+//             transition: all 0.5s;
+//         }
+
+//         img {
+//             width: 32px;
+//             height: 32px;
+//         }
+
+//         p {
+//             color: #fff;
+//             text-transform: uppercase;
+//             font-size: 12px;
+//             font-weight: 500;
+//             margin-bottom: 0;
+//             text-align: center;
+//             @include fontRegular;
+//         }
+//     }
+// }
+
+.home-nav-conteiner {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-
-    @media (max-width: 1145px) {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .home-card {
-        width: 120px;
-        height: 90px;
-        background-color: #2f2f32;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 2px 2px 3px 3px rgba(41, 42, 42, 0.38);
-
+    max-width: 1200px;
+    height: 136px;
+    margin: 0 auto;
+    margin-top: 64px;
+    
+    .cards {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px;
-
-        @media (max-width: 1145px) {
-            width: 103px;
+        width: 100%;
+        cursor: pointer;
+        border-radius: 8px;
+        width: 136px;
+        height: 136px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-style: dashed;
+        &:hover{
+            background-color:  rgba(238, 50, 85, 0.06);
+            transition: all 0.3s;
         }
+    }
 
-        &:hover {
-            background-color: #ee3255;
-            transition: all 0.5s;
-        }
+    img {
+        width: 35px;
+        height: 35px;
+    }
 
-        img {
-            width: 32px;
-            height: 32px;
-        }
-
-        p {
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 0;
-            text-align: center;
-            @include fontRegular;
-        }
+    p {
+        color: white;
+        font-size: 14px;
+        font-weight: 500;
+        padding-top: 26px;
+        line-height: 100%;
+        text-align: center;
+        @include fontRegular;
+        text-transform: uppercase;
     }
 }
