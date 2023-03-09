@@ -1,0 +1,5 @@
+.dashboard_create_info {
+    // background-color: brown;
+    min-height: 100vh;
+    @include flexCenter(column);
+}
