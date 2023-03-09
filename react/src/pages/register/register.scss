@@ -6,7 +6,7 @@
         // background-color: red;
         padding: 20px 15px;
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         p {
             margin-right: 0.5em;
         }
@@ -30,7 +30,7 @@
             width: 50%;
             // background-color: gold;
             @include flexCenter(column);
-            justify-content: start;
+            justify-content: flex-start;
             @media (max-width: 1050px) {
                 width: 100%;
             }

@@ -22,11 +22,12 @@ import Jobs from "./pages/jobs/Jobs";
 import RegisterPage, { countryApi } from "./pages/register";
 import UserPage from "./pages/user";
 import TermsAndConditionsPage from "./pages/terms_conditions";
-import JobsForm from './components/jobsform/JobsForm'
+import JobsForm from "./components/jobsform/JobsForm";
 // Style
 import "./styles/main.scss";
 import UserLayout from "./components/layout/UserLayout";
 import JobDetail from "./pages/job_detail/JobDetail";
+import "./index.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -59,7 +60,7 @@ const router = createBrowserRouter(
             <Route path="jobdetail" element={<JobDetail />}/> */}
             <Route path="jobs" element={<Jobs />}></Route>
             <Route path="jobs/:id" element={<JobDetail />} />
-            <Route path="addjobs" element={<JobsForm />}/>
+            <Route path="addjobs" element={<JobsForm />} />
 
             {/* Footer */}
             <Route

@@ -1,4 +1,4 @@
-section{
+section {
     width: 100%;
     .jobs-form-wrapper {
         max-width: 1400px;
@@ -6,18 +6,18 @@ section{
         height: max-content;
         // min-height:100px;
         background-color: #262727;
-        box-shadow: 2px 2px 5px 4px rgba(41,42,42,0.38);
+        box-shadow: 2px 2px 5px 4px rgba(41, 42, 42, 0.38);
         border-radius: 6px;
         margin: 0 auto;
         margin-top: 200px;
         margin-bottom: 100px;
         display: flex;
         flex-direction: column;
-        .text-area-container{
+        .text-area-container {
             display: flex;
             flex-direction: column;
         }
-    
+
         .general-container-parent {
             width: 100%;
             height: 50px;
@@ -28,17 +28,17 @@ section{
             cursor: pointer;
             position: relative;
             z-index: 3;
-            
+
             img {
                 padding-left: 10px;
             }
-    
+
             h4 {
                 color: #fff;
                 font-weight: 500;
             }
         }
-    
+
         .general-wrapper {
             position: relative;
             overflow: hidden;
@@ -47,33 +47,32 @@ section{
                     position: static;
                 }
             }
-    
+
             .general-container {
                 // padding: 15px;
-                
+
                 height: 700px;
                 height: max-content;
                 width: 944px;
                 transition: 900ms;
                 // animation: identifier linear 3s forwards;
-    
+
                 width: 100%;
                 padding: 20px;
                 gap: 1em;
 
-                div{
+                div {
                     display: flex;
                     justify-content: space-between;
                 }
 
-    
                 @media (max-width: 1450px) {
                     flex-wrap: wrap;
                     justify-content: space-around;
                     height: auto;
                 }
 
-                button{
+                button {
                     margin-top: 30px;
                     padding: 12px 10px;
                     background-color: #ee3255;
@@ -83,24 +82,24 @@ section{
                     border-radius: 4px;
                     cursor: pointer;
 
-                    &:hover{
+                    &:hover {
                         background-color: #fd234b;
                         transition: all 0.5s;
                     }
                 }
-    
+
                 .form-wrapper {
                     display: flex;
                     flex-direction: column;
                     margin-top: 15px;
 
-                    .error-sapn{
+                    .error-sapn {
                         color: #ee3255;
                         font-size: 12px;
                         padding-top: 5px;
                         margin: 0;
                     }
-    
+
                     select {
                         background-color: transparent;
                         color: #fff;
@@ -116,24 +115,23 @@ section{
                             border: 1px solid #ee3255;
                             transition: all 0.5s;
                         }
-    
+
                         @media (max-width: 1450px) {
                             width: 700px;
                         }
-    
-                        
+
                         @media (max-width: 768px) {
                             width: 568px;
                         }
-    
+
                         @media (max-width: 689px) {
                             width: 500px;
                         }
-    
+
                         @media (max-width: 550px) {
                             width: 450px;
                         }
-    
+
                         @media (max-width: 500px) {
                             width: 400px;
                         }
@@ -141,13 +139,13 @@ section{
                             width: 300px;
                         }
                     }
-    
+
                     option {
                         background-color: #262727;
                         height: 10px;
                         font-size: 15px;
                     }
-    
+
                     textarea {
                         width: 1000px;
                         height: 150px;
@@ -165,24 +163,23 @@ section{
                             border: 1px solid #ee3255;
                             transition: all 0.5s;
                         }
-    
+
                         @media (max-width: 1450px) {
                             width: 700px;
                         }
-    
-                        
+
                         @media (max-width: 768px) {
                             width: 568px;
                         }
-    
+
                         @media (max-width: 689px) {
                             width: 500px;
                         }
-    
+
                         @media (max-width: 550px) {
                             width: 450px;
                         }
-    
+
                         @media (max-width: 500px) {
                             width: 400px;
                         }
@@ -190,35 +187,31 @@ section{
                             width: 300px;
                         }
                     }
-    
+
                     .range-input {
                         width: 200px;
-    
-                        
                     }
-    
+
                     div {
                         display: flex;
                         gap: 5px;
-    
-                        
+
                         @media (max-width: 1450px) {
                             width: 700px;
                         }
-    
-                        
+
                         @media (max-width: 768px) {
                             width: 568px;
                         }
-    
+
                         @media (max-width: 689px) {
                             width: 500px;
                         }
-    
+
                         @media (max-width: 550px) {
                             width: 450px;
                         }
-    
+
                         @media (max-width: 500px) {
                             width: 400px;
                         }
@@ -246,29 +239,28 @@ section{
                         border: 2px solid #303030;
                         color: #fff;
                         margin-top: 7px;
-    
+
                         &:focus {
                             border: 1px solid #ee3255;
                             transition: all 0.5s;
                         }
-    
+
                         @media (max-width: 1450px) {
                             width: 700px;
                         }
-    
-                        
+
                         @media (max-width: 768px) {
                             width: 568px;
                         }
-    
+
                         @media (max-width: 689px) {
                             width: 500px;
                         }
-    
+
                         @media (max-width: 550px) {
                             width: 450px;
                         }
-    
+
                         @media (max-width: 500px) {
                             width: 400px;
                         }
@@ -276,22 +268,19 @@ section{
                             width: 300px;
                         }
                     }
-    
+
                     .checkbox-container {
                         display: flex;
                         background-color: red;
-                        justify-content: start;
+                        justify-content: flex-start;
                     }
                 }
             }
         }
     }
-    
-
 }
 
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
     padding-right: 10px;
 }
-
