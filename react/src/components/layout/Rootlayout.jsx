@@ -6,6 +6,7 @@ import {
     Navigate,
     Outlet,
     ScrollRestoration,
+    useLocation,
     useNavigate,
 } from "react-router-dom";
 import { loadUser, logout } from "../../api/auth/actions";
