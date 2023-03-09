@@ -1,18 +1,16 @@
 import axios from "axios";
-import jwt_decode from "jwt-decode";
-import dayjs from "dayjs";
+import Cookies from "js-cookie";
 
-const baseURL = import.meta.env.VITE_APP_BASE_URL;
+const baseURL = `${import.meta.env.VITE_BASE_URL}/api/`;
 
-const authTokens = localStorage.getItem("authTokens")
-    ? JSON.parse(localStorage.getItem("authTokens"))
-    : null;
+const authTokens = Cookies.get("authTokens") ? Cookies.get("authTokens") : null;
 
 const axiosInstance = axios.create({
     baseURL,
     headers: {
-        Authorization: `Bearer ${authTokens?.access}`,
+        Authorization: `Bearer ${authTokens}`,
         "Content-type": "multipart/form-data",
+        "X-requested-With": "XMLHttpRequest",
     },
     // withCredentials: true,
 });
@@ -35,24 +33,11 @@ export const axiosUnAuthorized = axios.create({
 
 axiosInstance.interceptors.request.use(async (req) => {
     if (!authTokens) {
-        localStorage.getItem("authTokens")
-            ? JSON.parse(localStorage.getItem("authTokens"))
+        const authTokens = Cookies.get("authTokens")
+            ? Cookies.get("authTokens")
             : null;
-
-        req.headers.Authorization = `Bearer ${authTokens?.access}`;
+        req.headers.Authorization = `Bearer ${authTokens}`;
     }
-
-    const user = jwt_decode(authTokens?.access);
-    const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
-
-    if (!isExpired) return req;
-
-    const response = await axios.post(`${baseURL}/auth/jwt/refresh/`, {
-        refresh: authTokens.refresh,
-    });
-
-    localStorage.setItem("authTokens", JSON.stringify(response.data));
-    req.headers.Authorization = `Bearer ${response.data.access}`;
     return req;
 });
 

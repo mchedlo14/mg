@@ -1,0 +1,97 @@
+.dashboard_sidebar {
+    width: 260px;
+    min-width: 260px;
+    padding-top: 60px;
+    ul {
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        padding: 0 15px;
+        list-style: none;
+        gap: 1em;
+    }
+}
+
+.dashboard_sidebar_category_title {
+    min-height: 40px;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: $mg_red;
+    font-weight: 700;
+    //  gap: 1em;
+    overflow: hidden;
+    .upper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 40px;
+        cursor: pointer;
+    }
+    .rotate {
+        width: 10px;
+        height: 10px;
+        border: 2px solid white;
+        transform: rotate(-45deg);
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        transition: 500ms;
+        margin-right: 5px;
+    }
+    aside {
+        display: flex;
+        flex-direction: column;
+        padding-left: 15px;
+        color: white;
+        font-weight: 500;
+        transition: 500ms;
+        overflow: hidden;
+        z-index: 1;
+        main {
+            display: flex;
+            flex-direction: column;
+            padding-right: 5px;
+            transition: 500ms;
+
+            .category {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 40px;
+                cursor: pointer;
+                div {
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid white;
+                    transform: rotate(-45deg);
+                    border-top: 2px solid transparent;
+                    border-left: 2px solid transparent;
+                }
+            }
+            .sub_cat {
+                padding-left: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                transition: 500ms;
+                overflow: hidden;
+                height: max-content;
+                .sub_sub_category {
+                    min-height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    transition: 500ms;
+
+                    a {
+                        color: white;
+                        text-decoration: none;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

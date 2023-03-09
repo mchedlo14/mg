@@ -1,0 +1,92 @@
+.user_dashboard_section {
+    // background-color: gray;
+    min-height: 100vh;
+    padding-top: 100px;
+    .introduction {
+        box-shadow: 0px 2px 8px rgb(0 0 0 / 12%);
+        border-radius: 5px;
+        background: linear-gradient(to right, #a5fecb, #429dde, #7b4ffc);
+        width: 80%;
+        max-width: 720px;
+        height: 130px;
+        margin: 0 auto;
+        display: flex;
+
+        .avatar {
+            width: 30%;
+            height: 100%;
+            img {
+                @include imageStyle(contain);
+            }
+            @media (max-width: 550px) {
+                display: none;
+            }
+        }
+        .text {
+            width: 70%;
+            height: 100%;
+            padding: 10px 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            @include flexCenter(column);
+            @media (max-width: 650px) {
+                h2 {
+                    font-size: 0, 9rem;
+                }
+            }
+            @media (max-width: 550px) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+
+    .user_dashboard_category_container {
+        width: 80%;
+        max-width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 50px auto;
+        justify-content: space-evenly;
+        .box {
+            height: 68px;
+            min-width: 220px;
+            width: 30%;
+            display: flex;
+            background: #b2dcff;
+            text-decoration: none;
+            border-radius: 10px;
+            .quantity {
+                width: 30%;
+                height: 100%;
+                @include flexCenter(row);
+                h2 {
+                    background-color: darkblue;
+                    width: 70%;
+                    height: 70%;
+                    @include flexCenter(row);
+                    border-radius: 30%;
+                    color: white;
+                    font-size: 1.9rem;
+                }
+            }
+            .info {
+                width: 70%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                color: black;
+                p {
+                    font-size: 1.1rem;
+                }
+                span {
+                    margin: 5px 0;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import logo from "../../assets/images/logomg.png";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import PersonRegistration from "../../components/register/Person";
 import CompanyRegister from "../../components/register/Company";
@@ -7,15 +7,36 @@ import telCodes from "../../Json/country_code.json";
 import experts from "../../assets/images/expert.png";
 import info from "../../assets/images/fire.png";
 import jobs from "../../assets/images/employee.png";
+import PopupMiddle from "../../components/popup/middle";
+import { useDispatch, useSelector } from "react-redux";
+import { setRegisterSuccess } from "../../redux/client/auth/slice";
+import { loadUser } from "../../api/auth/actions";
 
 function RegisterPage() {
     const [registerIsActive, setRegisterIsActive] = useState("person");
     const countryData = useLoaderData();
-    // useEffect(() => {
-    //     console.log(countryData);
-    // }, []);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    // Selectors
+    const { registerSuccess } = useSelector((state) => state.authRedux);
+
     return (
         <section className="register-wrapper">
+            {registerSuccess && (
+                <PopupMiddle>
+                    <h1>წარმატებით გაიარეთ რეგისტრაცია</h1>
+                    <button
+                        onClick={() => {
+                            navigate("/");
+                            dispatch(setRegisterSuccess(false));
+                        }}
+                    >
+                        მთავარ გვერდზე დაბრუნება
+                    </button>
+                </PopupMiddle>
+            )}
+
             <header className="registration-navigation">
                 {/* <p>გაქვთ ანგარიში უკვე შექმნილი?</p>
                 <Link to={""}>შესვლა</Link> */}

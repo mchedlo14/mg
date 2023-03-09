@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loadUser, signUp } from "../../api/auth/actions";
+import { setRegisterSuccess } from "../../redux/client/auth/slice";
+import axios from "axios";
 
 function CompanyRegister({ countryData }) {
+    // States
     const [countrySort, setCountrySort] = useState([]);
+    //  Modules
+    const dispatch = useDispatch();
+    // UseForm
     const {
         register,
         handleSubmit,
@@ -11,7 +19,34 @@ function CompanyRegister({ countryData }) {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = () => {};
+    const onSubmit = (data) => {
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("identification_code", data.identification_code);
+        formData.append("legal_form", data.legal_form);
+        formData.append("phone", data.dial_code + " " + data.phone);
+        formData.append("country", data.country);
+        formData.append("email", data.email);
+        formData.append("city", data.city);
+        formData.append("address", data.address);
+        formData.append("password", data.password);
+
+        dispatch(signUp(formData))
+            .unwrap()
+            .then((originalPromiseResult) => {
+                // axios.get(`${import.meta.env.VITE_BASE_URL}/user`, {
+                //     headers: {
+                //         Authorization: `Bearer ${originalPromiseResult.access_token}`,
+                //         "Content-type": "multipart/form-data",
+                //         "X-requested-With": "XMLHttpRequest",
+                //     },
+                // });
+                dispatch(loadUser());
+                dispatch(setRegisterSuccess(true));
+            })
+            .catch((rejectedValue) => {});
+    };
+
     useEffect(() => {
         setCountrySort(
             countryData
@@ -31,25 +66,44 @@ function CompanyRegister({ countryData }) {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                {/* <label htmlFor="company_id">საიდენტიფიკაციო კოდი</label> */}
+                {/* სახელი */}
                 <input
                     type="text"
-                    name="person_registration"
-                    id="company_id"
-                    placeholder="საიდენტიფიკაციო კოდი"
-                    {...register("company_id", { required: true })}
+                    name="company_registration"
+                    id="company_name"
+                    placeholder="სახელი"
+                    {...register("name", { required: true })}
                     style={{ border: errors.company_id && "2px solid red" }}
                 />
             </div>
             <div>
-                {/* <label htmlFor="forms">სამართლებრივი ფორმა</label> */}
+                {/* საიდენტიფიკაციო კოდი */}
+                <input
+                    type="number"
+                    name="company_registration"
+                    id="company_id"
+                    placeholder="საიდენტიფიკაციო კოდი"
+                    {...register("identification_code", {
+                        required: true,
+                        pattern: {
+                            value: /^[0-9]+$/,
+                            message: "დასაშვებია მხოლოდ რიცხვები",
+                        },
+                    })}
+                    style={{ border: errors.company_id && "2px solid red" }}
+                />
+                {errors.identification_code && (
+                    <span>{errors.identification_code.message}</span>
+                )}
+            </div>
+            <div>
+                {/* სამართლებრივი ფორმა */}
                 <select
-                    name="person_registration"
+                    name="company_registration"
                     id="forms"
-                    {...register("forms", { required: true })}
+                    {...register("legal_form", { required: true })}
                     style={{ border: errors.forms && "2px solid red" }}
                 >
-                    <option value="">აირჩიეთ ფორმა</option>
                     <option value="ინდივიდუალური მეწარმე">
                         ინდივიდუალური მეწარმე
                     </option>
@@ -70,27 +124,40 @@ function CompanyRegister({ countryData }) {
                 </select>
             </div>
             <div>
-                {/* <label htmlFor="mobile">ტელ.ნომერი</label> */}
+                {/* ტელ.ნომერი */}
                 <div className="telephone">
-                    <select name="dial_code" id="dial_code">
+                    <select
+                        name="dial_code"
+                        id="dial_code"
+                        {...register("dial_code", {
+                            required: true,
+                        })}
+                    >
                         <option value="+995">Geo</option>
                     </select>
 
                     <input
                         type="number"
-                        name="person_registration"
-                        id="mobile"
+                        name="company_registration"
+                        id="phone"
                         placeholder="ტელ.ნომერი"
-                        {...register("mobile", { required: true })}
+                        {...register("phone", {
+                            required: true,
+                            pattern: {
+                                value: /^[0-9]+$/,
+                                message: "დასაშვებია მხოლოდ რიცხვები",
+                            },
+                        })}
                         style={{ border: errors.mobile && "2px solid red" }}
                     />
+                    {errors.phone && <span>{errors.phone.message}</span>}
                 </div>
             </div>
             <div>
-                {/* <label htmlFor="mail">ელ.ფოსტა</label> */}
+                {/* ელ.ფოსტა */}
                 <input
                     type="email"
-                    name="person_registration"
+                    name="company_registration"
                     id="mail"
                     placeholder="ელ.ფოსტა"
                     {...register("email", { required: true })}
@@ -98,7 +165,11 @@ function CompanyRegister({ countryData }) {
                 />
             </div>
             <div>
-                <select name="" id="">
+                <select
+                    name=""
+                    id=""
+                    {...register("country", { required: true })}
+                >
                     <option value="Georgia">Georgia</option>
                     {countrySort &&
                         countrySort.map((data, i) => (
@@ -109,10 +180,10 @@ function CompanyRegister({ countryData }) {
                 </select>
             </div>
             <div>
-                {/* <label htmlFor="city">ქალაქი</label> */}
+                {/* ქალაქი */}
                 <input
                     type="text"
-                    name="person_registration"
+                    name="company_registration"
                     id="city"
                     placeholder="შეიყვანე ქალაქი/დაბა/სოფელი"
                     {...register("city", { required: true })}
@@ -121,10 +192,10 @@ function CompanyRegister({ countryData }) {
             </div>
 
             <div>
-                {/* <label htmlFor="address">ფაქტიური მისამართი</label> */}
+                {/* ფაქტიური მისამართი */}
                 <input
                     type="text"
-                    name="person_registration"
+                    name="company_registration"
                     id="address"
                     placeholder="ფაქტიური მისამართი"
                     {...register("address", { required: true })}
@@ -133,32 +204,51 @@ function CompanyRegister({ countryData }) {
             </div>
 
             <div>
-                {/* <label htmlFor="password">პაროლი</label> */}
+                {/* პაროლი */}
                 <input
                     type="password"
-                    name="person_registration"
+                    name="company_registration"
                     id="password"
                     placeholder="პაროლი"
-                    {...register("password", { required: true })}
+                    {...register("password", {
+                        required: true,
+                        minLength: {
+                            value: 8,
+                            message: "პაროლი უნდა იყოს 8 სიმბოლოზე მეტი",
+                        },
+                    })}
                     style={{ border: errors.password && "2px solid red" }}
                 />
+                {errors.password && <span>{errors.password.message}</span>}
             </div>
             <div>
-                {/* <label htmlFor="re_password">გაიმეორეთ პაროლი</label> */}
+                {/* გაიმეორეთ პაროლი */}
                 <input
                     type="password"
-                    name="person_registration"
+                    name="company_registration"
                     id="re_password"
                     placeholder="გაიმეორეთ პაროლი"
-                    {...register("re_password", { required: true })}
+                    {...register("re_password", {
+                        required: true,
+                        validate: (val) => {
+                            if (watch("password") != val) {
+                                return "პაროლი არ ეთხვევა ერთმანეთს";
+                            }
+                        },
+                    })}
                     style={{ border: errors.re_password && "2px solid red" }}
                 />
+                {errors.re_password && (
+                    <span>{errors.re_password.message}</span>
+                )}
             </div>
             <aside>
                 <input
                     type="checkbox"
                     id="terms_check"
-                    {...register("terms_checked", { required: true })}
+                    {...register("terms_checked", {
+                        required: true,
+                    })}
                 />
                 <label htmlFor="terms_check">
                     ვეთანხმები{" "}
@@ -167,7 +257,7 @@ function CompanyRegister({ countryData }) {
                     </Link>
                 </label>
             </aside>
-            {errors.politic_checked && (
+            {errors.terms_checked && (
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
             )}
 

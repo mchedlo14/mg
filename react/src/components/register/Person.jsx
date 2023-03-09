@@ -11,7 +11,25 @@ function PersonRegistration({ countryData, telCodes }) {
         formState: { errors },
     } = useForm();
 
-    const onSubmit = () => {};
+    const onSubmit = () => {
+        const formData = new FormData();
+        formData.append("name", data.name);
+        formData.append("last_name", data.identification_code);
+        formData.append("email", data.legal_form);
+        formData.append("phone", data.dial_code + " " + data.phone);
+        formData.append("country", data.country);
+        formData.append("email", data.email);
+        formData.append("city", data.city);
+        formData.append("address", data.address);
+        formData.append("password", data.password);
+
+        dispatch(signUp(formData))
+            .unwrap()
+            .then((originalPromiseResult) => {
+                dispatch(setRegisterSuccess(true));
+            })
+            .catch((rejectedValue) => {});
+    };
     // console.log(telCodes);
     useEffect(() => {
         setTelCodeSort(
@@ -61,9 +79,9 @@ function PersonRegistration({ countryData, telCodes }) {
                     <input
                         type="number"
                         name="person_registration"
-                        id="mobile"
+                        id="phone"
                         placeholder="ტელეფონის ნომერი"
-                        {...register("mobile", { required: true })}
+                        {...register("phone", { required: true })}
                         style={{ border: errors.mobile && "2px solid red" }}
                     />
                 </div>
@@ -72,9 +90,9 @@ function PersonRegistration({ countryData, telCodes }) {
                 <input
                     type="email"
                     name="person_registration"
-                    id="mail"
+                    id="email"
                     placeholder="ელ.ფოსტა"
-                    {...register("mail", { required: true })}
+                    {...register("email", { required: true })}
                     style={{ border: errors.mail && "2px solid red" }}
                 />
             </div>
