@@ -22,7 +22,7 @@ import Jobs from "./pages/jobs/Jobs";
 import RegisterPage, { countryApi } from "./pages/register";
 import UserPage from "./pages/user";
 import TermsAndConditionsPage from "./pages/terms_conditions";
-
+import JobsForm from "./components/jobsform/JobsForm";
 // Style
 import "./styles/main.scss";
 import UserLayout from "./components/layout/UserLayout";
@@ -33,6 +33,8 @@ import DashboardLayout from "./components/layout/dashboard/dashboardLayout";
 import DashboardPage from "./pages/dashboard";
 import DashboardCreateInfo from "./pages/dashboard/info/create_info";
 import DashboardCreateSubInfo from "./pages/dashboard/info/create_sub_info";
+import JobDetail from "./pages/job_detail/JobDetail";
+import "./index.css";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -65,7 +67,11 @@ const router = createBrowserRouter(
                     <Route path=":path/:id" element={<ExpertPersonPage />} />
                 </Route>
                 {/* Jobs */}
-                <Route path="jobs" element={<Jobs />} />
+                {/* <Route path="jobs" element={<Jobs />} />
+            <Route path="jobdetail" element={<JobDetail />}/> */}
+            <Route path="jobs" element={<Jobs />}></Route>
+            <Route path="jobs/:id" element={<JobDetail />} />
+            <Route path="addjobs" element={<JobsForm />} />
 
                 {/* Footer */}
                 <Route

@@ -6,6 +6,7 @@ import {
     Navigate,
     Outlet,
     ScrollRestoration,
+    useLocation,
     useNavigate,
 } from "react-router-dom";
 import { loadUser, logout } from "../../api/auth/actions";
@@ -59,6 +60,7 @@ function RootLayout() {
         !Cookies.get("authTokens") && setUserIsLoading(false);
     }, []);
 
+    const location = useLocation();
     return (
         <>
             {!userIsLoading ? (
@@ -75,6 +77,12 @@ function RootLayout() {
                             </div>
 
                             <div className="home-button-wrapper">
+                        {location && location.pathname === "/jobs" && (
+                            <button onClick={() => navigate("addjobs")}>
+                                ვაკანსიის დამატება
+                            </button>
+                        )}
+
                                 {isAuthenticated ? (
                                     <button
                                         className="logout"
