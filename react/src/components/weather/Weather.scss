@@ -120,9 +120,17 @@
 
         p {
             font-size: 12px;
-            @include fontRegular;
+            font-family: "Noto Sans Georgian", sans-serif;
+            font-weight: 400;
             color: white;
+            background: #111111;
             line-height: 16.32px;
+            width: 99px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
         }
     }
 
@@ -136,9 +144,10 @@
 
         p {
             font-size: 12px;
-            @include fontThin;
-            color: white;
-            line-height: 16.32px;
+            @include fontRegular;
+            color: #FFFFFF;
+            line-height: 100%;
+            user-select: none;
         }
     }
 }
