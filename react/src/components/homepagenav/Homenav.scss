@@ -48,7 +48,7 @@
             font-weight: 500;
             margin-bottom: 0;
             text-align: center;
-            @include fontRegular;
+            @include fontGeorgian(400);
         }
     }
 }

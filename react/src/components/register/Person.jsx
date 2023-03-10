@@ -42,7 +42,11 @@ function PersonRegistration({ countryData, telCodes }) {
     }, [telCodes]);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            autoSave="off"
+            autoComplete="off"
+        >
             <div>
                 {/* <label htmlFor="name">სახელი</label> */}
                 <input

@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import { loadUser, logout } from "../../api/auth/actions";
 import logo from "../../assets/images/logomg.png";
-import lightIcon from "../../assets/svgs/brightness.svg";
+import lightIcon from "../../assets/images/ligh-bulbe.png";
 import fb from "../../assets/svgs/facebook.svg";
 
 function RootLayout() {
@@ -77,11 +77,11 @@ function RootLayout() {
                             </div>
 
                             <div className="home-button-wrapper">
-                        {location && location.pathname === "/jobs" && (
-                            <button onClick={() => navigate("addjobs")}>
-                                ვაკანსიის დამატება
-                            </button>
-                        )}
+                                {location && location.pathname === "/jobs" && (
+                                    <button onClick={() => navigate("addjobs")}>
+                                        ვაკანსიის დამატება
+                                    </button>
+                                )}
 
                                 {isAuthenticated ? (
                                     <button
@@ -100,12 +100,22 @@ function RootLayout() {
                                         გასვლა
                                     </button>
                                 ) : (
-                                    <button onClick={() => navigate("/log_in")}>
-                                        შესვლა
-                                    </button>
+                                    <>
+                                        <button
+                                            onClick={() => navigate("/log_in")}
+                                        >
+                                            რეგისტრაცია
+                                        </button>
+                                        <button
+                                            onClick={() => navigate("/log_in")}
+                                        >
+                                            ავტორიზაცია
+                                        </button>
+                                    </>
                                 )}
-
-                                <img src={lightIcon} alt="brightness" />
+                                <div className="light_toogle">
+                                    <img src={lightIcon} alt="brightness" />
+                                </div>
                             </div>
                         </nav>
                     </header>
@@ -114,7 +124,7 @@ function RootLayout() {
                         <Outlet />
                     </main>
 
-                    <footer className="root-footer">
+                    {/* <footer className="root-footer">
                         <div className="copyright box">
                             <p>Copyright © 2023 MG</p>
                         </div>
@@ -141,7 +151,7 @@ function RootLayout() {
                                 <img src={fb} alt="" />
                             </Link>
                         </div>
-                    </footer>
+                    </footer> */}
                 </>
             ) : (
                 <div>Loading</div>

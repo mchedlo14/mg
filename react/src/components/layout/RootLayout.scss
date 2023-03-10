@@ -10,7 +10,7 @@
 }
 .root-layout-nav {
     height: 3rem;
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 56px 0 2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -38,19 +38,23 @@
 
     button {
         display: block;
-        height: 2.7rem;
-        line-height: 2rem;
-        border-radius: 0.6rem;
-        padding: 0 1.5rem;
-        font-size: 0.9rem;
-        font-weight: 500;
+        width: 169px;
+        border-radius: 4px;
+        padding: 6px 24px;
         cursor: pointer;
         transition: all 0.15s;
         border: 0;
         color: rgb(250, 250, 250);
         letter-spacing: 1px;
-        background: rgb(36, 36, 37);
+        background: $mg_red;
         transition: 400ms;
+        @include fontGeorgian(400);
+        line-height: 22px;
+        font-size: 16px;
+        &:first-child {
+            background-color: $button_white_bg;
+            color: $button_blue_txt;
+        }
         &:hover {
             background-color: rgb(255, 255, 255, 0.12);
             transition: 400ms;
@@ -65,6 +69,16 @@
         justify-content: space-around;
         align-items: center;
         gap: 10px;
+        .light_toogle {
+            @include flexCenter(row);
+            padding: 6px;
+            width: 28px;
+            height: 28px;
+            margin-left: 10px;
+            background: $light_toggle_bg;
+            border-radius: 6px;
+            cursor: pointer;
+        }
     }
 }
 
