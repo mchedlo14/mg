@@ -190,3 +190,68 @@ function PersonRegistration({ countryData, telCodes }) {
 }
 
 export default PersonRegistration;
+
+
+
+
+
+
+   {/* Sex */}
+
+   <div className="main_container">
+   {/* Country */}
+   <div
+       className="select"
+       name="company_registration"
+       id="forms"
+       onClick={() => {
+           setCountryOpen(false);
+           setCompanyRegOpen(false);
+           setSexOpen(!sexOpen);
+           setPhoneNumOpen(false);
+       }}
+       // style={{ border: errors.forms && "2px solid red" }}
+   >
+       <div className="values">{sex}</div>
+
+       <div
+           className="rotate_div"
+           style={{
+               transform: `rotate(${
+                   sexOpen ? "45deg" : "-45deg"
+               })`,
+           }}
+       />
+       {sexOpen && (
+           <div className="dropdawn">
+               <option
+                   value={"მამრობითი"}
+                   onClick={(e) => {
+                       setSex(e.target.value);
+                       setSexOpen(!sexOpen);
+                   }}
+               >
+                   მამრობითი
+               </option>
+               <option
+                   value={"მდედრობითი"}
+                   onClick={(e) => {
+                       setSex(e.target.value);
+                       setSexOpen(!sexOpen);
+                   }}
+               >
+                   მდედრობითი
+               </option>
+               <option
+                   value={"სხვა"}
+                   onClick={(e) => {
+                       setSex(e.target.value);
+                       setSexOpen(!sexOpen);
+                   }}
+               >
+                   სხვა
+               </option>
+           </div>
+       )}
+   </div>
+</div>
