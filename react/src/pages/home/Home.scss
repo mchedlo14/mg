@@ -48,15 +48,15 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    min-height: 100vh;
+    min-height: calc(100vh - 355px);
     margin-top: 140px;
-    @media(max-width:1250px){
+    @media (max-width: 1250px) {
         padding: 20px;
     }
-    @media(max-width:680px){
+    @media (max-width: 680px) {
         margin-top: 56px;
     }
-    div{
+    div {
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
@@ -67,8 +67,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 120px;
-        margin-top: 120px;
 
         input {
             outline: none;
@@ -80,7 +78,7 @@
             border-radius: 12px;
             padding-left: 20px;
             background-color: rgb(47, 47, 50);
-            color: #787D8A;
+            color: #787d8a;
             font-size: 16px;
 
             input::placeholder {
@@ -89,7 +87,7 @@
                 line-height: 19.04px;
                 padding-top: 22.5;
                 padding-bottom: 22.5;
-                color: #787D8A;
+                color: #787d8a;
             }
         }
 
@@ -100,4 +98,111 @@
             right: 20px;
         }
     }
+
+    // .root-footer{
+    //     width: 100%;
+    //     height: 215px;
+    //     background-color: #0000001A;
+    //     padding-left:56px ;
+    //     padding-right: 56px;
+    //     padding-top: 24px;
+    //     padding-bottom: 24px;
+    //     display: flex ;
+    //     justify-content: space-between;
+    //     margin-top: 230px;
+
+    //     .footer-nav-container{
+    //         display: flex;
+    //         flex-direction: column;
+
+    //         h3{
+    //             font-size: 16px;
+    //             @include fontRegular;
+    //             font-weight: 500px;
+    //             line-height: 22px;
+    //             color: #EE3255;
+    //         }
+    //         div{
+    //             margin-top: 13px;
+    //             p{
+    //                 color: #797979;
+    //                 @include fontRegular;
+    //                 font-size: 14px;
+    //                 line-height: 20px;
+    //                 padding-top: 8px;
+    //                 cursor: pointer;
+    //             }
+    //         }
+
+    //     }
+    //     .footer-copyright-container{
+    //         display: flex;
+    //         // display: none;
+    //         gap: 32px;
+    //         align-items: center;
+    //         margin-top: 162px;
+
+    //         .footer-logo{
+    //             width:38px;
+    //             height: 29px;
+    //         }
+
+    //         p{
+    //             @include fontRegular;
+    //             color: #797979;
+    //             font-size: 16px;
+    //             line-height: 22px;
+    //         }
+    //     }
+
+    //     .footer-social-container{
+    //         display: flex;
+    //         flex-direction: column;
+    //         gap: 5px;
+
+    //         p{
+    //             color: red;
+    //             color: rgba(233, 233, 233, 0.6);
+    //             font-size: 14px;
+    //             line-height: 19px;
+    //             @include fontRegular;
+    //             font-weight: 300;
+    //         }
+
+    //         h3{
+    //             font-size: 16px;
+    //             @include fontRegular;
+    //             font-weight: 500px;
+    //             line-height: 22px;
+    //             color: #EE3255;
+    //         }
+
+    //         div{
+    //             display: flex;
+    //             gap: 8px;
+
+    //             .footer-container{
+    //                 display: flex;
+    //                 align-items: center;
+    //                 width: 160px;
+    //                 justify-content: space-between;
+    //             }
+    //         }
+
+    //         .soc-box{
+    //             width: 22px;
+    //             height: 22px;
+    //             background: rgba(233, 233, 233, 0.13);
+    //             border-radius: 4px;
+    //             margin: 0;
+    //             display: flex;
+    //             justify-content: center;
+    //             align-items: center;
+    //             img{
+    //                 width: 10px;
+    //                 height: 11.67px;
+    //             }
+    //         }
+    //     }
+    // }
 }

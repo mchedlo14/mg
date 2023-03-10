@@ -12,7 +12,11 @@ import {
 import { loadUser, logout } from "../../api/auth/actions";
 import logo from "../../assets/images/logomg.png";
 import lightIcon from "../../assets/svgs/brightness.svg";
-import fb from "../../assets/svgs/facebook.svg";
+import fb from "../../assets/svgs/fblogo.svg";
+import linkedin from "../../assets/svgs/linkedin.svg";
+import instagram from "../../assets/svgs/insta.svg";
+
+import footerLogo from "../../assets/svgs/logomg.png";
 
 function RootLayout() {
     // States
@@ -77,11 +81,11 @@ function RootLayout() {
                             </div>
 
                             <div className="home-button-wrapper">
-                        {location && location.pathname === "/jobs" && (
-                            <button onClick={() => navigate("addjobs")}>
-                                ვაკანსიის დამატება
-                            </button>
-                        )}
+                                {location && location.pathname === "/jobs" && (
+                                    <button onClick={() => navigate("addjobs")}>
+                                        ვაკანსიის დამატება
+                                    </button>
+                                )}
 
                                 {isAuthenticated ? (
                                     <button
@@ -115,7 +119,7 @@ function RootLayout() {
                     </main>
 
                     <footer className="root-footer">
-                        <div className="copyright box">
+                        {/* <div className="copyright box">
                             <p>Copyright © 2023 MG</p>
                         </div>
                         <div className="roules box">
@@ -140,6 +144,73 @@ function RootLayout() {
                             <Link to={""}>
                                 <img src={fb} alt="" />
                             </Link>
+                        </div> */}
+
+                        <div className="upper">
+                            <div className="footer-nav-container">
+                                <h3>ნავიგაცია</h3>
+                                <div>
+                                    <p>წესები და პირობები</p>
+                                    <p>კონფიდენციალურობის პოლიტიკა</p>
+                                    <p>დაბრუნების პოლიტიკა</p>
+                                    <p>კონტაქტი</p>
+                                </div>
+                            </div>
+
+                            {/* Social */}
+
+                            <div className="footer-social-container">
+                                <h3>სოც ქსელები</h3>
+                                <div
+                                    style={{
+                                        marginTop: "13px",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                    }}
+                                >
+                                    <div>
+                                        <div className="footer-container">
+                                            <p>facebook.com/NAME</p>
+                                            <div className="soc-box">
+                                                <img src={fb} alt="fb logo" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="footer-container">
+                                            <p>linkedin.com/NAME</p>
+                                            <div className="soc-box">
+                                                <img
+                                                    src={linkedin}
+                                                    alt="linkedin"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div className="footer-container">
+                                            <p>facebook.com/NAME</p>
+                                            <div className="soc-box">
+                                                <img
+                                                    src={instagram}
+                                                    alt="fb logo"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* copopy */}
+                        <div className="footer-copyright-container">
+                            <img
+                                src={footerLogo}
+                                alt="footer logo"
+                                className="footer-logo"
+                            />
+                            <p>Copyright © 2023 MG</p>
                         </div>
                     </footer>
                 </>
