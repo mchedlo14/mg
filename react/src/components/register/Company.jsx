@@ -389,7 +389,10 @@ function CompanyRegister({ countryData }) {
                     {...register("politic_checked", { required: true })}
                 />
                 <label htmlFor="politic_check">
-                    ვეთანხმები <Link to={""}>კონფიდენციალობის პოლიტიკას</Link>
+                    ვეთანხმები{" "}
+                    <Link to={"/confidential_politics"}>
+                        კონფიდენციალობის პოლიტიკას
+                    </Link>
                 </label>
             </aside>
             {errors.politic_checked && (
@@ -401,7 +404,7 @@ function CompanyRegister({ countryData }) {
             <aside>
                 <label>
                     უკვე რეგისტრირებული ხარ? გაიარე{" "}
-                    <Link to={""}>ავტორიზაცია</Link>
+                    <Link to={"/log_in"}>ავტორიზაცია</Link>
                 </label>
             </aside>
         </form>

@@ -224,6 +224,50 @@
                         -moz-appearance: textfield; /* Firefox */
                     }
                 }
+
+                .date {
+                    label {
+                        margin-top: -24px;
+                    }
+                    // .calendar {
+                    //     background-color: green;
+
+                    //     display: flex;
+                    //     width: 448px;
+                    //     height: 472px;
+                    //     flex-basis: 420px;
+                    //     flex-direction: column;
+                    //     flex-grow: 100;
+
+                    //     .react-calendar {
+                    //         margin: 0 auto;
+                    //         border-radius: 8px;
+                    //         background-color: #080a10;
+                    //         border: 1px solid rgba(42, 49, 68, 0.24);
+                    //         width: 448px;
+                    //         height: 472px;
+                    //         padding: 19px;
+                    //         .react-calendar__month-view__days {
+                    //             gap: 33px;
+                    //             button {
+                    //                 width: 34px;
+                    //                 max-width: 34px;
+                    //                 height: 34px;
+                    //                 background: rgba(42, 49, 68, 0.15);
+                    //                 border-radius: 4px;
+                    //                 color: $button_blue_txt;
+                    //                 font-size: 14px;
+                    //                 line-height: 19px;
+                    //                 @include fontGeorgian(400);
+                    //                 text-align: center;
+                    //             }
+                    //         }
+                    //         button {
+                    //             background-color: yellow;
+                    //         }
+                    //     }
+                    // }
+                }
                 aside {
                     width: 100%;
                     display: flex;
@@ -285,7 +329,6 @@
                     //     transition: 700ms;
                     // }
                 }
-                
             }
         }
     }
