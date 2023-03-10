@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useGeoApi from "../../hooks/useGeoApi";
+import locationIcon from '../../assets/svgs/location.svg'
 
 const Weather = () => {
     const [currentLocation, setCurrentLocation] = useState("");
@@ -47,8 +48,8 @@ const Weather = () => {
     }, [currencyData]);
 
     return (
-        <section className="weather-wrapper">
-            <div className="left-container">
+        <section className="weather-conteiner">
+            <div className="left-side">
                 <p className="celsius">
                     {weatherData && weatherData.main && weatherData.main.temp
                         ? Math.round(weatherData.main.temp - 273.15)
@@ -57,7 +58,7 @@ const Weather = () => {
                         ? "°"
                         : ""}
                 </p>
-                <div>
+                <div className="items">
                     {filteredCurrency && (
                         <>
                             <Link
@@ -65,8 +66,10 @@ const Weather = () => {
                                 target="_blank"
                             >
                                 <p>
+                                    ($){" "}
                                     {filteredCurrency.length > 1 &&
-                                        filteredCurrency[1].code}
+                                        filteredCurrency[1].code}{" "}
+                                    -{" "}
                                     <span>
                                         {filteredCurrency.length > 1 &&
                                             parseFloat(
@@ -80,8 +83,10 @@ const Weather = () => {
                                 target="_blank"
                             >
                                 <p>
+                                    (€){" "}
                                     {filteredCurrency.length > 1 &&
-                                        filteredCurrency[0].code}
+                                        filteredCurrency[0].code}{" "}
+                                    -{" "}
                                     <span>
                                         {filteredCurrency.length > 1 &&
                                             parseFloat(
@@ -94,7 +99,8 @@ const Weather = () => {
                     )}
                 </div>
             </div>
-            <div className="right-container">
+            <div className="right-side">
+                <img src={locationIcon} alt='location icon' style={{width:'14px',height:'14px'}}/>
                 <p>
                     {currentLocation && currentLocation === "K'alak'i T'bilisi"
                         ? currentLocation.split(" ")[1]
