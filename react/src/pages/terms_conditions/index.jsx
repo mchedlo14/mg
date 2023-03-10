@@ -3,7 +3,6 @@ import PricingTerms from "../../components/terms_conditions/price";
 import TermsAndConditions from "../../components/terms_conditions/terms";
 
 function TermsAndConditionsPage() {
-    const [change, setChange] = useState("terms");
     return (
         <>
             <section className="terms_and_conditions_section">

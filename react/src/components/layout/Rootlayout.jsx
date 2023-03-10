@@ -150,9 +150,15 @@ function RootLayout() {
                             <div className="footer-nav-container">
                                 <h3>ნავიგაცია</h3>
                                 <div>
-                                    <p>წესები და პირობები</p>
-                                    <p>კონფიდენციალურობის პოლიტიკა</p>
-                                    <p>დაბრუნების პოლიტიკა</p>
+                                    <Link to={'/terms_and_conditions'}>
+                                        <p>წესები და პირობები</p>
+                                    </Link>
+                                    <Link to={'/confidential_politics'}>
+                                        <p>კონფიდენციალურობის პოლიტიკა</p>
+                                    </Link>
+                                    <Link to={'/back_politics'}>
+                                        <p>დაბრუნების პოლიტიკა</p>
+                                    </Link>
                                     <p>კონტაქტი</p>
                                 </div>
                             </div>
@@ -171,14 +177,18 @@ function RootLayout() {
                                     <div>
                                         <div className="footer-container">
                                             <p>facebook.com/NAME</p>
-                                            <div className="soc-box">
-                                                <img src={fb} alt="fb logo" />
-                                            </div>
+                                            <a href="https://www.facebook.com/profile.php?id=100084893275115" target='_blank'>
+
+                                                <div className="soc-box">
+                                                    <img src={fb} alt="fb logo" />
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div>
                                         <div className="footer-container">
                                             <p>linkedin.com/NAME</p>
+                                            
                                             <div className="soc-box">
                                                 <img
                                                     src={linkedin}
