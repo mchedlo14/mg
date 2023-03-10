@@ -103,6 +103,14 @@
             display: flex;
             gap: 18px;
             margin-left: 18px;
+            @media (max-width: 680px) {
+                gap: 4px;
+                margin-left: 4px;
+            }
+            @media (max-width: 350px) {
+                width: 150px;
+                margin-left: 4px;
+            }
         }
 
         .celsius {
@@ -132,6 +140,9 @@
             align-items: center;
             justify-content: center;
             border-radius: 4px;
+            @media (max-width: 350px) {
+                width: 84px;
+            }
         }
     }
 

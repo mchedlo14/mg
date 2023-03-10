@@ -26,6 +26,7 @@ function FooterForHome() {
                     <img src={fb} alt="" />
                 </Link>
             </div>
+
         </footer>
     );
 }

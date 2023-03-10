@@ -16,44 +16,54 @@ const Homenav = () => {
 
   return (
     <section className='home-nav-conteiner'>
-        <div className='cards' onClick={() => router('info')}>
-            <img src={InfoImg} alt='show image'/>
-            <p>ინფო</p>
+        <div className='nav-left-side'>
+            <div className='cards' onClick={() => router('info')}>
+                <img src={InfoImg} alt='show image'/>
+                <p>ინფო</p>
+            </div>
+
+            <div className='cards' onClick={() => router('/expertsCount')}>
+                <img src={expertsImg} alt='expert image'/>
+                <p>ექსპერტები</p>
+            </div>
+
+            <div className='cards' onClick={() => router('/jobsCount')}>
+                <img src={JobImg} alt='employee image'/>
+                <p>სამსახური</p>
+            </div>
+
+            <div className='cards'>
+                <img src={couponImg} alt='coupon image'/>
+                <p>კუპონები</p>
+            </div>
         </div>
 
-        <div className='cards' onClick={() => router('/expertsCount')}>
-            <img src={expertsImg} alt='expert image'/>
-            <p>ექსპერტები</p>
-        </div>
 
-        <div className='cards' onClick={() => router('/jobs')}>
-            <img src={JobImg} alt='employee image'/>
-            <p>სამსახური</p>
-        </div>
 
-        <div className='cards'>
-            <img src={couponImg} alt='coupon image'/>
-            <p>კუპონები</p>
-        </div>
+        <div className='nav-right-side'> 
 
-        <div className='cards'>
-            <img src={carImg} alt='car image'/>
-            <p>ავტო</p>
-        </div>
+            <div className='cards'>
+                <img src={carImg} alt='car image'/>
+                <p>ავტო</p>
+            
+            </div>
 
-        <div className='cards'>
-            <img src={homeImg} alt='home image'/>
-            <p>უძრავი ქონება</p>
-        </div>
+            <div className='cards'>
+                <img src={homeImg} alt='home image'/>
+                <p>უძრავი ქონება</p>
+            </div>
 
-        <div className='cards'>
-            <img src={SHopImg} alt='product image'/>
-            <p>მარკეტი</p>
+            <div className='cards'>
+                <img src={SHopImg} alt='product image'/>
+                <p>მარკეტი</p>
+            </div>
+            <div className='cards'>
+                <img src={eventImg} alt='event image'/>
+                <p>ივენთები</p>
+            </div>
+    
         </div>
-        <div className='cards'>
-            <img src={eventImg} alt='event image'/>
-            <p>ივენთები</p>
-        </div>
+      
     </section>
   )
 }

@@ -36,6 +36,7 @@ import DashboardCreateSubInfo from "./pages/dashboard/info/create_sub_info";
 import JobDetail from "./pages/job_detail/JobDetail";
 import "./index.css";
 import ExpertsCount from "./pages/countdown/ExpertsCount";
+import JobsCount from "./pages/countdown/JobsCount";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -64,17 +65,20 @@ const router = createBrowserRouter(
                 {/* Experets */}
                 <Route path="experts" element={<ExpertLayout />}>
                     {/* <Route index element={<Expert />}></Route> */}
-                    {/* <Route index element={<ExpertCountDown />}></Route> */}
                     <Route path=":path" element={<ExpertDetail />} />
                     <Route path=":path/:id" element={<ExpertPersonPage />} />
                 </Route>
-                    <Route path="expertsCount" element={<ExpertsCount />}/>
+                {/* while service will be ready */}
+                <Route path="expertsCount" element={<ExpertsCount />} />
                 {/* Jobs */}
                 {/* <Route path="jobs" element={<Jobs />} />
             <Route path="jobdetail" element={<JobDetail />}/> */}
-            <Route path="jobs" element={<Jobs />}></Route>
-            <Route path="jobs/:id" element={<JobDetail />} />
-            <Route path="addjobs" element={<JobsForm />} />
+                <Route path="jobs" element={<Jobs />}></Route>
+                <Route path="jobs/:id" element={<JobDetail />} />
+                <Route path="addjobs" element={<JobsForm />} />
+
+                {/* while service will be ready */}
+                <Route path='jobsCount' element={<JobsCount />}/>
 
                 {/* Footer */}
                 <Route
@@ -96,7 +100,10 @@ const router = createBrowserRouter(
                 {/* Info */}
                 <Route path="create_info" element={<DashboardCreateInfo />} />
 
-                <Route path="create_sub_info" element={<DashboardCreateSubInfo />} />
+                <Route
+                    path="create_sub_info"
+                    element={<DashboardCreateSubInfo />}
+                />
             </Route>
         </>
     )
