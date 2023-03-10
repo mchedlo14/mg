@@ -13,6 +13,7 @@ import { loadUser, logout } from "../../api/auth/actions";
 import logo from "../../assets/images/logomg.png";
 import lightIcon from "../../assets/images/ligh-bulbe.png";
 import fb from "../../assets/svgs/facebook.svg";
+import authIcon from "../../assets/images/auth_icon.png";
 
 function RootLayout() {
     // States
@@ -102,7 +103,9 @@ function RootLayout() {
                                 ) : (
                                     <>
                                         <button
-                                            onClick={() => navigate("/log_in")}
+                                            onClick={() =>
+                                                navigate("/register")
+                                            }
                                         >
                                             რეგისტრაცია
                                         </button>
@@ -115,6 +118,10 @@ function RootLayout() {
                                 )}
                                 <div className="light_toogle">
                                     <img src={lightIcon} alt="brightness" />
+                                </div>
+
+                                <div className="auth">
+                                    <img src={authIcon} alt="auth" />
                                 </div>
                             </div>
                         </nav>

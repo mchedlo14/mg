@@ -15,7 +15,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     .logo {
         width: 60px;
         height: 47px;
@@ -29,7 +28,6 @@
     .logout {
         background-color: $mg_red;
         transition: 400ms;
-
         &:hover {
             transition: 400ms;
             background-color: $mg_red_hover;
@@ -51,24 +49,41 @@
         @include fontGeorgian(400);
         line-height: 22px;
         font-size: 16px;
+        @include flexCenter(row);
+        @media (max-width: 768px) {
+            display: none;
+        }
         &:first-child {
-            background-color: $button_white_bg;
-            color: $button_blue_txt;
+            background-color: $button_blue_txt;
+            color: #e4e4e4;
+            &:hover {
+                background-color: $user_choose_button_active_bg;
+                color: $button_blue_txt;
+                border: none;
+            }
         }
         &:hover {
-            background-color: rgb(255, 255, 255, 0.12);
+            background-color: transparent;
             transition: 400ms;
+            border: 1px solid $mg_red;
+            color: $mg_red;
         }
     }
 
     .home-button-wrapper {
         min-width: 150px;
         height: auto;
-
         display: flex;
         justify-content: space-around;
         align-items: center;
         gap: 10px;
+        @media (max-width: 768px) {
+            gap: 12px;
+            justify-content: end;
+            background-color: red;
+            min-width: 0px;
+            margin-right: -2.5em;
+        }
         .light_toogle {
             @include flexCenter(row);
             padding: 6px;
@@ -78,6 +93,23 @@
             background: $light_toggle_bg;
             border-radius: 6px;
             cursor: pointer;
+        }
+        .auth {
+            background-color: $auth_bg;
+            width: 42px;
+            height: 42px;
+            border: 1px solid $auth_bordr_color;
+            border-radius: 50%;
+            cursor: pointer;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
+            @include flexCenter(row);
+            img {
+                width: 22px;
+                height: 22px;
+            }
         }
     }
 }

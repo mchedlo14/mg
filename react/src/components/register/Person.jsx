@@ -224,15 +224,6 @@ function PersonRegistration({ countryData, telCodes }) {
                             >
                                 მდედრობითი
                             </option>
-                            <option
-                                value={"სხვა"}
-                                onClick={(e) => {
-                                    setSex(e.target.value);
-                                    setSexOpen(!sexOpen);
-                                }}
-                            >
-                                სხვა
-                            </option>
                         </div>
                     )}
                 </div>
@@ -323,7 +314,10 @@ function PersonRegistration({ countryData, telCodes }) {
                     {...register("politic_checked", { required: true })}
                 />
                 <label htmlFor="politic_check">
-                    ვეთანხმები <Link to={"/confidential_politics"}>კონფიდენციალობის პოლიტიკას</Link>
+                    ვეთანხმები{" "}
+                    <Link to={"/confidential_politics"}>
+                        კონფიდენციალობის პოლიტიკას
+                    </Link>
                 </label>
             </aside>
             {errors.politic_checked && (

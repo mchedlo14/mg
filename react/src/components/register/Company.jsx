@@ -399,7 +399,7 @@ function CompanyRegister({ countryData }) {
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
             )}
 
-            <button type="submit">ავტორიზაცია</button>
+            <button type="submit">რეგისტრაცია</button>
 
             <aside>
                 <label>
