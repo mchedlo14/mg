@@ -1,26 +1,42 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadUser, signUp } from "../../api/auth/actions";
 import { setRegisterSuccess } from "../../redux/client/auth/slice";
-import axios from "axios";
-import SelectDropdawn from "../dropdawn";
+import { useOnClickOutside } from "usehooks-ts";
+import passwordIcon from "../../assets/images/password.png";
 
 function CompanyRegister({ countryData }) {
     // States
     const [countrySort, setCountrySort] = useState([]);
+
+    // Password State
+    const [passwordIsShow, setPasswordIsShow] = useState(false);
+    const [rePasswordIsShow, setRePasswordIsShow] = useState(false);
+
     const [companyReg, setCompanyReg] = useState("ინდივიდუალური მეწარმე");
     const [companyRegOpen, setCompanyRegOpen] = useState(false);
+
     const [phoneNum, setPhoneNum] = useState("+995");
     const [phoneNumOpen, setPhoneNumOpen] = useState(false);
 
     const [country, setCountry] = useState("Georgia");
     const [countryOpen, setCountryOpen] = useState(false);
 
-    const [sex, setSex] = useState("მამრობითი");
-    const [sexOpen, setSexOpen] = useState(false);
+    // Outside Click of drop dawn
 
+    const ref = useRef(null);
+
+    const handleClickOutside = () => {
+        setCountryOpen(false);
+        setPhoneNumOpen(false);
+        setCompanyRegOpen(false);
+    };
+
+    useOnClickOutside(ref, handleClickOutside);
+
+    // Temporary API
     const companyStatus = [
         "ინდივიდუალური მეწარმე",
         "შპს",
@@ -28,11 +44,12 @@ function CompanyRegister({ countryData }) {
         "სააქციო საზოგადოება",
         "კომანდიტური საზოგადოება",
         "კოოპერატივი",
-        "არასამეწარმეო(არაკომერციული) იურიდიული პირი",
+        "არასამეწარმეო (არაკომერციული) იურიდიული პირი",
         "საჯარო სამართლის სუბიექტი",
         "სხვა",
     ];
-    //  Modules
+
+    // Redux
     const dispatch = useDispatch();
     // UseForm
     const {
@@ -57,19 +74,13 @@ function CompanyRegister({ countryData }) {
         dispatch(signUp(formData))
             .unwrap()
             .then((originalPromiseResult) => {
-                // axios.get(`${import.meta.env.VITE_BASE_URL}/user`, {
-                //     headers: {
-                //         Authorization: `Bearer ${originalPromiseResult.access_token}`,
-                //         "Content-type": "multipart/form-data",
-                //         "X-requested-With": "XMLHttpRequest",
-                //     },
-                // });
                 dispatch(loadUser());
                 dispatch(setRegisterSuccess(true));
             })
             .catch((rejectedValue) => {});
     };
 
+    // Sorting Country Data
     useEffect(() => {
         setCountrySort(
             countryData
@@ -88,52 +99,59 @@ function CompanyRegister({ countryData }) {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
+            {/* კომპანიის სახელი */}
             <div className="main_container">
-                {/* სახელი */}
-
                 <input
+                    className={`${
+                        errors.company_name ? "form_error_input" : "empty"
+                    }`}
                     type="text"
                     name="company_registration"
                     id="company_name"
-                    {...register("name", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
+                    {...register("company_name", { required: true })}
                     autoComplete="off"
                 />
                 <label htmlFor="company_name">კომპანიის სახელი</label>
             </div>
+
+            {/* საიდენტიფიკაციო კოდი */}
             <div className="main_container">
-                {/* საიდენტიფიკაციო კოდი */}
                 <input
+                    className={`${
+                        errors.identification_code
+                            ? "form_error_input"
+                            : "empty"
+                    }`}
                     type="number"
                     name="company_registration"
-                    id="company_id"
+                    id="identification_code"
                     {...register("identification_code", {
                         required: true,
                         pattern: {
                             value: /^[0-9]+$/,
-                            message: "დასაშვებია მხოლოდ რიცხვები",
+                            message: "დასაშვებია მხოლოდ დადებითი რიცხვები",
                         },
                     })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
                 />
-                <label htmlFor="company_id">საიდენტიფიკაციო კოდი</label>
-                {errors.identification_code && (
-                    <span>{errors.identification_code.message}</span>
-                )}
+                <label htmlFor="identification_code">
+                    საიდენტიფიკაციო კოდი
+                </label>
             </div>
+            {errors.identification_code && (
+                <span>{errors.identification_code.message}</span>
+            )}
+
+            {/* სამართლებრივი ფორმა */}
             <div className="main_container">
-                {/* სამართლებრივი ფორმა */}
                 <div
-                    className="select"
+                    className={`select`}
                     name="company_registration"
                     id="forms"
                     onClick={() => {
                         setCompanyRegOpen(!companyRegOpen);
                         setCountryOpen(false);
-                        setSexOpen(false);
                         setPhoneNumOpen(false);
                     }}
-                    // style={{ border: errors.forms && "2px solid red" }}
                 >
                     <div className="values">{companyReg}</div>
 
@@ -146,29 +164,30 @@ function CompanyRegister({ countryData }) {
                         }}
                     />
                     {companyRegOpen && (
-                        <div className="dropdawn">
+                        <div className="dropdawn" ref={ref}>
                             {companyStatus &&
                                 companyStatus.map((data, i) => (
-                                    <option
+                                    <p
                                         key={i}
                                         value={data}
-                                        onClick={(e) => {
-                                            setCompanyReg(e.target.value);
+                                        onClick={() => {
+                                            setCompanyReg(data);
                                             setCompanyRegOpen(!companyRegOpen);
                                         }}
                                     >
                                         {data}
-                                    </option>
+                                    </p>
                                 ))}
                         </div>
                     )}
                 </div>
             </div>
+
+            {/* ტელ.ნომერი */}
             <div className="main_container">
-                {/* ტელ.ნომერი */}
                 <div className="telephone">
                     <div
-                        className="select"
+                        className={`select `}
                         name="dial_code"
                         id="dial_code"
                         {...register("dial_code", {
@@ -178,7 +197,6 @@ function CompanyRegister({ countryData }) {
                             setPhoneNumOpen(!phoneNumOpen);
                             setCompanyRegOpen(false);
                             setCountryOpen(false);
-                            setSexOpen(false);
                         }}
                     >
                         <div className="values">
@@ -201,15 +219,14 @@ function CompanyRegister({ countryData }) {
 
                         {/* {phoneNumOpen && ( */}
                         {phoneNumOpen && (
-                            <div className="dropdawn">
+                            <div className="dropdawn" ref={ref}>
                                 {/* {phoneNum &&
                   phoneNum.map((data, i) => ( */}
                                 <aside
                                     // key={i}
-                                    // value={data}
                                     value={"+995"}
                                     onClick={(e) => {
-                                        setPhoneNum(e.target.value);
+                                        // setPhoneNum(data);
                                         setPhoneNumOpen(!phoneNumOpen);
                                     }}
                                 >
@@ -228,6 +245,9 @@ function CompanyRegister({ countryData }) {
                     </div>
 
                     <input
+                        className={`${
+                            errors.phone ? "form_error_input" : "empty"
+                        }`}
                         type="number"
                         name="company_registration"
                         id="phone"
@@ -238,26 +258,26 @@ function CompanyRegister({ countryData }) {
                                 message: "დასაშვებია მხოლოდ რიცხვები",
                             },
                         })}
-                        style={{ border: errors.mobile && "2px solid red" }}
                     />
                     <label htmlFor="phone">ტელ.ნომერი</label>
                     {errors.phone && <span>{errors.phone.message}</span>}
                 </div>
             </div>
+
+            {/* ელ.ფოსტა */}
             <div className="main_container">
-                {/* ელ.ფოსტა */}
                 <input
+                    className={`${errors.email ? "form_error_input" : "empty"}`}
                     type="email"
                     name="company_registration"
-                    id="mail"
+                    id="email"
                     {...register("email", { required: true })}
-                    // style={{ border: errors.email && "2px solid red" }}
                 />
-                <label htmlFor="phone">ელ.ფოსტა</label>
+                <label htmlFor="email">ელ.ფოსტა</label>
             </div>
 
+            {/* ქვეყანა */}
             <div className="main_container">
-                {/* Country */}
                 <div
                     className="select"
                     name="company_registration"
@@ -265,10 +285,8 @@ function CompanyRegister({ countryData }) {
                     onClick={() => {
                         setCountryOpen(!countryOpen);
                         setCompanyRegOpen(false);
-                        setSexOpen(false);
                         setPhoneNumOpen(false);
                     }}
-                    // style={{ border: errors.forms && "2px solid red" }}
                 >
                     <div className="values">{country}</div>
 
@@ -281,27 +299,29 @@ function CompanyRegister({ countryData }) {
                         }}
                     />
                     {countryOpen && (
-                        <div className="dropdawn">
+                        <div className="dropdawn" ref={ref}>
                             {countrySort &&
                                 countrySort.map((data, i) => (
-                                    <option
+                                    <p
                                         key={i}
                                         value={data}
                                         onClick={(e) => {
-                                            setCountry(e.target.value);
+                                            setCountry(data);
                                             setCountryOpen(!countryOpen);
                                         }}
                                     >
                                         {data}
-                                    </option>
+                                    </p>
                                 ))}
                         </div>
                     )}
                 </div>
             </div>
+
+            {/* ქალაქი */}
             <div className="main_container">
-                {/* ქალაქი */}
                 <input
+                    className={`${errors.city ? "form_error_input" : "empty"}`}
                     type="text"
                     name="company_registration"
                     id="city"
@@ -311,22 +331,27 @@ function CompanyRegister({ countryData }) {
                 <label htmlFor="city">შეიყვანე ქალაქი/დაბა/სოფელი</label>
             </div>
 
+            {/* ფაქტიური მისამართი */}
             <div className="main_container">
-                {/* ფაქტიური მისამართი */}
                 <input
+                    className={`${
+                        errors.address ? "form_error_input" : "empty"
+                    }`}
                     type="text"
                     name="company_registration"
                     id="address"
                     {...register("address", { required: true })}
-                    // style={{ border: errors.address && "2px solid red" }}
                 />
                 <label htmlFor="address">ფაქტიური მისამართი</label>
             </div>
 
+            {/* პაროლი */}
             <div className="main_container">
-                {/* პაროლი */}
                 <input
-                    type="password"
+                    className={`${
+                        errors.password ? "form_error_input" : "empty"
+                    }`}
+                    type={passwordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="password"
                     {...register("password", {
@@ -336,15 +361,23 @@ function CompanyRegister({ countryData }) {
                             message: "პაროლი უნდა იყოს 8 სიმბოლოზე მეტი",
                         },
                     })}
-                    // style={{ border: errors.password && "2px solid red" }}
                 />
                 <label htmlFor="password">პაროლი</label>
-                {errors.password && <span>{errors.password.message}</span>}
+                <img
+                    src={passwordIcon}
+                    alt="password"
+                    onClick={() => setPasswordIsShow(!passwordIsShow)}
+                />
             </div>
+            {errors.password && <span>{errors.password.message}</span>}
+
+            {/* გაიმეორეთ პაროლი */}
             <div className="main_container">
-                {/* გაიმეორეთ პაროლი */}
                 <input
-                    type="password"
+                    className={`${
+                        errors.re_password ? "form_error_input" : "empty"
+                    }`}
+                    type={rePasswordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="re_password"
                     {...register("re_password", {
@@ -355,14 +388,17 @@ function CompanyRegister({ countryData }) {
                             }
                         },
                     })}
-                    // style={{ border: errors.re_password && "2px solid red" }}
                 />
                 <label htmlFor="re_password">გაიმეორეთ პაროლი</label>
-
-                {errors.re_password && (
-                    <span>{errors.re_password.message}</span>
-                )}
+                <img
+                    src={passwordIcon}
+                    alt="password"
+                    onClick={() => setRePasswordIsShow(!rePasswordIsShow)}
+                />
             </div>
+            {errors.re_password && <span>{errors.re_password.message}</span>}
+
+            {/* Agreement */}
             <aside>
                 <input
                     type="checkbox"
@@ -378,9 +414,9 @@ function CompanyRegister({ countryData }) {
                     </Link>
                 </label>
             </aside>
-            {errors.terms_checked && (
+            {/* {errors.terms_checked && (
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
-            )}
+            )} */}
 
             <aside>
                 <input
@@ -395,9 +431,9 @@ function CompanyRegister({ countryData }) {
                     </Link>
                 </label>
             </aside>
-            {errors.politic_checked && (
+            {/* {errors.politic_checked && (
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
-            )}
+            )} */}
 
             <button type="submit">რეგისტრაცია</button>
 

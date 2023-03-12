@@ -164,3 +164,8 @@
 //         }
 //     }
 // }
+
+.form_error_input {
+    border: 1px solid $border_red !important;
+    background: $input_red_bg !important;
+}

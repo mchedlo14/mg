@@ -59,6 +59,11 @@ $option_bg: #080a10;
 $option_color: rgba(182, 188, 205, 0.6);
 $checked_color: #6b6b6b;
 
+// Error
+$border_red: #d61c1c;
+$input_red_bg: rgba(214, 28, 28, 0.06);
+$text_red_err: #d61c1c;
+
 @mixin flexCenter($direction) {
     display: flex;
     flex-direction: $direction;

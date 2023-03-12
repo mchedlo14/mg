@@ -1,18 +1,31 @@
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useEffect, useState, useRef } from "react";
+import { set, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import { useOnClickOutside } from "usehooks-ts";
+import passwordIcon from "../../assets/images/password.png";
 
 function PersonRegistration({ countryData, telCodes }) {
+    // States
     const [telCodeSort, setTelCodeSort] = useState([]);
-    const [value, onChange] = useState(new Date());
+    // Password State
+    const [passwordIsShow, setPasswordIsShow] = useState(false);
+    const [rePasswordIsShow, setRePasswordIsShow] = useState(false);
+
+    const ref = useRef();
 
     const [phoneNum, setPhoneNum] = useState("+995");
     const [phoneNumOpen, setPhoneNumOpen] = useState(false);
 
     const [sex, setSex] = useState("მამრობითი");
     const [sexOpen, setSexOpen] = useState(false);
+
+    const handleClickOutside = () => {
+        setPhoneNumOpen(false);
+        setSexOpen(false);
+    };
+
+    useOnClickOutside(ref, handleClickOutside);
+
     const {
         register,
         handleSubmit,
@@ -63,7 +76,6 @@ function PersonRegistration({ countryData, telCodes }) {
                     name="person_registration"
                     id="first_name"
                     {...register("first_name", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
                     autoComplete="off"
                 />
                 <label htmlFor="first_name">სახელი</label>
@@ -75,7 +87,6 @@ function PersonRegistration({ countryData, telCodes }) {
                     name="person_registration"
                     id="last_name"
                     {...register("last_name", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
                     autoComplete="off"
                 />
                 <label htmlFor="last_name">გვარი</label>
@@ -115,7 +126,7 @@ function PersonRegistration({ countryData, telCodes }) {
 
                         {/* {phoneNumOpen && ( */}
                         {phoneNumOpen && (
-                            <div className="dropdawn">
+                            <div className="dropdawn" ref={ref}>
                                 {/* {phoneNum &&
                   phoneNum.map((data, i) => ( */}
                                 <aside
@@ -165,7 +176,6 @@ function PersonRegistration({ countryData, telCodes }) {
                     name="person_registration"
                     id="email"
                     {...register("email", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
                     autoComplete="off"
                 />
                 <label htmlFor="email">ელ.ფოსტ</label>
@@ -177,12 +187,10 @@ function PersonRegistration({ countryData, telCodes }) {
                     name="person_registration"
                     id="destination"
                     {...register("destination", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
                     autoComplete="off"
                 />
                 <label htmlFor="destination">შეიყვანე ქალაქი/დაბა/სოფელი</label>
             </div>
-
             {/* სქესი */}
             <div className="main_container">
                 <div
@@ -205,30 +213,27 @@ function PersonRegistration({ countryData, telCodes }) {
                         }}
                     />
                     {sexOpen && (
-                        <div className="dropdawn">
-                            <option
-                                value={"მამრობითი"}
-                                onClick={(e) => {
-                                    setSex(e.target.value);
+                        <div className="dropdawn" ref={ref}>
+                            <p
+                                onClick={() => {
+                                    setSex("მამრობითი");
                                     setSexOpen(!sexOpen);
                                 }}
                             >
                                 მამრობითი
-                            </option>
-                            <option
-                                value={"მდედრობითი"}
-                                onClick={(e) => {
-                                    setSex(e.target.value);
+                            </p>
+                            <p
+                                onClick={() => {
+                                    setSex("მდედრობითი");
                                     setSexOpen(!sexOpen);
                                 }}
                             >
                                 მდედრობითი
-                            </option>
+                            </p>
                         </div>
                     )}
                 </div>
             </div>
-
             {/* დაბადების თარიღი */}
             <div className="main_container date">
                 <input
@@ -254,7 +259,7 @@ function PersonRegistration({ countryData, telCodes }) {
             {/* პაროლი */}
             <div className="main_container">
                 <input
-                    type="password"
+                    type={passwordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="password"
                     {...register("password", {
@@ -264,15 +269,19 @@ function PersonRegistration({ countryData, telCodes }) {
                             message: "პაროლი უნდა იყოს 8 სიმბოლოზე მეტი",
                         },
                     })}
-                    // style={{ border: errors.password && "2px solid red" }}
                 />
                 <label htmlFor="password">პაროლი</label>
-                {errors.password && <span>{errors.password.message}</span>}
+                <img
+                    src={passwordIcon}
+                    alt="password"
+                    onClick={() => setPasswordIsShow(!passwordIsShow)}
+                />
             </div>
+            {errors.password && <span>{errors.password.message}</span>}
             <div className="main_container">
                 {/* გაიმეორეთ პაროლი */}
                 <input
-                    type="password"
+                    type={rePasswordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="re_password"
                     {...register("re_password", {
@@ -283,14 +292,17 @@ function PersonRegistration({ countryData, telCodes }) {
                             }
                         },
                     })}
-                    // style={{ border: errors.re_password && "2px solid red" }}
                 />
                 <label htmlFor="re_password">გაიმეორეთ პაროლი</label>
-
-                {errors.re_password && (
-                    <span>{errors.re_password.message}</span>
-                )}
+                <img
+                    src={passwordIcon}
+                    alt="password"
+                    onClick={() => setRePasswordIsShow(!rePasswordIsShow)}
+                />
             </div>
+            {errors.re_password && <span>{errors.re_password.message}</span>}
+
+            {/* Agreement */}
             <aside>
                 <input
                     type="checkbox"
