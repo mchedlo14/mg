@@ -75,6 +75,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type="text"
                     name="person_registration"
                     id="first_name"
+                    placeholder=" "
                     {...register("first_name", { required: true })}
                     autoComplete="off"
                 />
@@ -86,6 +87,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type="text"
                     name="person_registration"
                     id="last_name"
+                    placeholder=" "
                     {...register("last_name", { required: true })}
                     autoComplete="off"
                 />
@@ -156,6 +158,7 @@ function PersonRegistration({ countryData, telCodes }) {
                         type="number"
                         name="company_registration"
                         id="phone"
+                        placeholder=" "
                         {...register("phone", {
                             required: true,
                             pattern: {
@@ -175,6 +178,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type="email"
                     name="person_registration"
                     id="email"
+                    placeholder=" "
                     {...register("email", { required: true })}
                     autoComplete="off"
                 />
@@ -186,6 +190,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type="text"
                     name="person_registration"
                     id="destination"
+                    placeholder=" "
                     {...register("destination", { required: true })}
                     autoComplete="off"
                 />
@@ -241,7 +246,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     name="person_registration"
                     id="birth_day"
                     {...register("birth_day", { required: true })}
-                    // style={{ border: errors.company_id && "2px solid red" }}
+                    placeholder=" "
                     autoComplete="off"
                 />
                 <label htmlFor="birth_day">დაბადების თარიღი</label>
@@ -262,6 +267,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type={passwordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="password"
+                    placeholder=" "
                     {...register("password", {
                         required: true,
                         minLength: {
@@ -284,6 +290,7 @@ function PersonRegistration({ countryData, telCodes }) {
                     type={rePasswordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="re_password"
+                    placeholder=" "
                     {...register("re_password", {
                         required: true,
                         validate: (val) => {

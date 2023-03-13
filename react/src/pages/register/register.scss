@@ -120,14 +120,14 @@
                         @include fontGeorgian(500);
                         outline: none;
                     }
-                    input:focus + label {
+                    input:focus ~ label {
                         transition: 300ms;
                         margin-top: -24px;
                     }
-                    // input:not(:placeholder-shown) + label {
-                    //     transition: 300ms;
-                    //     margin-top: -24px;
-                    // }
+                    input:not(:placeholder-shown) ~ label {
+                        transition: 300ms;
+                        margin-top: -24px;
+                    }
                     img {
                         position: absolute;
                         right: 4.17%;

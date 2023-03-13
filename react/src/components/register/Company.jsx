@@ -108,6 +108,7 @@ function CompanyRegister({ countryData }) {
                     type="text"
                     name="company_registration"
                     id="company_name"
+                    placeholder=" "
                     {...register("company_name", { required: true })}
                     autoComplete="off"
                 />
@@ -125,6 +126,7 @@ function CompanyRegister({ countryData }) {
                     type="number"
                     name="company_registration"
                     id="identification_code"
+                    placeholder=" "
                     {...register("identification_code", {
                         required: true,
                         pattern: {
@@ -251,6 +253,7 @@ function CompanyRegister({ countryData }) {
                         type="number"
                         name="company_registration"
                         id="phone"
+                        placeholder=" "
                         {...register("phone", {
                             required: true,
                             pattern: {
@@ -260,9 +263,9 @@ function CompanyRegister({ countryData }) {
                         })}
                     />
                     <label htmlFor="phone">ტელ.ნომერი</label>
-                    {errors.phone && <span>{errors.phone.message}</span>}
                 </div>
             </div>
+            {errors.phone && <span>{errors.phone.message}</span>}
 
             {/* ელ.ფოსტა */}
             <div className="main_container">
@@ -271,6 +274,7 @@ function CompanyRegister({ countryData }) {
                     type="email"
                     name="company_registration"
                     id="email"
+                    placeholder=" "
                     {...register("email", { required: true })}
                 />
                 <label htmlFor="email">ელ.ფოსტა</label>
@@ -325,8 +329,8 @@ function CompanyRegister({ countryData }) {
                     type="text"
                     name="company_registration"
                     id="city"
+                    placeholder=" "
                     {...register("city", { required: true })}
-                    style={{ border: errors.city && "2px solid red" }}
                 />
                 <label htmlFor="city">შეიყვანე ქალაქი/დაბა/სოფელი</label>
             </div>
@@ -340,6 +344,7 @@ function CompanyRegister({ countryData }) {
                     type="text"
                     name="company_registration"
                     id="address"
+                    placeholder=" "
                     {...register("address", { required: true })}
                 />
                 <label htmlFor="address">ფაქტიური მისამართი</label>
@@ -354,6 +359,7 @@ function CompanyRegister({ countryData }) {
                     type={passwordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="password"
+                    placeholder=" "
                     {...register("password", {
                         required: true,
                         minLength: {
@@ -380,6 +386,7 @@ function CompanyRegister({ countryData }) {
                     type={rePasswordIsShow ? "text" : "password"}
                     name="company_registration"
                     id="re_password"
+                    placeholder=" "
                     {...register("re_password", {
                         required: true,
                         validate: (val) => {
