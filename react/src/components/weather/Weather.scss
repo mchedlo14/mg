@@ -1,83 +1,165 @@
-.weather-wrapper {
-    max-width: 1052px;
-    width: 90%;
-    height: 40px;
-    margin: 0 auto;
+// .weather-wrapper {
+//     max-width: 1052px;
+//     width: 90%;
+//     height: 40px;
+//     margin: 0 auto;
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 0px 14px 0px 0px;
+
+//     a {
+//         text-decoration: none;
+//     }
+
+//     .left-container {
+//         width: 230px;
+//         height: 40px;
+//         display: flex;
+//         align-items: center;
+//         justify-content: flex-start;
+
+//         .celsius {
+//             color: #999;
+//             font-size: 1rem;
+//             font-weight: 500;
+//             cursor: context-menu;
+
+//             &:hover {
+//                 color: #fff;
+//             }
+
+//             @media (max-width: 640px) {
+//                 padding-top: 6px;
+//             }
+//         }
+
+//         p {
+//             color: #999;
+//             cursor: context-menu;
+//             font-size: 1rem;
+//             cursor: pointer;
+//             user-select: none;
+//             &:hover {
+//                 color: #fff;
+//                 transition: all 0.4s;
+//             }
+
+//             @media (max-width: 640px) {
+//                 padding-top: 6px;
+//             }
+//         }
+//         div {
+//             display: flex;
+//             gap: 15px;
+//             margin-left: 20px;
+//         }
+//     }
+
+//     .right-container {
+//         width: 120px;
+//         height: 40px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+
+//         p {
+//             font-size: 1rem;
+//             overflow: hidden;
+//             white-space: nowrap;
+//             max-width: 15rem;
+//             margin-left: auto;
+//             color: #999;
+//             letter-spacing: 0.5px;
+
+//             @media (max-width: 640px) {
+//                 padding-top: 6px;
+//             }
+//         }
+//     }
+// }
+
+// span {
+//     margin-left: 10px;
+// }
+
+.weather-conteiner {
     display: flex;
     justify-content: space-between;
-    padding: 0px 14px 0px 0px;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 12px;
 
-    a {
-        text-decoration: none;
-    }
-
-    .left-container {
-        width: 230px;
-        height: 40px;
+    .left-side {
+        width: 20%;
+        height: 24px;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: flex-start;
 
+        .items {
+            width: 201px;
+            display: flex;
+            gap: 18px;
+            margin-left: 18px;
+            @media (max-width: 680px) {
+                gap: 4px;
+                margin-left: 4px;
+            }
+            @media (max-width: 350px) {
+                width: 150px;
+                margin-left: 4px;
+            }
+        }
+
         .celsius {
-            color: #999;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: context-menu;
-
-            &:hover {
-                color: #fff;
-            }
-
-            @media (max-width: 640px) {
-                padding-top: 6px;
-            }
+            width: 51px;
+            height: 24px;
+            font-size: 12px;
+            @include fontThin;
+            color: #ffffff;
+            background-color: #06161d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            user-select: none;
         }
 
         p {
-            color: #999;
-            cursor: context-menu;
-            font-size: 1rem;
-            cursor: pointer;
-            user-select: none;
-            &:hover {
-                color: #fff;
-                transition: all 0.4s;
-            }
-
-            @media (max-width: 640px) {
-                padding-top: 6px;
-            }
-        }
-        div {
+            font-size: 12px;
+            font-family: "Noto Sans Georgian", sans-serif;
+            font-weight: 400;
+            color: white;
+            background: #111111;
+            line-height: 16.32px;
+            width: 99px;
+            height: 24px;
             display: flex;
-            gap: 15px;
-            margin-left: 20px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            @media (max-width: 350px) {
+                width: 84px;
+            }
         }
     }
 
-    .right-container {
-        width: 120px;
-        height: 40px;
+    .right-side {
+        width: 100px;
+        height: 16px;
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 8px;
 
         p {
-            font-size: 1rem;
-            overflow: hidden;
-            white-space: nowrap;
-            max-width: 15rem;
-            margin-left: auto;
-            color: #999;
-            letter-spacing: 0.5px;
-
-            @media (max-width: 640px) {
-                padding-top: 6px;
-            }
+            font-size: 12px;
+            @include fontRegular;
+            color: #FFFFFF;
+            line-height: 100%;
+            user-select: none;
         }
     }
-}
-
-span {
-    margin-left: 10px;
 }

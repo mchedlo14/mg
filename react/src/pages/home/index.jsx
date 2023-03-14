@@ -14,10 +14,10 @@ function HomePage() {
     const router = useNavigate();
 
     return (
-        <div className="home-wrapper">
+        <div className="home-conteiner">
             <div>
                 <div className="search-container">
-                    <input placeholder="მოიძებნება ყველაფერი" />
+                    <input  placeholder="მოიძებნება ყველაფერი..." />
                     <img src={searchIcon} alt="search icon" />
                 </div>
                 <Weather />
