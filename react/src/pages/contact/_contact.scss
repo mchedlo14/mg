@@ -1,0 +1,107 @@
+.contact_page {
+    min-height: 100vh;
+    .map_container {
+        max-width: 1808px;
+        width: 95%;
+        height: 528px;
+        border-radius: 8px;
+        background-color: brown;
+        margin: 0 auto;
+        margin-top: 164px;
+    }
+
+    .contact_information {
+        max-width: 1234px;
+        width: 95%;
+        height: max-content;
+        min-height: 100px;
+        margin: 0 auto;
+        margin-top: 44px;
+        padding-bottom: 50px;
+        header {
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            h2 {
+                font-size: 20px;
+                line-height: 27px;
+                @include fontGeorgian(600);
+                color: $mg_red;
+            }
+            p {
+                font-size: 14px;
+                line-height: 19px;
+                @include fontGeorgian(400);
+                color: #cccccc;
+                margin-top: 4px;
+            }
+        }
+        main {
+            // display: grid;
+            // grid-template-columns: 1fr 1fr 1fr;
+            display: flex;
+            justify-content: space-between;
+
+            min-height: 112px;
+            margin-top: 92px;
+            gap: 5px;
+            @media (max-width: 620px) {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+                gap: 72px;
+            }
+            .box {
+                display: flex;
+                flex-direction: column;
+
+                width: fit-content;
+                @media (max-width: 620px) {
+                    width: 100%;
+                }
+                .up {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    @media (max-width: 620px) {
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+                    div {
+                        background: rgba(238, 50, 85, 0.16);
+                        border-radius: 4px;
+                        width: 24px;
+                        height: 24.31px;
+                        @include flexCenter(row);
+                    }
+                    p {
+                        color: #dcdcdc;
+                        font-size: 20px;
+                        line-height: 27px;
+                        @include fontGeorgian(600);
+                    }
+                }
+                .txt {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    margin-top: 12.16px;
+                    h5,
+                    a {
+                        color: #9c9c9c;
+                        font-size: 14px;
+                        line-height: 19px;
+                        @include fontGeorgian(500);
+                        text-decoration: none;
+                        span {
+                            color: rgba(220, 220, 220, 1);
+                            font-size: 14px;
+                            line-height: 19px;
+                            @include fontGeorgian(400);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

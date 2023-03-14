@@ -78,9 +78,9 @@ const router = createBrowserRouter(
                 <Route path="addjobs" element={<JobsForm />} />
 
                 {/* while service will be ready */}
-                <Route path='jobsCount' element={<JobsCount />}/>
+                <Route path="jobsCount" element={<JobsCount />} />
 
-                {/* Footer */}
+                {/* Company Informations */}
                 <Route
                     path="terms_and_conditions"
                     element={<TermsAndConditionsPage />}

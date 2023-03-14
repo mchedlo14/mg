@@ -20,7 +20,7 @@
 @import "../components/layout//RootLayout.scss";
 @import "../components/footer/FooterForHome.scss";
 @import "../pages/terms_conditions/TermsAndConditions.scss";
-@import "../pages/contact/Contact.scss";
+@import "../pages/contact/_contact.scss";
 @import "../components/jobsform/JobsForm.scss";
 @import "../components/layout/userLayout.scss";
 @import "../components/user_sidebar/UserSidebar.scss";
@@ -32,8 +32,7 @@
 @import "../pages/dashboard/info/FromInfo.scss";
 @import "../components/dashboard_components/forms/Forms.scss";
 @import "../pages/job_detail/JobDetail.scss";
-@import '../pages/countdown/ExpertsCount.scss';
-
+@import "../pages/countdown/ExpertsCount.scss";
 
 ::-webkit-scrollbar {
     width: 10px;
