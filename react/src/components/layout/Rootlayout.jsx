@@ -14,10 +14,13 @@ import logo from "../../assets/images/logomg.png";
 import lightIcon from "../../assets/images/ligh-bulbe.png";
 import fb from "../../assets/svgs/facebook.svg";
 import authIcon from "../../assets/images/auth_icon.png";
+import uploadIcon from "../../assets/images/upload.png";
 
 function RootLayout() {
     // States
     const [userIsLoading, setUserIsLoading] = useState(true);
+
+    const location = useLocation();
 
     const navigate = useNavigate();
     // Redux
@@ -61,7 +64,6 @@ function RootLayout() {
         !Cookies.get("authTokens") && setUserIsLoading(false);
     }, []);
 
-    const location = useLocation();
     return (
         <>
             {!userIsLoading ? (
@@ -79,27 +81,47 @@ function RootLayout() {
 
                             <div className="home-button-wrapper">
                                 {location && location.pathname === "/jobs" && (
-                                    <button onClick={() => navigate("addjobs")}>
+                                    <button onClick={() => navigate("")}>
                                         ვაკანსიის დამატება
                                     </button>
                                 )}
 
                                 {isAuthenticated ? (
-                                    <button
-                                        className="logout"
-                                        onClick={() =>
-                                            dispatch(logout())
-                                                .unwrap()
-                                                .then(
-                                                    (
-                                                        originalPromiseResult
-                                                    ) => {}
-                                                )
-                                                .catch((rejectedValue) => {})
-                                        }
-                                    >
-                                        გასვლა
-                                    </button>
+                                    <>
+                                        {location &&
+                                            location.pathname === "/info" && (
+                                                <div
+                                                    className="add_informations"
+                                                    onClick={() =>
+                                                        navigate("addjobs")
+                                                    }
+                                                >
+                                                    <img
+                                                        src={uploadIcon}
+                                                        alt="upload"
+                                                    />
+                                                    დამატება
+                                                </div>
+                                            )}
+
+                                        <button
+                                            className="logout"
+                                            onClick={() =>
+                                                dispatch(logout())
+                                                    .unwrap()
+                                                    .then(
+                                                        (
+                                                            originalPromiseResult
+                                                        ) => {}
+                                                    )
+                                                    .catch(
+                                                        (rejectedValue) => {}
+                                                    )
+                                            }
+                                        >
+                                            გასვლა
+                                        </button>
+                                    </>
                                 ) : (
                                     <>
                                         <button

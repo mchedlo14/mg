@@ -33,6 +33,31 @@
             background-color: $mg_red_hover;
         }
     }
+    .add_informations {
+        display: flex;
+        align-items: center;
+        gap: 18.17px;
+        width: 149px;
+        height: 34px;
+        border: 1px dashed rgba(238, 50, 85, 0.3);
+        border-radius: 4px;
+        padding: 6px 16px;
+        font-size: 16px;
+        line-height: 22px;
+        @include fontGeorgian(400);
+        color: #d5d5d5;
+        cursor: pointer;
+        transition: 500ms;
+        &:hover {
+            background: rgba(238, 50, 85, 0.1);
+            transition: 500ms;
+            border: 1px dashed $mg_red;
+        }
+        img {
+            width: 11.67px;
+            height: 11.67px;
+        }
+    }
 
     button {
         display: block;
