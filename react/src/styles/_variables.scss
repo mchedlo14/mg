@@ -7,7 +7,7 @@ body {
     box-sizing: border-box;
 }
 //colors
-$home_page_bg_dark: #0E0E0E;
+$home_page_bg_dark: #0e0e0e;
 
 body {
     background-color: $home_page_bg_dark;
@@ -63,6 +63,10 @@ $checked_color: #6b6b6b;
 $border_red: #d61c1c;
 $input_red_bg: rgba(214, 28, 28, 0.06);
 $text_red_err: #d61c1c;
+
+// Box Containers:
+$info_box_bg: #040507;
+
 
 @mixin flexCenter($direction) {
     display: flex;
