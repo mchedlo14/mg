@@ -37,7 +37,11 @@
                 @include fontGeorgian(500);
                 outline: none;
             }
-            input:focus + label {
+            input:focus ~ label {
+                transition: 300ms;
+                margin-top: -24px;
+            }
+            input:not(:placeholder-shown) ~ label {
                 transition: 300ms;
                 margin-top: -24px;
             }
@@ -58,6 +62,13 @@
                 cursor: pointer;
                 z-index: 5;
             }
+        }
+        span {
+            font-size: 14px;
+            line-height: 14px;
+            color: $text_red_err;
+            @include fontGeorgian(400);
+            margin: 0;
         }
         aside {
             width: 100%;

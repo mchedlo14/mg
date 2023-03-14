@@ -63,9 +63,9 @@ function CompanyRegister({ countryData }) {
         const formData = new FormData();
         formData.append("name", data.name);
         formData.append("identification_code", data.identification_code);
-        formData.append("legal_form", data.legal_form);
-        formData.append("phone", data.dial_code + " " + data.phone);
-        formData.append("country", data.country);
+        formData.append("legal_form", companyReg);
+        formData.append("phone", phoneNum + " " + data.phone);
+        formData.append("country", country);
         formData.append("email", data.email);
         formData.append("city", data.city);
         formData.append("address", data.address);
@@ -109,7 +109,7 @@ function CompanyRegister({ countryData }) {
                     name="company_registration"
                     id="company_name"
                     placeholder=" "
-                    {...register("company_name", { required: true })}
+                    {...register("name", { required: true })}
                     autoComplete="off"
                 />
                 <label htmlFor="company_name">კომპანიის სახელი</label>
@@ -192,9 +192,6 @@ function CompanyRegister({ countryData }) {
                         className={`select `}
                         name="dial_code"
                         id="dial_code"
-                        {...register("dial_code", {
-                            required: true,
-                        })}
                         onClick={() => {
                             setPhoneNumOpen(!phoneNumOpen);
                             setCompanyRegOpen(false);
@@ -421,9 +418,9 @@ function CompanyRegister({ countryData }) {
                     </Link>
                 </label>
             </aside>
-            {/* {errors.terms_checked && (
+            {errors.terms_checked && (
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
-            )} */}
+            )}
 
             <aside>
                 <input
@@ -438,9 +435,9 @@ function CompanyRegister({ countryData }) {
                     </Link>
                 </label>
             </aside>
-            {/* {errors.politic_checked && (
+            {errors.politic_checked && (
                 <span style={{ color: "red" }}>სავალდებულო ველი</span>
-            )} */}
+            )}
 
             <button type="submit">რეგისტრაცია</button>
 

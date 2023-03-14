@@ -39,12 +39,20 @@ function LoginPage() {
             });
     return !isAuthenticated ? (
         <section className="login-wrapper">
-            <form className="login_container">
+            <form className="login_container" onSubmit={handleSubmit(onSubmit)}>
                 {/* სათაური */}
                 <h1>ანგარიშზე შესვლა</h1>
                 {/* იმეილი */}
                 <div>
-                    <input type="email" name="log_in" id="email_login" />
+                    <input
+                        type="email"
+                        name="log_in"
+                        id="email_login"
+                        placeholder=" "
+                        {...register("email", {
+                            required: true,
+                        })}
+                    />
                     <label htmlFor="email_login">ელ.ფოსტა</label>
                 </div>
 
@@ -54,6 +62,10 @@ function LoginPage() {
                         type={passwordIsShow ? "text" : "password"}
                         name="log_in"
                         id="password_login"
+                        placeholder=" "
+                        {...register("password", {
+                            required: true,
+                        })}
                     />
                     <label htmlFor="password_login">პაროლი</label>
                     <img
@@ -62,6 +74,8 @@ function LoginPage() {
                         onClick={() => setPasswordIsShow(!passwordIsShow)}
                     />
                 </div>
+
+                {handleErrors && <span>{handleErrors}</span>}
 
                 {/* დამახსოვება */}
                 <aside>
