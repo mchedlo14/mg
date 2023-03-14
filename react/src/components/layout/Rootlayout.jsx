@@ -11,8 +11,9 @@ import {
 } from "react-router-dom";
 import { loadUser, logout } from "../../api/auth/actions";
 import logo from "../../assets/images/logomg.png";
-import lightIcon from "../../assets/svgs/brightness.svg";
+import lightIcon from "../../assets/images/ligh-bulbe.png";
 import fb from "../../assets/svgs/facebook.svg";
+import authIcon from "../../assets/images/auth_icon.png";
 
 function RootLayout() {
     // States
@@ -77,11 +78,11 @@ function RootLayout() {
                             </div>
 
                             <div className="home-button-wrapper">
-                        {location && location.pathname === "/jobs" && (
-                            <button onClick={() => navigate("addjobs")}>
-                                ვაკანსიის დამატება
-                            </button>
-                        )}
+                                {location && location.pathname === "/jobs" && (
+                                    <button onClick={() => navigate("addjobs")}>
+                                        ვაკანსიის დამატება
+                                    </button>
+                                )}
 
                                 {isAuthenticated ? (
                                     <button
@@ -100,12 +101,28 @@ function RootLayout() {
                                         გასვლა
                                     </button>
                                 ) : (
-                                    <button onClick={() => navigate("/log_in")}>
-                                        შესვლა
-                                    </button>
+                                    <>
+                                        <button
+                                            onClick={() =>
+                                                navigate("/register")
+                                            }
+                                        >
+                                            რეგისტრაცია
+                                        </button>
+                                        <button
+                                            onClick={() => navigate("/log_in")}
+                                        >
+                                            ავტორიზაცია
+                                        </button>
+                                    </>
                                 )}
+                                <div className="light_toogle">
+                                    <img src={lightIcon} alt="brightness" />
+                                </div>
 
-                                <img src={lightIcon} alt="brightness" />
+                                <div className="auth">
+                                    <img src={authIcon} alt="auth" />
+                                </div>
                             </div>
                         </nav>
                     </header>
@@ -114,7 +131,7 @@ function RootLayout() {
                         <Outlet />
                     </main>
 
-                    <footer className="root-footer">
+                    {/* <footer className="root-footer">
                         <div className="copyright box">
                             <p>Copyright © 2023 MG</p>
                         </div>
@@ -141,7 +158,7 @@ function RootLayout() {
                                 <img src={fb} alt="" />
                             </Link>
                         </div>
-                    </footer>
+                    </footer> */}
                 </>
             ) : (
                 <div>Loading</div>

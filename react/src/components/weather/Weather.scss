@@ -117,7 +117,7 @@
             width: 51px;
             height: 24px;
             font-size: 12px;
-            @include fontThin;
+            @include fontGeorgian(400);
             color: #ffffff;
             background-color: #06161d;
             display: flex;
@@ -156,8 +156,8 @@
 
         p {
             font-size: 12px;
-            @include fontRegular;
-            color: #FFFFFF;
+            @include fontGeorgian(400);
+            color: #ffffff;
             line-height: 100%;
             user-select: none;
         }

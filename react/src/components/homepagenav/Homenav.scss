@@ -146,7 +146,7 @@
         padding-top: 26px;
         line-height: 100%;
         text-align: center;
-        @include fontRegular;
+        @include fontGeorgian(400);
         text-transform: uppercase;
 
         @media (max-width: 680px) {

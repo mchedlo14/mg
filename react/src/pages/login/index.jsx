@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { authLogin } from "../../api/auth/actions";
 import logo from "../../assets/images/logomg.png";
+import passwordIcon from "../../assets/images/password.png";
 
 function LoginPage() {
     const { isAuthenticated } = useSelector((state) => state.auth);
 
     // States
     const [handleErrors, setHandleErrors] = useState(null);
+    const [passwordIsShow, setPasswordIsShow] = useState(false);
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     // Form
@@ -36,75 +39,61 @@ function LoginPage() {
             });
     return !isAuthenticated ? (
         <section className="login-wrapper">
-            
-            <div className="login-container">
-                {/* Back */}
-                <div
-                    className="back-button"
-                    onClick={() => {
-                        navigate("/");
-                    }}
-                >
-                    <div></div>
+            <form className="login_container" onSubmit={handleSubmit(onSubmit)}>
+                {/* სათაური */}
+                <h1>ანგარიშზე შესვლა</h1>
+                {/* იმეილი */}
+                <div>
+                    <input
+                        type="email"
+                        name="log_in"
+                        id="email_login"
+                        placeholder=" "
+                        {...register("email", {
+                            required: true,
+                        })}
+                    />
+                    <label htmlFor="email_login">ელ.ფოსტა</label>
                 </div>
-                {/* Image Container */}
-                <div className="logn-image-box">
+
+                {/* პაროლი */}
+                <div>
+                    <input
+                        type={passwordIsShow ? "text" : "password"}
+                        name="log_in"
+                        id="password_login"
+                        placeholder=" "
+                        {...register("password", {
+                            required: true,
+                        })}
+                    />
+                    <label htmlFor="password_login">პაროლი</label>
                     <img
-                        src={logo}
-                        alt=""
-                        onClick={() => {
-                            navigate("/");
-                        }}
+                        src={passwordIcon}
+                        alt="password"
+                        onClick={() => setPasswordIsShow(!passwordIsShow)}
                     />
                 </div>
-                {/* Title */}
-                <div className="login-title">
-                    <p>შესვლა</p>
-                </div>
-                {/* Form */}
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input
-                        type="emial"
-                        name="login"
-                        placeholder="იმეილი"
-                        {...register("email", { required: true })}
-                    />
-                    {errors.email && <span>{errors.email.message}</span>}
-                    <input
-                        type="password"
-                        name="login"
-                        placeholder="პაროლი"
-                        {...register("password", { required: true })}
-                    />
-                    {errors.password && <span>{errors.password.message}</span>}
-                    {handleErrors && <span>{handleErrors}</span>}
 
-                    <Link to={""}>პაროლის აღდგენა</Link>
+                {handleErrors && <span>{handleErrors}</span>}
 
-                    <button type="submit">შესვლა</button>
-                </form>
+                {/* დამახსოვება */}
+                <aside>
+                    <input type="checkbox" id="saving_inp" />
+                    <label htmlFor="saving_inp">
+                        დაიმახსოვრე ანგარიშის მონაცემები
+                    </label>
+                </aside>
 
-                {/* Create Account */}
+                <button type="submit">ავტორიზაცია</button>
 
-                <button
-                    className="create-account-button"
-                    onClick={() => {
-                        navigate("/register");
-                    }}
-                >
-                    ანგარიშის შექმნა
-                </button>
-
-                <div className="signin-socials">
-                    <p>ავტორიზაცია სოციალური ქსელებით</p>
-                    <div className="social_container">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
+                <aside>
+                    <label htmlFor="">
+                        არ გაქვთ ანგარიში? გაიარე{" "}
+                        <Link to={"/register"}>რეგისტრაცია</Link>{" "}
+                    </label>
+                </aside>
+            </form>
         </section>
     ) : (
         <Navigate to={"/"} replace={true} />

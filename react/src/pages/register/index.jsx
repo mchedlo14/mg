@@ -37,45 +37,7 @@ function RegisterPage() {
                 </PopupMiddle>
             )}
 
-            <header className="registration-navigation">
-                {/* <p>გაქვთ ანგარიში უკვე შექმნილი?</p>
-                <Link to={""}>შესვლა</Link> */}
-            </header>
             <div className="register-contaner">
-                {/* Registration Information */}
-                <div className="registration-information">
-                    {/* Image */}
-                    <div className="image-box">
-                        <img src={logo} alt="" />
-                    </div>
-                    {/* Title */}
-                    <div className="registration-title">
-                        <h2>MG ID - ერთი ანგარიში ყველა სერვისისთვის</h2>
-                    </div>
-                    {/* Icons */}
-                    <div className="registration-icons">
-                        <div>
-                            <img src={experts} alt="experts" />
-                        </div>
-
-                        <div>
-                            <img src={info} alt="info" />
-                        </div>
-                        <div>
-                            <img src={jobs} alt="jobs" />
-                        </div>
-                    </div>
-                    {/* Information */}
-                    <div className="registration-information">
-                        {/* <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quibusdam sunt magnam ducimus laborum
-                            similique voluptate nostrum id, ipsam minus,
-                            expedita, rerum modi eaque soluta saepe.
-                        </p> */}
-                    </div>
-                </div>
-
                 {/* Registration Form */}
                 <div className="registration-form">
                     <h1>ანგარიშის შექმნა</h1>
@@ -113,6 +75,7 @@ function RegisterPage() {
                             />
                         </div>
                     </div>
+                    
                     {/* Person Form */}
                     {registerIsActive === "person" && (
                         <PersonRegistration

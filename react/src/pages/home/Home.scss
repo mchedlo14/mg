@@ -50,13 +50,13 @@
     width: 100%;
     min-height: 100vh;
     margin-top: 140px;
-    @media(max-width:1250px){
+    @media (max-width: 1250px) {
         padding: 20px;
     }
-    @media(max-width:680px){
+    @media (max-width: 680px) {
         margin-top: 56px;
     }
-    div{
+    div {
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
@@ -80,16 +80,16 @@
             border-radius: 12px;
             padding-left: 20px;
             background-color: rgb(47, 47, 50);
-            color: #787D8A;
+            color: #787d8a;
             font-size: 16px;
 
             input::placeholder {
                 font-size: 14px;
-                @include fontThin;
+                @include fontGeorgian(400);
                 line-height: 19.04px;
                 padding-top: 22.5;
                 padding-bottom: 22.5;
-                color: #787D8A;
+                color: #787d8a;
             }
         }
 
