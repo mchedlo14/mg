@@ -36,8 +36,23 @@
     // width: 100%;
     min-height: 500px;
     margin: 50px auto;
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, 591px);
+    // flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
     padding: 16px;
+    @media (max-width: 1850px) {
+        grid-template-columns: repeat(auto-fill, 450px);
+    }
+
+    @media (max-width: 950px) {
+        grid-template-columns: repeat(auto-fill, 90%);
+    }
+    @media (max-width: 400px) {
+        padding: 0px;
+        grid-template-columns: repeat(auto-fill, 95%);
+    }
 }

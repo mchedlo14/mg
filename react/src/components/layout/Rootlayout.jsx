@@ -81,7 +81,7 @@ function RootLayout() {
 
                             <div className="home-button-wrapper">
                                 {location && location.pathname === "/jobs" && (
-                                    <button onClick={() => navigate("")}>
+                                    <button onClick={() => navigate("addjobs")}>
                                         ვაკანსიის დამატება
                                     </button>
                                 )}
@@ -92,9 +92,7 @@ function RootLayout() {
                                             location.pathname === "/info" && (
                                                 <div
                                                     className="add_informations"
-                                                    onClick={() =>
-                                                        navigate("addjobs")
-                                                    }
+                                                    onClick={() => navigate("")}
                                                 >
                                                     <img
                                                         src={uploadIcon}
