@@ -8,10 +8,10 @@ function CategoryServicesPage() {
             <section className="category_services_section">
                 <div className="main-wrapper">
                     {/* Section TiTle */}
-                    <div className="section_title">
+                    {/* <div className="section_title">
                         <h1>სილამაზე და ჯამთელობა</h1>
                         <Breadcrumbs />
-                    </div>
+                    </div> */}
 
                     {/* Main Content */}
                     <div className="category_services_main_content">

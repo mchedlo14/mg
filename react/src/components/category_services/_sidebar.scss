@@ -1,0 +1,120 @@
+.category_services_side_bar_container {
+    width: 25%;
+    min-height: 792px;
+    background-color: #000000;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    max-width: 440px;
+    padding: 24px;
+    .provider_title {
+        // height: 70px;
+        h4 {
+            font-size: 16px;
+            line-height: 22px;
+            @include fontGeorgian(700);
+            color: #ffffff;
+        }
+    }
+    .hr {
+        width: calc(100% + 48px);
+        transform: translateX(-24px);
+        margin-top: 24px;
+        background-color: rgba(255, 255, 255, 0.1);
+        height: 1px;
+    }
+
+    .list_of_categories {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        width: 100%;
+        gap: 32px;
+        .provided {
+            .category_title {
+                h4 {
+                    font-size: 14px;
+                    line-height: 19px;
+                    @include fontGeorgian(500);
+                    color: #cfcfcf;
+                }
+            }
+            .category_list {
+                margin-top: 8px;
+                select {
+                    outline: none;
+                    background-color: transparent;
+                    max-width: 392px;
+                    width: 90%;
+                    height: 50px;
+                    border: 1px solid rgba(255, 255, 255, 0.12);
+                    border-radius: 4px;
+                    font-size: 12px;
+                    line-height: 16px;
+                    @include fontGeorgian(400);
+                    color: rgba(255, 255, 255, 0.5);
+                    padding: 14px;
+                    option {
+                        // color: black;
+                        background-color: $home_page_bg_dark;
+                    }
+                }
+            }
+            .category_sub_list {
+                padding-right: 0px;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5em;
+                li {
+                    display: flex;
+                    gap: 8px;
+                    text-align: center;
+                    align-items: center;
+                    input {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        border: 1px solid rgba(255, 255, 255, 0.28);
+                        border-radius: 3px;
+                        outline: none;
+                        width: 14px;
+                        height: 14px;
+                        background: transparent;
+                        &:checked {
+                            // accent-color: #219e3e;
+                            // border-color: #219e3e;
+                            accent-color: #ffffff;
+                            border-color: #ffffff;
+                            background: #ffffff;
+                        }
+                    }
+                    input:checked ~ label {
+                        color: #ffffff;
+                    }
+                    label {
+                        cursor: pointer;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: rgba(255, 255, 255, 0.3);
+                        @include fontGeorgian(400);
+                    }
+                }
+            }
+        }
+    }
+    .submit {
+        margin-top: 87px;
+        button {
+            width: 190px;
+            height: 46px;
+            padding: 12px 44px;
+            border: 1px solid $mg_red;
+            border-radius: 6px;
+            font-size: 16px;
+            line-height: 22px;
+            @include fontGeorgian(400);
+            color: #ffffff;
+        }
+    }
+}
